@@ -56,7 +56,7 @@ jQuery(function() {
 		perma_option: '$pcf[facebook_perma_option]',
 		display_name: '$ptx[facebook_display_name]',
 		referrer_track: '$pcf[facebook_referrer_track]',
-		language: '${lang}_$ptx[general_country_code]', // TODO
+		language: '${lang}_$ptx[general_country_code]',
 		action: '$pcf[facebook_action]'
 	    },
 	    twitter: {
