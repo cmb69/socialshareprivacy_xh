@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta name="content-language" content="de">
+<title>Socialshareprivacy_XH - Manual</title>
+<link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+
+<body>
+
+<h1>Socialshareprivacy_XH - a CMSimple_XH Plugin</h1>
+<img src="../socialshareprivacy.png" style="display:block; float:left; margin: 0 20px 10px 0">
+<p style="text-align:justify">Socialshareprivacy_XH facilitates to have
+Facebook, Twitter and Google+ buttons on your website
+without violating your visitor's privacy.
+Before the buttons are actually shown, the visitor has to agree explicitely.
+This plugin is only a wrapper around the jQuery plugin socialshareprivacy,
+which is developed by <a href="http://www.heise.de/ct/artikel/2-Klicks-fuer-mehr-Datenschutz-1333879.html">heise online</a>.
+Socialshareprivacy_XH doesn't provide any additional features,
+but is merely meant as a simple way to use and configure the jQuery plugin
+without the need to mess around in JS files.</p>
+
+<ul id="nav">
+<li><a href="#notice">Important Notice</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#settings">Settings</a></li>
+<li><a href="#usage">Usage</a></li>
+<!--<li><a href="#limitations">Limitations</a></li>-->
+<li><a href="#license">License</a></li>
+<li><a href="#credits">Credits</a></li>
+</ul>
+
+<div id="body">
+
+<p><strong>Please do read this documentation
+<em>before</em> you encounter any problems!</strong></p>
+
+<h2><a name="notice">Important Notice</a></h2>
+<p><strong>Socialshareprivacy_XH couldn't be tested so far in various environments.
+It is a so called BETA version. Use with caution!</strong></p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="requirements">Requirements</a></h2>
+<p>Socialshareprivacy_XH is a plugin for CMSimple_XH.
+It requires a UTF-8 encoded version and
+<a href="http://www.cmsimple-xh.com/wiki/doku.php/plugins:jquery4cmsimple">jQuery4CMSimple</a>,
+which is already bundled with CMSimple_XH since version 1.4.1.</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="installation">Installation</a></h2>
+<p>The installation is done as with many other CMSimple_XH plugins.
+See the <a href="http://www.cmsimple-xh.com/wiki/doku.php/manuals:users_manual:plugins:installation">
+CMSimple_XH wiki</a> for further details.</p>
+<ol>
+<li><strong>Backup the data on your server.</strong></li>
+<li>Unzip the distribution on your computer.</li>
+<li>Upload the whole directory socialshareprivacy/ to your server into CMSimple_XH's plugins directory.</li>
+<li>Set write permissions to the subdirectories config/, css/, js/ and languages/.</li>
+<li><strong>Switch to "Socialshareprivacy" in the back-end to check if all requirements are fulfilled.</strong></li>
+</ol>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="settings">Settings</a></h2>
+<p>The plugin's configuration is done as with many other
+CMSimple_XH plugins in the website's back-end.
+Select "Socialshareprivacy" from "Plugins".</p>
+<p>You can change the default settings of Socialshareprivacy_XH in "Plugin Config".
+Hints for the options will be displayed
+when hovering over the help icon with your mouse.</p>
+<p>Localization is done in "Plugin Language".
+You can translate the character strings to your own language,
+or customize them according to your needs.</p>
+<p>The look of the Socialshareprivacy_XH can be customized in "Plugin Stylesheet".</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="usage">Usage</a></h2>
+<p>Just insert the following to the template or a CMSimple page where you want the social buttons to be shown:</p>
+<pre>&lt;div class="socialshareprivacy"&gt;&lt;/div&gt;</pre>
+<p>You can insert this code several times, if you like.
+The buttons will be embedded automatically inside those divs.</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<!--<h2><a name="limitations">Limitations</a></h2>
+<div class="toplink"><a href="#">back to top</a></div>
+-->
+<h2><a name="license">License</a></h2>
+<p>Socialshareprivacy_XH is licensed under
+<a href="http://www.gnu.org/licenses/gpl.html">GPLv3</a>.</p>
+<p>&copy; 2012 Christoph M. Becker</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+<h2><a name="credits">Credits</a></h2>
+<p>Many thanks to Christian for pointing me to socialshareprivacy.</p>
+<p>This plugin uses free applications icons from <a href="http://www.aha-soft.com/">Aha-Soft</a>.
+Many thanks for making these icons freely available.</p>
+<!--<p>Many thanks to the community at the <a href="http://www.cmsimpleforum.com">CMSimple forum</a>-->
+<!--for tips, suggestions and testing.</p>-->
+<p>And last but not least many thanks to <a href="http://www.harteg.dk">Peter Harteg</a>,
+the "father" of CMSimple, and all developers of
+<a href="http://www.cmsimple-xh.com">CMSimple_XH</a>
+without whom this amazing CMS wouldn't exist.</p>
+<div class="toplink"><a href="#">back to top</a></div>
+
+</div>
+
+</body>
+
+</html>

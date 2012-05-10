@@ -1,0 +1,2 @@
+Version 1beta1 - released 2012-05-10
+cmb	initial release
