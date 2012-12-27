@@ -27,6 +27,7 @@ $plugin_tx['socialshareprivacy']['syscheck_encoding']="Encoding 'UTF-8' configur
 $plugin_tx['socialshareprivacy']['syscheck_magic_quotes']="Magic quotes runtime off";
 $plugin_tx['socialshareprivacy']['syscheck_writable']="Folder '%s' writable";
 
+$plugin_tx['socialshareprivacy']['cf_template_call']="Whether the plugin is called in the template: \"1\" (yes) or \"0\" (no).";
 $plugin_tx['socialshareprivacy']['cf_cookie_expires']="The period the cookie is valid (in days).";
 $plugin_tx['socialshareprivacy']['cf_facebook_status']="Whether the user has Facebook available: \"on\" or \"off\".";
 $plugin_tx['socialshareprivacy']['cf_facebook_perma_option']="Whether the user has the option to activate Facebook permanently (cookies must be enabled): \"on\" or \"off\".";

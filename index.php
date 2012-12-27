@@ -97,7 +97,12 @@ SCRIPT;
 function Socialshareprivacy_init()
 {
     global $hjs, $sl, $pth, $plugin_cf;
+    static $again = false;
 
+    if ($again) {
+	return;
+    }
+    $again = true;
     $dir = $pth['folder']['plugins'].'socialshareprivacy/';
     include_once $pth['folder']['plugins'].'jquery/jquery.inc.php';
     include_jQuery();
@@ -136,6 +141,11 @@ function socialshareprivacy()
 }
 
 
-//Socialshareprivacy_init();
+/*
+ * Initialize plugin, if enable_globally is set.
+ */
+if ($plugin_cf['socialshareprivacy']['template_call']) {
+    Socialshareprivacy_init();
+}
 
 ?>

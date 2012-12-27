@@ -1,5 +1,6 @@
 <?php
 
+$plugin_cf['socialshareprivacy']['template_call']="0";
 $plugin_cf['socialshareprivacy']['cookie_expires']="365";
 $plugin_cf['socialshareprivacy']['facebook_status']="on";
 $plugin_cf['socialshareprivacy']['facebook_perma_option']="on";
