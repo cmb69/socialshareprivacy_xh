@@ -100,9 +100,9 @@ function Socialshareprivacy_init()
 
     $dir = $pth['folder']['plugins'].'socialshareprivacy/';
     include_once $pth['folder']['plugins'].'jquery/jquery.inc.php';
-    include_jquery();
-    $hjs .= '<script type="text/javascript" src="' . $dir
-        . 'js/jquery.socialshareprivacy.min.js"></script>';
+    include_jQuery();
+    include_jQueryPlugin('socialshareprivacy', $dir
+        . 'js/jquery.socialshareprivacy.min.js');
     $fn = $dir . 'js/socialshareprivacy-' . $sl . '.js';
     $init = Socialshareprivacy_config();
     if (!file_exists($fn)
