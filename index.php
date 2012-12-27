@@ -123,6 +123,19 @@ function Socialshareprivacy_init()
 }
 
 
-Socialshareprivacy_init();
+/**
+ * Displays the social buttons.
+ *
+ * @access public
+ * @return string  The (X)HTML.
+ */
+function socialshareprivacy()
+{
+    Socialshareprivacy_init();
+    return '<div class="socialshareprivacy"></div>';
+}
+
+
+//Socialshareprivacy_init();
 
 ?>
