@@ -3,6 +3,7 @@
 /**
  * Front-end of Socialshareprivacy_XH.
  *
+ * @version $Id$
  * Copyright (c) 2012 Christoph M. Becker (see license.txt)
  */
 
