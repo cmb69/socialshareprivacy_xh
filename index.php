@@ -3,8 +3,15 @@
 /**
  * Front-end of Socialshareprivacy_XH.
  *
- * @version $Id$
- * Copyright (c) 2012 Christoph M. Becker (see license.txt)
+ * PHP versions 4 and 5
+ *
+ * @category  CMSimple_XH
+ * @package   Socialshareprivacy_XH
+ * @author    Christoph M. Becker <cmbecker69@gmx.de>
+ * @copyright 2012 Christoph M. Becker
+ * @license   GNU GPL v3
+ * @version   SVN: $Id$
+ * @link      http://3-magi.net/?CMSimple_XH/Socialshareprivacy_XH
  */
 
 
@@ -101,24 +108,25 @@ function Socialshareprivacy_init()
     static $again = false;
 
     if ($again) {
-	return;
+        return;
     }
     $again = true;
     $dir = $pth['folder']['plugins'].'socialshareprivacy/';
     include_once $pth['folder']['plugins'].'jquery/jquery.inc.php';
     include_jQuery();
-    include_jQueryPlugin('socialshareprivacy', $dir
-        . 'js/jquery.socialshareprivacy.min.js');
+    include_jQueryPlugin(
+        'socialshareprivacy', $dir . 'js/jquery.socialshareprivacy.min.js'
+    );
     $fn = $dir . 'js/socialshareprivacy-' . $sl . '.js';
     $init = Socialshareprivacy_config();
     if (!file_exists($fn)
         || filemtime($fn) <= filemtime($dir . 'config/config.php')
-        || filemtime($fn) <= filemtime($dir . 'languages/' . $sl . '.php'))
-    {
+        || filemtime($fn) <= filemtime($dir . 'languages/' . $sl . '.php')
+    ) {
         if (file_exists($fn) && !is_writable($fn)
             ||($fh = fopen($fn, 'w')) === false
-            || fwrite($fh, $init) === false)
-        {
+            || fwrite($fh, $init) === false
+        ) {
             e('cntsave', 'file', $fn);
         }
         if ($fh !== false) {
