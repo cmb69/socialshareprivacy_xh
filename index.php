@@ -21,7 +21,7 @@ if (!defined('CMSIMPLE_XH_VERSION')) {
 }
 
 
-define('SOCIALSHAREPRIVACY_VERSION', '1rc1');
+define('SOCIALSHAREPRIVACY_VERSION', '1rc2');
 
 
 /**

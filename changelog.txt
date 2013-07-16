@@ -1,3 +1,9 @@
+Version 1rc2 - released 2013-07-17
+cmb     fixed incompatibility with jQuery >= 1.9 without jQuery Migrate Plugin
+cmb     removed explicit setting of domain for perma cookies
+cmb     extended copyright to 2013
+cmb     added version.nfo file
+
 Version 1rc1 - released 2012-12-27
 cmb     fixed bug, where second languages were not properly handled
 cmb     fixed bug, where JS error occurred on IE8 if in IE7 mode
