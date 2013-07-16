@@ -7,9 +7,7 @@
  * Copyright (c) 2011 Hilko Holweg, Sebastian Hilbig, Nicolas Heiringhoff, Juergen Schmidt,
  * Heise Zeitschriften Verlag GmbH & Co. KG, http://www.heise.de
  *
- * Replaced misguided user agent sniffing with simple feature detection
- * to handle browsers, which don't implement the JSON object.
- * Copyright (c) 2012 Christoph M. Becker
+ * Copyright (c) 2012-2013 Christoph M. Becker
  *
  * is released under the MIT License http://www.opensource.org/licenses/mit-license.php
  *
