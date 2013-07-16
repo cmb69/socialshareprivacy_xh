@@ -15,8 +15,6 @@
  */
 (function ($) {
 
-    "use strict";
-
 	/*
 	 * helper functions
 	 */
