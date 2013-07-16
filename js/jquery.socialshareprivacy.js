@@ -72,15 +72,15 @@
         return uri;
     }
 
-    function cookieSet(name, value, days, path, domain) {
+    function cookieSet(name, value, days, path) {
         var expires = new Date();
         expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-        document.cookie = name + '=' + value + '; expires=' + expires.toUTCString() + '; path=' + path + '; domain=' + domain;
+        document.cookie = name + '=' + value + '; expires=' + expires.toUTCString() + '; path=' + path + ';';
     }
-    function cookieDel(name, value, path, domain) {
+    function cookieDel(name, value, path) {
         var expires = new Date();
         expires.setTime(expires.getTime() - 100);
-        document.cookie = name + '=' + value + '; expires=' + expires.toUTCString() + '; path=' + path + '; domain=' + domain;
+        document.cookie = name + '=' + value + '; expires=' + expires.toUTCString() + '; path=' + path + ';';
     }
 
     // extend jquery with our plugin function
@@ -356,10 +356,10 @@
                     var cookie_name = 'socialSharePrivacy_' + service;
 
                     if ($('#' + event.target.id + ':checked').length) {
-                        cookieSet(cookie_name, 'perma_on', options.cookie_expires, options.cookie_path, options.cookie_domain);
+                        cookieSet(cookie_name, 'perma_on', options.cookie_expires, options.cookie_path);
                         $('form fieldset label[for=' + click + ']', context).addClass('checked');
                     } else {
-                        cookieDel(cookie_name, 'perma_on', options.cookie_path, options.cookie_domain);
+                        cookieDel(cookie_name, 'perma_on', options.cookie_path);
                         $('form fieldset label[for=' + click + ']', context).removeClass('checked');
                     }
                 });

@@ -52,7 +52,6 @@ jQuery(function() {
         txt_help: '$ptx[general_help]',
         settings_perma: '$ptx[general_settings_perma]',
         cookie_path: '$sn',
-        cookie_domain: '$_SERVER[SERVER_NAME]',
         cookie_expires: $pcf[cookie_expires],
         css_path: '',
         services: {
