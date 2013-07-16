@@ -350,8 +350,7 @@
                 $container_settings_info.find('span.settings').css('cursor', 'pointer');
 
                 // Einstellungs-Menue bei mouseover ein-/ausblenden
-                live(context, $container_settings_info.find('span.settings'),
-			'mouseenter', function () {
+                live($container_settings_info, 'span.settings', 'mouseenter', function () {
                     var timeout_id = window.setTimeout(function () { $container_settings_info.find('.settings_info_menu').removeClass('off').addClass('on'); }, 500);
                     $(this).data('timeout_id', timeout_id);
                 });
@@ -362,8 +361,8 @@
                 });
 
                 // Klick-Interaktion auf <input> um Dienste dauerhaft ein- oder auszuschalten (Cookie wird gesetzt oder geloescht)
-                live($(document), $container_settings_info.find('fieldset input'),
-			'click', function (event) {
+                live($container_settings_info, 'fieldset input', 'click',
+			function (event) {
                     var click = event.target.id;
                     var service = click.substr(click.lastIndexOf('_') + 1, click.length);
                     var cookie_name = 'socialSharePrivacy_' + service;
