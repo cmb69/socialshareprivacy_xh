@@ -3,7 +3,7 @@
 <project name="Socialshareprivacy" default="help">
 
     <fileset id="php-sources" dir=".">
-        <include name="admin.php"/>
+        <include name="classes/*.php"/>
         <include name="index.php"/>
     </fileset>
 
