@@ -181,8 +181,7 @@ class Socialshareprivacy_Controller
         $o .= print_plugin_admin('off');
         switch ($admin) {
         case '':
-            $o .= self::renderVersion() . tag('hr')
-                . self::renderSystemCheck();
+            $o .= self::renderVersion() . self::renderSystemCheck();
             break;
         default:
             $o .= plugin_admin_common($action, $admin, 'socialshareprivacy');
@@ -195,40 +194,38 @@ class Socialshareprivacy_Controller
      * @return string (X)HTML
      *
      * @global array The paths of system files and folders.
+     * @global array The localization of the plugins.
      */
     protected static function renderVersion()
     {
-        global $pth;
+        global $pth, $plugin_tx;
 
-        return '<h1><a href="http://3-magi.net/?CMSimple_XH/Socialshareprivacy_XH">'
-            . 'Socialshareprivacy_XH</a></h1>'
-            . tag(
-                'img style="float:left;margin:0 1em 0.5em 0" src="'
-                . $pth['folder']['plugins']
-                . 'socialshareprivacy/socialshareprivacy.png" alt="Plugin icon"'
-            )
-            . '<p style="margin-top: 1em">Version: ' . SOCIALSHAREPRIVACY_VERSION
-            . '</p>'
-            . '<p>Copyright &copy; 2012-2015 <a href="http://3-magi.net/">'
-            . 'Christoph M. Becker</a></p>'
-            . '<p>Socialshareprivacy_XH is powered by'
-            . ' <a href="http://www.heise.de/extras/socialshareprivacy/">'
-            . 'socialshareprivacy</a>.'
-            . '<p style="text-align:justify">This program is free software: you can'
-            . ' redistribute it and/or modify'
-            . ' it under the terms of the GNU General Public License as published by'
-            . ' the Free Software Foundation, either version 3 of the License, or'
-            . ' (at your option) any later version.</p>'
-            . '<p style="text-align:justify>This program is distributed in the hope'
-            . ' that it will be useful,'
-            . ' but WITHOUT ANY WARRANTY; without even the implied warranty of'
-            . ' MERCHAN&shy;TABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the'
-            . ' GNU General Public License for more details.</p>'
-            . '<p style="text-align:justify>You should have received a copy of the'
-            . ' GNU General Public License'
-            . ' along with this program.  If not, see'
-            . ' <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/'
-            . '</a>.</p>';
+        $image = tag(
+            'img class="socialshareprivacy_logo" src="' . $pth['folder']['plugins']
+            . 'socialshareprivacy/socialshareprivacy.png" alt="'
+            . $plugin_tx['socialshareprivacy']['alt_logo'] . '"'
+        );
+        $version = SOCIALSHAREPRIVACY_VERSION;
+        return <<<EOT
+<h1>Socialshareprivacy &ndash; {$plugin_tx['socialshareprivacy']['menu_info']}</h1>
+$image
+<p>Version: $version</p>
+<p>Copyright &copy; 2012-2015 <a href="http://3-magi.net/">Christoph M.
+Becker</a></p>
+<p>Socialshareprivacy_XH is powered by <a
+href="http://www.heise.de/extras/socialshareprivacy/">socialshareprivacy</a>.
+<p class="socialshareprivacy_license">This program is free software: you can
+redistribute it and/or modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.</p>
+<p class="socialshareprivacy_license">This program is distributed in the hope
+that it will be useful, but <em>without any warranty</em>; without even the
+implied warranty of <em>merchantability</em> or <em>fitness for a particular
+purpose</em>. See the GNU General Public License for more details.</p>
+<p class="socialshareprivacy_license">You should have received a copy of the GNU
+General Public License along with this program. If not, see <a
+href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
+EOT;
     }
 
     /**

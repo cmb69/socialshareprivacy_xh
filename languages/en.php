@@ -20,6 +20,10 @@ $plugin_tx['socialshareprivacy']['gplus_off']="not connected to Google+";
 $plugin_tx['socialshareprivacy']['gplus_on']="connected to Google+";
 $plugin_tx['socialshareprivacy']['gplus_display_name']="Google+";
 
+$plugin_tx['socialshareprivacy']['menu_info']="Info";
+
+$plugin_tx['socialshareprivacy']['alt_logo']="Double thumbs up";
+
 $plugin_tx['socialshareprivacy']['syscheck_title']="System check";
 $plugin_tx['socialshareprivacy']['syscheck_phpversion']="PHP version &ge; %s";
 $plugin_tx['socialshareprivacy']['syscheck_extension']="Extension '%s' loaded";

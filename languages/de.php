@@ -21,6 +21,10 @@ $plugin_tx['socialshareprivacy']['gplus_off']="nicht mit Google+ verbunden";
 $plugin_tx['socialshareprivacy']['gplus_on']="mit Google+ verbunden";
 $plugin_tx['socialshareprivacy']['gplus_display_name']="Google+";
 
+$plugin_tx['socialshareprivacy']['menu_info']="Info";
+
+$plugin_tx['socialshareprivacy']['alt_logo']="Doppeltes Daumen hoch";
+
 $plugin_tx['socialshareprivacy']['syscheck_title']="System Prüfung";
 $plugin_tx['socialshareprivacy']['syscheck_phpversion']="PHP-Version &ge; %s";
 $plugin_tx['socialshareprivacy']['syscheck_extension']="Erweiterung '%s' geladen";
