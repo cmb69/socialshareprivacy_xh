@@ -240,18 +240,15 @@ EOT;
     {
         global $pth, $tx, $plugin_tx;
 
-        define('SOCIALSHAREPRIVACY_PHP_VERSION', '5.2.0');
+        $phpVersion = '5.2.0';
         $ptx = $plugin_tx['socialshareprivacy'];
         $imgdir = $pth['folder']['plugins'] . 'socialshareprivacy/images/';
         $ok = tag('img src="' . $imgdir . 'ok.png" alt="ok"');
         $warn = tag('img src="' . $imgdir . 'warn.png" alt="warning"');
         $fail = tag('img src="' . $imgdir . 'fail.png" alt="failure"');
         $o = '<h4>' . $ptx['syscheck_title'] . '</h4>'
-            . (version_compare(PHP_VERSION, SOCIALSHAREPRIVACY_PHP_VERSION) >= 0
-                ? $ok : $fail)
-            . '&nbsp;&nbsp;' . sprintf(
-                $ptx['syscheck_phpversion'], SOCIALSHAREPRIVACY_PHP_VERSION
-            )
+            . (version_compare(PHP_VERSION, $phpVersion) >= 0 ? $ok : $fail)
+            . '&nbsp;&nbsp;' . sprintf($ptx['syscheck_phpversion'], $phpVersion)
             . tag('br');
         foreach (array('json') as $ext) {
             $o .= (extension_loaded($ext) ? $ok : $fail)
