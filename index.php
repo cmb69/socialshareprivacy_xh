@@ -8,7 +8,7 @@
  * @category  CMSimple_XH
  * @package   Socialshareprivacy_XH
  * @author    Christoph M. Becker <cmbecker69@gmx.de>
- * @copyright 2012-2013 Christoph M. Becker
+ * @copyright 2012-2015 Christoph M. Becker
  * @license   GNU GPL v3
  * @link      http://3-magi.net/?CMSimple_XH/Socialshareprivacy_XH
  */

@@ -3,7 +3,7 @@
 /**
  * Back-end of Socialshareprivacy_XH.
  *
- * Copyright (c) 2012-2013 Christoph M. Becker (see LICENSE)
+ * Copyright (c) 2012-2015 Christoph M. Becker (see LICENSE)
  */
 
 
@@ -27,7 +27,7 @@ function Socialshareprivacy_version()
 	      . $pth['folder']['plugins']
 	      . 'socialshareprivacy/socialshareprivacy.png" alt="Plugin icon"')
 	. '<p style="margin-top: 1em">Version: ' . SOCIALSHAREPRIVACY_VERSION . '</p>'
-	. '<p>Copyright &copy; 2012-2013 <a href="http://3-magi.net/">Christoph M. Becker</a></p>'
+	. '<p>Copyright &copy; 2012-2015 <a href="http://3-magi.net/">Christoph M. Becker</a></p>'
 	. '<p>Socialshareprivacy_XH is powered by'
 	. ' <a href="http://www.heise.de/extras/socialshareprivacy/">socialshareprivacy</a>.'
 	. '<p style="text-align:justify">This program is free software: you can redistribute it and/or modify'
