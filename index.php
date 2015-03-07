@@ -34,11 +34,6 @@ EOT
  */
 define('SOCIALSHAREPRIVACY_VERSION', '@SOCIALSHAREPRIVACY_VERSION@');
 
-/*
- * The plugin controller.
- */
-require_once $pth['folder']['plugin_classes'] . 'Controller.php';
-
 /**
  * Displays the social buttons.
  *
