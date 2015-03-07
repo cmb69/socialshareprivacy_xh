@@ -10,7 +10,6 @@
  * @author    Christoph M. Becker <cmbecker69@gmx.de>
  * @copyright 2012-2013 Christoph M. Becker
  * @license   GNU GPL v3
- * @version   SVN: $Id$
  * @link      http://3-magi.net/?CMSimple_XH/Socialshareprivacy_XH
  */
 
