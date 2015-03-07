@@ -35,28 +35,22 @@
     </target>
 
     <target name="unit-tests" description="runs all unit tests">
-        <phpunit bootstrap="tests/bootstrap.php"
-                 haltonerror="true" haltonfailure="true">
+        <phpunit haltonerror="true" haltonfailure="true">
             <formatter type="plain" usefile="false"/>
             <batchtest>
-                <fileset dir="tests/unit">
-                    <include name="*Test.php"/>
-                </fileset>
+                <fileset refid="unit-tests"/>
             </batchtest>
         </phpunit>
     </target>
 
     <target name="coverage" description="generates coverage report">
+        <mkdir dir="tests/coverage" mode="0777"/>
         <coverage-setup database="tests/coverage/coverage.db">
-            <fileset dir="classes">
-                <include name="*.php"/>
-            </fileset>
+            <fileset refid="php-sources"/>
         </coverage-setup>
-        <phpunit bootstrap="tests/bootstrap.php" codecoverage="true">
+        <phpunit codecoverage="true">
             <batchtest>
-                <fileset dir="tests/unit">
-                    <include name="*Test.php"/>
-                </fileset>
+                <fileset refid="unit-tests"/>
             </batchtest>
         </phpunit>
         <coverage-report outfile="tests/coverage/coverage.xml">
