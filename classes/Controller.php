@@ -29,16 +29,15 @@ class Socialshareprivacy_Controller
      * @return void
      *
      * @global array  The configuration of the plugins.
-     * @global bool   Whether we're in admin mode.
      */
     public static function dispatch()
     {
-        global $plugin_cf, $adm;
+        global $plugin_cf;
 
         if ($plugin_cf['socialshareprivacy']['template_call']) {
             self::init();
         }
-        if ($adm) {
+        if (XH_ADM) {
             if (function_exists('XH_registerStandardPluginMenuItems')) {
                 XH_registerStandardPluginMenuItems(false);
             }
@@ -53,7 +52,7 @@ class Socialshareprivacy_Controller
      *
      * @return void
      *
-     * @global string The (X)HTML fragment to insert into the head element.
+     * @global string The (X)HTML fragment to insert at the bottom of the body.
      * @global string The requested language.
      * @global array  The paths of system files and folders.
      *
@@ -61,7 +60,7 @@ class Socialshareprivacy_Controller
      */
     static function init()
     {
-        global $hjs, $pth;
+        global $bjs, $pth;
         static $again = false;
 
         if ($again) {
@@ -74,7 +73,7 @@ class Socialshareprivacy_Controller
         include_jQueryPlugin(
             'socialshareprivacy', $dir . 'jquery.socialshareprivacy.js'
         );
-        $hjs .= '<script type="text/javascript">/* <![CDATA[ */'
+        $bjs .= '<script type="text/javascript">/* <![CDATA[ */'
             . 'jQuery(function() {'
             . 'jQuery(".socialshareprivacy").socialSharePrivacy('
             . json_encode(self::getConfiguration())
