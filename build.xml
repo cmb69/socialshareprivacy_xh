@@ -86,10 +86,6 @@
                 </replacetokens>
             </filterchain>
         </move>
-        <jsMin targetDir="dist" suffix="" failonerror="true">
-            <fileset dir="export">
-            </fileset>
-        </jsMin>
         <move todir="dist">
             <fileset dir="export">
                 <exclude name="build.xml"/>

@@ -24,7 +24,7 @@ if (!defined('CMSIMPLE_XH_VERSION')) {
 /**
  * The plugin version.
  */
-define('SOCIALSHAREPRIVACY_VERSION', '1rc2');
+define('SOCIALSHAREPRIVACY_VERSION', '@SOCIALSHAREPRIVACY_VERSION@');
 
 /**
  * Returns the JS to initialize the social buttons.
