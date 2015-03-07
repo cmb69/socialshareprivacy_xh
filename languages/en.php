@@ -33,15 +33,15 @@ $plugin_tx['socialshareprivacy']['syscheck_writable']="Folder '%s' writable";
 
 $plugin_tx['socialshareprivacy']['cf_template_call']="Whether the plugin is called in the template: \"1\" (yes) or \"0\" (no).";
 $plugin_tx['socialshareprivacy']['cf_cookie_expires']="The period the cookie is valid (in days).";
-$plugin_tx['socialshareprivacy']['cf_facebook_status']="Whether the user has Facebook available: \"on\" or \"off\".";
-$plugin_tx['socialshareprivacy']['cf_facebook_perma_option']="Whether the user has the option to activate Facebook permanently (cookies must be enabled): \"on\" or \"off\".";
+$plugin_tx['socialshareprivacy']['cf_facebook_status']="Whether the user has Facebook available: \"on\" (yes) or \"off\" (no).";
+$plugin_tx['socialshareprivacy']['cf_facebook_perma_option']="Whether the user has the option to activate Facebook permanently (cookies must be enabled): \"on\" (yes) or \"off\" (no).";
 $plugin_tx['socialshareprivacy']['cf_facebook_referrer_track']="Will be appended to the URL; can be used to track the referrer.";
 $plugin_tx['socialshareprivacy']['cf_facebook_action']="Caption of the button: \"recommend\" (Recommend) or \"like\" (Like).";
-$plugin_tx['socialshareprivacy']['cf_twitter_status']="Whether the user has Twitter available: \"on\" or \"off\".";
-$plugin_tx['socialshareprivacy']['cf_twitter_perma_option']="Whether the user has the option to activate Twitter permanently (cookies must be enabled): \"on\" or \"off\".";
+$plugin_tx['socialshareprivacy']['cf_twitter_status']="Whether the user has Twitter available: \"on\" (yes) or \"off\" (no).";
+$plugin_tx['socialshareprivacy']['cf_twitter_perma_option']="Whether the user has the option to activate Twitter permanently (cookies must be enabled): \"on\" (yes) or \"off\" (no).";
 $plugin_tx['socialshareprivacy']['cf_twitter_referrer_track']="Will be appended to the URL; can be used to track the referrer.";
-$plugin_tx['socialshareprivacy']['cf_gplus_status']="Whether the user has Google+ available: \"on\" or \"off\".";
-$plugin_tx['socialshareprivacy']['cf_gplus_perma_option']="Whether the user has the option to activate Google+ permanently (cookies must be enabled): \"on\" or \"off\".";
+$plugin_tx['socialshareprivacy']['cf_gplus_status']="Whether the user has Google+ available: \"on\" (yes) or \"off\" (no).";
+$plugin_tx['socialshareprivacy']['cf_gplus_perma_option']="Whether the user has the option to activate Google+ permanently (cookies must be enabled): \"on\" (yes) or \"off\" (no).";
 $plugin_tx['socialshareprivacy']['cf_gplus_referrer_track']="Will be appended to the URL; can be used to track the referrer.";
 
 ?>
