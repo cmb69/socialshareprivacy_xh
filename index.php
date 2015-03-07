@@ -13,20 +13,30 @@
  * @link      http://3-magi.net/?CMSimple_XH/Socialshareprivacy_XH
  */
 
-
+/*
+ * Prevent direct access.
+ */
 if (!defined('CMSIMPLE_XH_VERSION')) {
     header('HTTP/1.0 403 Forbidden');
     exit;
 }
 
-
+/**
+ * The plugin version.
+ */
 define('SOCIALSHAREPRIVACY_VERSION', '1rc2');
-
 
 /**
  * Returns the JS to initialize the social buttons.
  *
  * @return string
+ *
+ * @global array  The paths of system files and folders.
+ * @global string The script name.
+ * @global string The requested language.
+ * @global array  The configuration of the core.
+ * @global array  The configuration of the plugins.
+ * @global array  The localization of the plugins.
  */
 function Socialshareprivacy_config()
 {
@@ -95,10 +105,16 @@ SCRIPT;
 }
 
 /**
- * Embeds the necessary JS to the <head> to display the social buttons.
+ * Embeds the necessary JS into the <head> to display the social buttons.
  *
- * @global string $hjs
  * @return void
+ *
+ * @global string The (X)HTML fragment to insert into the head element.
+ * @global string The requested language.
+ * @global array  The paths of system files and folders.
+ * @global array  The configuration of the plugins.
+ *
+ * @staticvar bool $again Whether the function has already been called.
  */
 function Socialshareprivacy_init()
 {
@@ -134,12 +150,10 @@ function Socialshareprivacy_init()
     $hjs .= '<script type="text/javascript" src="' . $fn . '"></script>';
 }
 
-
 /**
  * Displays the social buttons.
  *
- * @access public
- * @return string  The (X)HTML.
+ * @return string (X)HTML
  */
 function socialshareprivacy()
 {
