@@ -30,29 +30,20 @@ class Socialshareprivacy_Controller
      *
      * @global array  The configuration of the plugins.
      * @global bool   Whether we're in admin mode.
-     * @global string Whether the plugin administration is requested.
-     * @global string The value of the <var>action</var> GP parameter.
-     * @global string The value of the <var>admin</var> GP parameter.
-     * @global string The (X)HTML fragment to insert into the contents area.
      */
     public static function dispatch()
     {
-        global $plugin_cf, $adm, $socialshareprivacy, $action, $admin, $o;
+        global $plugin_cf, $adm;
 
         if ($plugin_cf['socialshareprivacy']['template_call']) {
             self::init();
         }
         if ($adm) {
-            if (isset($socialshareprivacy) && $socialshareprivacy == 'true') {
-                $o .= print_plugin_admin('off');
-                switch ($admin) {
-                case '':
-                    $o .= self::renderVersion() . tag('hr')
-                        . self::renderSystemCheck();
-                    break;
-                default:
-                    $o .= plugin_admin_common($action, $admin, 'socialshareprivacy');
-                }
+            if (function_exists('XH_registerStandardPluginMenuItems')) {
+                XH_registerStandardPluginMenuItems(false);
+            }
+            if (self::isAdministrationRequested()) {
+                self::handleAdministration();
             }
         }
     }
@@ -156,6 +147,46 @@ class Socialshareprivacy_Controller
                 )
             )
         );
+    }
+
+    /**
+     * Returns whether the plugin administration is requested.
+     *
+     * @return bool
+     *
+     * @global string Whether the plugin administration is requested.
+     */
+    protected static function isAdministrationRequested()
+    {
+        global $socialshareprivacy;
+
+        return function_exists('XH_wantsPluginAdministration')
+            && XH_wantsPluginAdministration('socialshareprivacy')
+            || isset($socialshareprivacy) && $socialshareprivacy == 'true';
+    }
+
+    /**
+     * Handles the plugin administration.
+     *
+     * @return void
+     *
+     * @global string The value of the <var>action</var> GP parameter.
+     * @global string The value of the <var>admin</var> GP parameter.
+     * @global string The (X)HTML fragment to insert into the contents area.
+     */
+    protected static function handleAdministration()
+    {
+        global $action, $admin, $o;
+
+        $o .= print_plugin_admin('off');
+        switch ($admin) {
+        case '':
+            $o .= self::renderVersion() . tag('hr')
+                . self::renderSystemCheck();
+            break;
+        default:
+            $o .= plugin_admin_common($action, $admin, 'socialshareprivacy');
+        }
     }
 
     /**
