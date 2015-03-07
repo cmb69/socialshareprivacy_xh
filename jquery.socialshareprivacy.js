@@ -1,4 +1,4 @@
-/*
+/*!
  * jquery.socialshareprivacy.js | 2 Klicks fuer mehr Datenschutz
  *
  * http://www.heise.de/extras/socialshareprivacy/
@@ -15,9 +15,9 @@
  */
 (function ($) {
 
-	/*
-	 * helper functions
-	 */
+    /*
+     * helper functions
+     */
 
     // abbreviate at last blank before length and add "\u2026" (horizontal ellipsis)
     function abbreviateText(text, length) {
@@ -80,11 +80,11 @@
     }
 
     function live(context, selector, event, handler) {
-	if (typeof jQuery.fn.on == "function") {
-	    context.on(event, selector, handler);
-	} else {
-	    $(selector, context).live(event, handler);
-	}
+        if (typeof jQuery.fn.on == "function") {
+            context.on(event, selector, handler);
+        } else {
+            $(selector, context).live(event, handler);
+        }
     }
 
     // extend jquery with our plugin function
@@ -182,8 +182,8 @@
 
                 var $container_fb = $('li.facebook', context);
 
-		live(context, 'li.facebook div.fb_like img.fb_like_privacy_dummy,li.facebook span.switch',
-			'click', function () {
+                live(context, 'li.facebook div.fb_like img.fb_like_privacy_dummy,li.facebook span.switch',
+                        'click', function () {
                     if ($container_fb.find('span.switch').hasClass('off')) {
                         $container_fb.addClass('info_off');
                         $container_fb.find('span.switch').addClass('on').removeClass('off').html(options.services.facebook.txt_fb_on);
@@ -217,7 +217,7 @@
                 var $container_tw = $('li.twitter', context);
 
                 live(context, 'li.twitter div.tweet img,li.twitter span.switch',
-			'click', function () {
+                        'click', function () {
                     if ($container_tw.find('span.switch').hasClass('off')) {
                         $container_tw.addClass('info_off');
                         $container_tw.find('span.switch').addClass('on').removeClass('off').html(options.services.twitter.txt_twitter_on);
@@ -246,7 +246,7 @@
                 var $container_gplus = $('li.gplus', context);
 
                 live(context, 'li.gplus div.gplusone img,li.gplus span.switch',
-			'click', function () {
+                        'click', function () {
                     if ($container_gplus.find('span.switch').hasClass('off')) {
                         $container_gplus.addClass('info_off');
                         $container_gplus.find('span.switch').addClass('on').removeClass('off').html(options.services.gplus.txt_gplus_on);
@@ -301,7 +301,7 @@
                     }
                 }
                 cookies += '}';
-		cookies = JSON.parse(cookies);
+                cookies = JSON.parse(cookies);
 
                 // Container definieren
                 var $container_settings_info = $('li.settings_info', context);
@@ -358,7 +358,7 @@
 
                 // Klick-Interaktion auf <input> um Dienste dauerhaft ein- oder auszuschalten (Cookie wird gesetzt oder geloescht)
                 live($container_settings_info, 'fieldset input', 'click',
-			function (event) {
+                        function (event) {
                     var click = event.target.id;
                     var service = click.substr(click.lastIndexOf('_') + 1, click.length);
                     var cookie_name = 'socialSharePrivacy_' + service;

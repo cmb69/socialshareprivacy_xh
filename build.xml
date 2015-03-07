@@ -86,10 +86,16 @@
                 </replacetokens>
             </filterchain>
         </move>
+        <jsMin targetDir="dist" suffix="" failonerror="true">
+            <fileset dir="export">
+                <include name="jquery.socialshareprivacy.js"/>
+            </fileset>
+        </jsMin>
         <move todir="dist">
             <fileset dir="export">
                 <exclude name="build.xml"/>
                 <exclude name="composer.*"/>
+                <exclude name="jquery.socialshareprivacy.js"/>
                 <exclude name="phpcompatinfo.json"/>
                 <exclude name="tests/**"/>
             </fileset>

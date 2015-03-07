@@ -81,7 +81,7 @@ class Socialshareprivacy_Controller
         include_once $pth['folder']['plugins'].'jquery/jquery.inc.php';
         include_jQuery();
         include_jQueryPlugin(
-            'socialshareprivacy', $dir . 'js/jquery.socialshareprivacy.min.js'
+            'socialshareprivacy', $dir . 'jquery.socialshareprivacy.js'
         );
         $hjs .= '<script type="text/javascript">/* <![CDATA[ */'
             . 'jQuery(function() {'
