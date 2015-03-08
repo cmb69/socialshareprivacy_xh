@@ -3,7 +3,7 @@
 $plugin_tx['socialshareprivacy']['general_info_link']="http://www.h-online.com/features/Two-clicks-for-more-privacy-1783256.html";
 $plugin_tx['socialshareprivacy']['general_help']="Ak aktivujete toto tlačidlo kliknutím, informácie budú odoslané na Facebook, Twitter, resp. Google v USA a možno tam budú aj uchované. Pre viac detailov kliknite na <em>i</em>.";
 $plugin_tx['socialshareprivacy']['general_settings_perma']="Aktivovať permanentne a povoliť prenos údajov:";
-$plugin_tx['socialshareprivacy']['general_country_code']="US";
+$plugin_tx['socialshareprivacy']['general_country_code']="SK";
 $plugin_tx['socialshareprivacy']['facebook_info']="2 kliknutia pre viac súkromia: tlačidlo bude aktívne až po kliknutí a budete môcť poslať doporučenie na Facebook. Akonáhle aktivujete tlačidlo, údaje budú odoslané tretej strane &ndash; pozrite na <em>i</em>.";
 $plugin_tx['socialshareprivacy']['facebook_off']="nepripojené na Facebook";
 $plugin_tx['socialshareprivacy']['facebook_on']="pripojené na Facebook";
