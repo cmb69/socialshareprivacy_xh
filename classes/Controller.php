@@ -107,11 +107,11 @@ class Socialshareprivacy_Controller
             'cookie_expires' => $pcf['cookie_expires'],
             'css_path' => '',
             'services' => array(
-                'facebook' => self::getFacebookConfiguration(),
-                'twitter' => self::getTwitterConfiguration(),
-                'gplus' => self::getGPlusConfiguration(),
-                'xing' => self::getXINGConfiguration(),
-                'linkedin' => self::getLinkedInConfiguration()
+                'facebook' => self::getServiceConfiguration('facebook'),
+                'twitter' => self::getServiceConfiguration('twitter'),
+                'gplus' => self::getServiceConfiguration('gplus'),
+                'xing' => self::getServiceConfiguration('xing'),
+                'linkedin' => self::getServiceConfiguration('linkedin')
             )
         );
         if ($pcf['url'] != '') {
@@ -121,168 +121,83 @@ class Socialshareprivacy_Controller
     }
 
     /**
-     * Returns the Facebook configuration.
+     * Returns the configuration for a certain service.
+     *
+     * @param string $service A service name.
      *
      * @return array
      *
-     * @global array  The paths of system files and folders.
-     * @global string The requested language.
-     * @global array  The configuration of the core.
-     * @global array  The configuration of the plugins.
-     * @global array  The localization of the plugins.
+     * @global array The configuration of the plugins.
+     * @global array The localization of the plugins.
      */
-    protected static function getFacebookConfiguration()
+    protected static function getServiceConfiguration($service)
     {
-        global $pth, $sl, $cf, $plugin_cf, $plugin_tx;
+        global $plugin_cf, $plugin_tx;
 
         $pcf = $plugin_cf['socialshareprivacy'];
         $ptx = $plugin_tx['socialshareprivacy'];
-        $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
-        $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
-        $image = $dir . 'css/images/dummy_facebook_' . $lang . '.png';
-        if (!file_exists($image)) {
-            $image = $dir . 'css/images/dummy_facebook.png';
+        $config = array(
+            'status' => $pcf["{$service}_status"],
+            'dummy_img' => self::getServiceImage($service),
+            'txt_info' => $ptx["{$service}_info"],
+            "txt_{$service}_off" => $ptx["{$service}_off"],
+            "txt_{$service}_on" => $ptx["{$service}_on"],
+            'perma_option' => $pcf["{$service}_perma_option"],
+            'display_name' => $ptx["{$service}_display_name"],
+            'referrer_track' => $pcf["{$service}_referrer_track"],
+            'language' => self::getServiceLanguage($service)
+        );
+        if ($service == 'facebook') {
+            $config['action'] = $pcf['facebook_action'];
         }
-        return array(
-            'status' => $pcf['facebook_status'],
-            'dummy_img' => $image,
-            'txt_info' => $ptx['facebook_info'],
-            'txt_fb_off' => $ptx['facebook_off'],
-            'txt_fb_on' => $ptx['facebook_on'],
-            'perma_option' => $pcf['facebook_perma_option'],
-            'display_name' => $ptx['facebook_display_name'],
-            'referrer_track' => $pcf['facebook_referrer_track'],
-            'language' => $lang . '_' . $ptx['general_country_code'],
-            'action' => $pcf['facebook_action']
-        );
+        return $config;
     }
 
     /**
-     * Returns the Twitter configuration.
+     * Returns the path of the image of a certain service.
      *
-     * @return array
+     * @param string $service A service name.
+     *
+     * @return string
      *
      * @global array  The paths of system files and folders.
      * @global string The requested language.
      * @global array  The configuration of the core.
-     * @global array  The configuration of the plugins.
-     * @global array  The localization of the plugins.
      */
-    protected static function getTwitterConfiguration()
+    protected static function getServiceImage($service)
     {
-        global $pth, $sl, $cf, $plugin_cf, $plugin_tx;
+        global $pth, $sl, $cf;
 
-        $pcf = $plugin_cf['socialshareprivacy'];
-        $ptx = $plugin_tx['socialshareprivacy'];
-        $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
+        $folder = $pth['folder']['plugins'] . 'socialshareprivacy/';
         $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
-        return array(
-            'status' => $pcf['twitter_status'],
-            'dummy_img' => $dir. 'css/images/dummy_twitter.png',
-            'txt_info' => $ptx['twitter_info'],
-            'txt_twitter_off' => $ptx['twitter_off'],
-            'txt_twitter_on' => $ptx['twitter_on'],
-            'perma_option' => $pcf['twitter_perma_option'],
-            'display_name' => $ptx['twitter_display_name'],
-            'referrer_track' => $pcf['twitter_referrer_track'],
-            'language' => $lang
-        );
+        $image = "{$folder}css/images/dummy_{$service}_{$lang}.png";
+        if (!file_exists($image)) {
+            $image = "{$folder}css/images/dummy_{$service}.png";
+        }
+        return $image;
     }
 
     /**
-     * Returns the Google Plus configuration.
+     * Returns the language code for a certain service.
      *
-     * @return array
+     * @param string $service A service name.
      *
-     * @global array  The paths of system files and folders.
+     * @return string
+     *
      * @global string The requested language.
      * @global array  The configuration of the core.
-     * @global array  The configuration of the plugins.
      * @global array  The localization of the plugins.
      */
-    protected static function getGPlusConfiguration()
+    protected static function getServiceLanguage($service)
     {
-        global $pth, $sl, $cf, $plugin_cf, $plugin_tx;
+        global $sl, $cf, $plugin_tx;
 
-        $pcf = $plugin_cf['socialshareprivacy'];
-        $ptx = $plugin_tx['socialshareprivacy'];
-        $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
         $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
-        return array(
-            'status' => $pcf['gplus_status'],
-            'dummy_img' => $dir . 'css/images/dummy_gplus.png',
-            'txt_info' => $ptx['gplus_info'],
-            'txt_gplus_off' => $ptx['gplus_off'],
-            'txt_gplus_on' => $ptx['gplus_on'],
-            'perma_option' => $pcf['gplus_perma_option'],
-            'display_name' => $ptx['gplus_display_name'],
-            'referrer_track' => $pcf['gplus_referrer_track'],
-            'language' => $lang
-        );
-    }
-
-    /**
-     * Returns the XING configuration.
-     *
-     * @return array
-     *
-     * @global array  The paths of system files and folders.
-     * @global string The requested language.
-     * @global array  The configuration of the core.
-     * @global array  The configuration of the plugins.
-     * @global array  The localization of the plugins.
-     */
-    protected static function getXINGConfiguration()
-    {
-        global $pth, $sl, $cf, $plugin_cf, $plugin_tx;
-
-        $pcf = $plugin_cf['socialshareprivacy'];
-        $ptx = $plugin_tx['socialshareprivacy'];
-        $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
-        $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
-        return array(
-            'status' => $pcf['xing_status'],
-            'dummy_img' => $dir . 'css/images/dummy_xing.png',
-            'txt_info' => $ptx['xing_info'],
-            'txt_gplus_off' => $ptx['xing_off'],
-            'txt_gplus_on' => $ptx['xing_on'],
-            'perma_option' => $pcf['xing_perma_option'],
-            'display_name' => $ptx['xing_display_name'],
-            'referrer_track' => $pcf['xing_referrer_track'],
-            'language' => $lang
-        );
-    }
-
-    /**
-     * Returns the LinkedIn configuration.
-     *
-     * @return array
-     *
-     * @global array  The paths of system files and folders.
-     * @global string The requested language.
-     * @global array  The configuration of the core.
-     * @global array  The configuration of the plugins.
-     * @global array  The localization of the plugins.
-     */
-    protected static function getLinkedInConfiguration()
-    {
-        global $pth, $sl, $cf, $plugin_cf, $plugin_tx;
-
-        $pcf = $plugin_cf['socialshareprivacy'];
-        $ptx = $plugin_tx['socialshareprivacy'];
-        $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
-        $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
-        return array(
-            'status' => $pcf['linkedin_status'],
-            'dummy_img' => $dir . 'css/images/dummy_linkedin.png',
-            'txt_info' => $ptx['linkedin_info'],
-            'txt_gplus_off' => $ptx['linkedin_off'],
-            'txt_gplus_on' => $ptx['linkedin_on'],
-            'perma_option' => $pcf['linkedin_perma_option'],
-            'display_name' => $ptx['linkedin_display_name'],
-            'referrer_track' => $pcf['linkedin_referrer_track'],
-            'language' => $lang . '_' . $ptx['general_country_code']
-        );
+        if (in_array($service, array('facebook', 'linkedin'))) {
+            $lang .= '_'
+                . $plugin_tx['socialshareprivacy']['general_country_code'];
+        }
+        return $lang;
     }
 
     /**
