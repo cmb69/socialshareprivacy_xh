@@ -1,17 +1,27 @@
+Version 1rc3 - released 2015-03-08
+* lifted the requirements to CMSimple_XH >= 1.5.4 and PHP >= 5.2.0
+* fixed info link (sugg. by learnandcode)
+* switched to vertical button layout (can be easily reverted in stylesheet)
+* got rid of JS language files
+* added support for XING and LinkedIn (sugg. by Martin)
+* added config option "Url"
+* improved support for CMSimple_XH 1.6
+* added internationalization of dummy button images
+* revised manuals
+
 Version 1rc2 - released 2013-07-17
-cmb     fixed incompatibility with jQuery >= 1.9 without jQuery Migrate Plugin
-cmb     removed explicit setting of domain for perma cookies
-cmb     extended copyright to 2013
-cmb     added version.nfo file
+* fixed incompatibility with jQuery >= 1.9 without jQuery Migrate Plugin
+* removed explicit setting of domain for perma cookies
+* extended copyright to 2013
+* added version.nfo file
 
 Version 1rc1 - released 2012-12-27
-cmb     fixed bug, where second languages were not properly handled
-cmb     fixed bug, where JS error occurred on IE8 if in IE7 mode
-cmb     switched to customary plugin call to display the social buttons
-cmb     updated and improved user manual accordingly
-cmb     added German user manual
-cmb     added Slovak localization (contributed by Tata)
-
+* fixed bug, where second languages were not properly handled
+* fixed bug, where JS error occurred on IE8 if in IE7 mode
+* switched to customary plugin call to display the social buttons
+* updated and improved user manual accordingly
+* added German user manual
+* added Slovak localization (contributed by Tata)
 
 Version 1beta1 - released 2012-05-10
-cmb	initial release
+* initial release
