@@ -148,7 +148,7 @@ class Socialshareprivacy_Controller
             'perma_option' => $pcf['facebook_perma_option'],
             'display_name' => $ptx['facebook_display_name'],
             'referrer_track' => $pcf['facebook_referrer_track'],
-            'language' => $lang. '_' . $ptx['general_country_code'],
+            'language' => $lang . '_' . $ptx['general_country_code'],
             'action' => $pcf['facebook_action']
         );
     }
@@ -277,7 +277,7 @@ class Socialshareprivacy_Controller
             'perma_option' => $pcf['linkedin_perma_option'],
             'display_name' => $ptx['linkedin_display_name'],
             'referrer_track' => $pcf['linkedin_referrer_track'],
-            'language' => $lang
+            'language' => $lang . '_' . $ptx['general_country_code']
         );
     }
 

@@ -324,7 +324,7 @@
                 else
                 {
                     // we don't use the standard inclusion script from Xing, if we would do so the iframe includes the hole enclosing website
-                    var xing_code = '<div class="Xing"><iframe class="XING" width="161" scrolling="no" height="20" frameborder="0" style="padding:0px;border:none;margin:0px;overflow:hidden;background-color:transparent;" src="https://www.xing-share.com/app/share?op=get_share_button;url='+xing_enc_uri+';counter=right;lang=de;type=iframe;hovercard_position=1" allowtransparency="true"></iframe></div>'
+                    var xing_code = '<div class="Xing"><iframe class="XING" width="161" scrolling="no" height="20" frameborder="0" style="padding:0px;border:none;margin:0px;overflow:hidden;background-color:transparent;" src="https://www.xing-share.com/app/share?op=get_share_button;url='+xing_enc_uri+';counter=right;lang=' + options.services.xing.language + ';type=iframe;hovercard_position=1" allowtransparency="true"></iframe></div>'
                 }
 
 
@@ -358,7 +358,7 @@
                 }
                 else
                 {
-                    var linkedin_code = '<div class="LinkedIn"><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share"></script></div>';
+                    var linkedin_code = '<div class="LinkedIn"><script src="//platform.linkedin.com/in.js" type="text/javascript">lang: ' + options.services.linkedin.language + '</script><script type="IN/Share"></script></div>';
                 }
 
 
