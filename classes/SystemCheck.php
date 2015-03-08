@@ -41,6 +41,7 @@ class Socialshareprivacy_SystemCheck
             $o .= self::checkExtension($ext) . tag('br');
         }
         $o .= self::checkMagicQuotesRuntime() . tag('br') . tag('br')
+            . self::checkXHVersion('1.5.4') . tag('br')
             . self::checkUTF8Encoding() . tag('br') . tag('br');
         foreach (self::getWritableFolders() as $folder) {
             $o .= self::checkWritability($folder) . tag('br');
@@ -102,6 +103,40 @@ class Socialshareprivacy_SystemCheck
         $kind = get_magic_quotes_runtime() ? 'fail' : 'ok';
         return self::renderCheckIcon($kind). '&nbsp;&nbsp;'
             . $plugin_tx['socialshareprivacy']['syscheck_magic_quotes'];
+    }
+
+    /**
+     * Renders the CMSimple_XH version check.
+     *
+     * @param string $version Required CMSimple_XH version.
+     *
+     * @return string (X)HTML
+     *
+     * @global array The localization of the plugins.
+     */
+    protected static function checkXHVersion($version)
+    {
+        global $plugin_tx;
+
+        $kind = self::hasXHVersion($version) ? 'ok' : 'fail';
+        return self::renderCheckIcon($kind) . '&nbsp;&nbsp;'
+            . sprintf(
+                $plugin_tx['socialshareprivacy']['syscheck_xhversion'], $version
+            );
+    }
+
+    /**
+     * Returns whether at least a certain CMSimple_XH version is installed.
+     *
+     * @param string $version A CMSimple_XH version number.
+     *
+     * @return bool
+     */
+    protected static function hasXHVersion($version)
+    {
+        return defined('CMSIMPLE_XH_VERSION')
+            && strpos(CMSIMPLE_XH_VERSION, 'CMSimple_XH') === 0
+            && version_compare(CMSIMPLE_XH_VERSION, "CMSimple_XH {$version}", 'gt');
     }
 
     /**

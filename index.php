@@ -13,22 +13,6 @@
  * @link      http://3-magi.net/?CMSimple_XH/Socialshareprivacy_XH
  */
 
-/*
- * Prevent direct access and usage from unsupported CMSimple_XH versions.
- */
-if (!defined('CMSIMPLE_XH_VERSION')
-    || strpos(CMSIMPLE_XH_VERSION, 'CMSimple_XH') !== 0
-    || version_compare(CMSIMPLE_XH_VERSION, 'CMSimple_XH 1.5.4', 'lt')
-) {
-    header('HTTP/1.1 403 Forbidden');
-    header('Content-Type: text/plain; charset=UTF-8');
-    die(<<<EOT
-Socialshareprivacy_XH detected an unsupported CMSimple_XH version.
-Uninstall Socialshareprivacy_XH or upgrade to a supported CMSimple_XH version!
-EOT
-    );
-}
-
 /**
  * The plugin version.
  */

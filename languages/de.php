@@ -44,6 +44,7 @@ $plugin_tx['socialshareprivacy']['syscheck_extension']="Erweiterung '%s' geladen
 $plugin_tx['socialshareprivacy']['syscheck_encoding']="Kodierung 'UTF-8' eingestellt";
 $plugin_tx['socialshareprivacy']['syscheck_magic_quotes']="Magic quotes runtime off";
 $plugin_tx['socialshareprivacy']['syscheck_writable']="Ordner '%s' schreibbar";
+$plugin_tx['socialshareprivacy']['syscheck_xhversion']="CMSimple_XH Version &ge; %s";
 
 $plugin_tx['socialshareprivacy']['cf_template_call']="Ob das Plugin im Template aufgerufen wird: \"1\" (ja) oder \"0\" (nein).";
 $plugin_tx['socialshareprivacy']['cf_url']="Der URL, auf den sich Likes, Tweets und Shares beziehen. Leer lassen, um den URL automatisch erkennen zu lassen. Siehe den  Abschnitt \"Verwendung\" im Handbuch für Details.";
