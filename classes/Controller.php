@@ -139,9 +139,13 @@ class Socialshareprivacy_Controller
         $ptx = $plugin_tx['socialshareprivacy'];
         $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
         $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
+        $image = $dir . 'css/images/dummy_facebook_' . $lang . '.png';
+        if (!file_exists($image)) {
+            $image = $dir . 'css/images/dummy_facebook.png';
+        }
         return array(
             'status' => $pcf['facebook_status'],
-            'dummy_img' => $dir . 'css/images/dummy_facebook_en.png',
+            'dummy_img' => $image,
             'txt_info' => $ptx['facebook_info'],
             'txt_fb_off' => $ptx['facebook_off'],
             'txt_fb_on' => $ptx['facebook_on'],
