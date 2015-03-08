@@ -1,6 +1,6 @@
 <?php
 
-$plugin_tx['socialshareprivacy']['general_info_link']="http://www.heise.de/ct/artikel/2-Klicks-fuer-mehr-Datenschutz-1333879.html";
+$plugin_tx['socialshareprivacy']['general_info_link']="http://www.h-online.com/features/Two-clicks-for-more-privacy-1783256.html";
 $plugin_tx['socialshareprivacy']['general_help']="If you activate these buttons by clicking, information will be sent to Facebook, Twitter resp. Google in the USA and perhaps stored there. For more details click on the <em>i</em>.";
 $plugin_tx['socialshareprivacy']['general_settings_perma']="Activate permanently and approve data transmission:";
 $plugin_tx['socialshareprivacy']['general_country_code']="US";
