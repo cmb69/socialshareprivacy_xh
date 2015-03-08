@@ -1,5 +1,9 @@
 /*
  * Front-end
+ *
+ * To achieve the horizontal layout of 1rc1, look for "horizontal layout"
+ * comments and remove the /* at the beginning of the line. Tweak the widths
+ * according to your needs.
  */
 
 .social_share_privacy_area {
@@ -10,13 +14,15 @@
     width: auto;
     height: 100%;
     display: block;
+    /*display: table; /* horizontal layout */
 }
 .social_share_privacy_area li {
     margin: 0 !important;
     padding: 0 !important;
     height: 21px;
     float: left;
-    width:100%;
+    width: 100%;
+    /*width: 100px; /* horizontal layout */
 }
 .social_share_privacy_area li .dummy_btn {
     float: left;
@@ -97,6 +103,7 @@
  */
 .social_share_privacy_area li .switch {
     display: inline-block;
+    /*display: none; /* horizontal layout */
     text-indent: -9999em;
     background: transparent url(images/socialshareprivacy_on_off.png)
         no-repeat 0 0 scroll;
@@ -117,7 +124,8 @@
  */
 .social_share_privacy_area li.help_info {
     position: relative;
-    width:100%;
+    width: 100%;
+    /*width: 100px; /* horizontal layout */
 }
 .social_share_privacy_area li.help_info .info,
 .social_share_privacy_area li .help_info.icon .info {
