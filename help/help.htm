@@ -101,7 +101,8 @@ configuration.</p>
 <p>Note that the likes, tweets and shares refer to the currently displayed page,
 including all additional query parameters, i.e. what is shown in the browser's
 address bar. If a canonical link is contained in the page's (X)HTML, this will
-be used, however.</p>
+be used, however. If you prefer that all likes, tweets and shares refer to a
+certain URL, you can set this URL in the configuration.</p>
 <div class="toplink"><a href="#">back to top</a></div>
 </section>
 
@@ -115,6 +116,9 @@ before), the possibility to permanently activate the buttons is not available.
 In browsers which doesn't understand the value "inline-block" for the "display"
 declaration (e.g. IE 7 and before), the layout is broken. Despite these
 limitations the plugin is still usable on IE 6 and 7.</p>
+<p>When testing on localhost, some of the buttons might not properly work,
+because the domain localhost might not be accepted by the services. You can use
+the configuration option "Url" to work around this limitation.</p>
 <div class="toplink"><a href="#">back to top</a></div>
 </section>
 

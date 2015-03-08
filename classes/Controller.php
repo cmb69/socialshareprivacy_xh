@@ -99,7 +99,7 @@ class Socialshareprivacy_Controller
 
         $pcf = $plugin_cf['socialshareprivacy'];
         $ptx = $plugin_tx['socialshareprivacy'];
-        return array(
+        $config = array(
             'info_link' => $ptx['general_info_link'],
             'txt_help' => $ptx['general_help'],
             'settings_perma' => $ptx['general_settings_perma'],
@@ -114,6 +114,10 @@ class Socialshareprivacy_Controller
                 'linkedin' => self::getLinkedInConfiguration()
             )
         );
+        if ($pcf['url'] != '') {
+            $config['uri'] = $pcf['url'];
+        }
+        return $config;
     }
 
     /**
