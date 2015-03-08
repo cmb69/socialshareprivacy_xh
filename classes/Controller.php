@@ -12,6 +12,7 @@
  * @license   http://www.gnu.org/licenses/gpl-3.0.en.html GNU GPLv3
  * @link      http://3-magi.net/?CMSimple_XH/Socialshareprivacy_XH
  */
+
 /**
  * The plugin controller.
  *
@@ -28,7 +29,7 @@ class Socialshareprivacy_Controller
      *
      * @return void
      *
-     * @global array  The configuration of the plugins.
+     * @global array The configuration of the plugins.
      */
     public static function dispatch()
     {
@@ -67,11 +68,12 @@ class Socialshareprivacy_Controller
             return;
         }
         $again = true;
-        $dir = $pth['folder']['plugins'].'socialshareprivacy/';
-        include_once $pth['folder']['plugins'].'jquery/jquery.inc.php';
+        include_once $pth['folder']['plugins'] . 'jquery/jquery.inc.php';
         include_jQuery();
         include_jQueryPlugin(
-            'socialshareprivacy', $dir . 'jquery.socialshareprivacy.js'
+            'socialshareprivacy',
+            $pth['folder']['plugins']
+            . 'socialshareprivacy/jquery.socialshareprivacy.js'
         );
         $bjs .= '<script type="text/javascript">/* <![CDATA[ */'
             . 'jQuery(function() {'
@@ -87,21 +89,16 @@ class Socialshareprivacy_Controller
      *
      * @return array
      *
-     * @global array  The paths of system files and folders.
      * @global string The script name.
-     * @global string The requested language.
-     * @global array  The configuration of the core.
      * @global array  The configuration of the plugins.
      * @global array  The localization of the plugins.
      */
     protected static function getConfiguration()
     {
-        global $pth, $sn, $sl, $cf, $plugin_cf, $plugin_tx;
+        global $sn, $plugin_cf, $plugin_tx;
 
         $pcf = $plugin_cf['socialshareprivacy'];
         $ptx = $plugin_tx['socialshareprivacy'];
-        $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
-        $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
         return array(
             'info_link' => $ptx['general_info_link'],
             'txt_help' => $ptx['general_help'],
@@ -110,41 +107,107 @@ class Socialshareprivacy_Controller
             'cookie_expires' => $pcf['cookie_expires'],
             'css_path' => '',
             'services' => array(
-                'facebook' => array(
-                    'status' => $pcf['facebook_status'],
-                    'dummy_img' => "{$dir}css/images/dummy_facebook_en.png",
-                    'txt_info' => $ptx['facebook_info'],
-                    'txt_fb_off' => $ptx['facebook_off'],
-                    'txt_fb_on' => $ptx['facebook_on'],
-                    'perma_option' => $pcf['facebook_perma_option'],
-                    'display_name' => $ptx['facebook_display_name'],
-                    'referrer_track' => $pcf['facebook_referrer_track'],
-                    'language' => "${lang}_$ptx[general_country_code]",
-                    'action' => $pcf['facebook_action']
-                ),
-                'twitter' => array(
-                    'status' => $pcf['twitter_status'],
-                    'dummy_img' => "{$dir}css/images/dummy_twitter.png",
-                    'txt_info' => $ptx['twitter_info'],
-                    'txt_twitter_off' => $ptx['twitter_off'],
-                    'txt_twitter_on' => $ptx['twitter_on'],
-                    'perma_option' => $pcf['twitter_perma_option'],
-                    'display_name' => $ptx['twitter_display_name'],
-                    'referrer_track' => $pcf['twitter_referrer_track'],
-                    'language' => $lang
-                ),
-                'gplus' => array(
-                    'status' => $pcf['gplus_status'],
-                    'dummy_img' => "{$dir}css/images/dummy_gplus.png",
-                    'txt_info' => $ptx['gplus_info'],
-                    'txt_gplus_off' => $ptx['gplus_off'],
-                    'txt_gplus_on' => $ptx['gplus_on'],
-                    'perma_option' => $pcf['gplus_perma_option'],
-                    'display_name' => $ptx['gplus_display_name'],
-                    'referrer_track' => $pcf['gplus_referrer_track'],
-                    'language' => $lang
-                )
+                'facebook' => self::getFacebookConfiguration(),
+                'twitter' => self::getTwitterConfiguration(),
+                'gplus' => self::getGPlusConfiguration()
             )
+        );
+    }
+
+    /**
+     * Returns the Facebook configuration.
+     *
+     * @return array
+     *
+     * @global array  The paths of system files and folders.
+     * @global string The requested language.
+     * @global array  The configuration of the core.
+     * @global array  The configuration of the plugins.
+     * @global array  The localization of the plugins.
+     */
+    protected static function getFacebookConfiguration()
+    {
+        global $pth, $sl, $cf, $plugin_cf, $plugin_tx;
+
+        $pcf = $plugin_cf['socialshareprivacy'];
+        $ptx = $plugin_tx['socialshareprivacy'];
+        $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
+        $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
+        return array(
+            'status' => $pcf['facebook_status'],
+            'dummy_img' => $dir . 'css/images/dummy_facebook_en.png',
+            'txt_info' => $ptx['facebook_info'],
+            'txt_fb_off' => $ptx['facebook_off'],
+            'txt_fb_on' => $ptx['facebook_on'],
+            'perma_option' => $pcf['facebook_perma_option'],
+            'display_name' => $ptx['facebook_display_name'],
+            'referrer_track' => $pcf['facebook_referrer_track'],
+            'language' => $lang. '_' . $ptx['general_country_code'],
+            'action' => $pcf['facebook_action']
+        );
+    }
+
+    /**
+     * Returns the Twitter configuration.
+     *
+     * @return array
+     *
+     * @global array  The paths of system files and folders.
+     * @global string The requested language.
+     * @global array  The configuration of the core.
+     * @global array  The configuration of the plugins.
+     * @global array  The localization of the plugins.
+     */
+    protected static function getTwitterConfiguration()
+    {
+        global $pth, $sl, $cf, $plugin_cf, $plugin_tx;
+
+        $pcf = $plugin_cf['socialshareprivacy'];
+        $ptx = $plugin_tx['socialshareprivacy'];
+        $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
+        $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
+        return array(
+            'status' => $pcf['twitter_status'],
+            'dummy_img' => $dir. 'css/images/dummy_twitter.png',
+            'txt_info' => $ptx['twitter_info'],
+            'txt_twitter_off' => $ptx['twitter_off'],
+            'txt_twitter_on' => $ptx['twitter_on'],
+            'perma_option' => $pcf['twitter_perma_option'],
+            'display_name' => $ptx['twitter_display_name'],
+            'referrer_track' => $pcf['twitter_referrer_track'],
+            'language' => $lang
+        );
+    }
+
+    /**
+     * Returns the Google Plus configuration.
+     *
+     * @return array
+     *
+     * @global array  The paths of system files and folders.
+     * @global string The requested language.
+     * @global array  The configuration of the core.
+     * @global array  The configuration of the plugins.
+     * @global array  The localization of the plugins.
+     */
+    protected static function getGPlusConfiguration()
+    {
+        global $pth, $sl, $cf, $plugin_cf, $plugin_tx;
+
+        $pcf = $plugin_cf['socialshareprivacy'];
+        $ptx = $plugin_tx['socialshareprivacy'];
+        $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
+        $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
+        return array(
+            'status' => $pcf['gplus_status'],
+            'dummy_img' => $dir . 'css/images/dummy_gplus.png',
+            'txt_info' => $ptx['gplus_info'],
+            'txt_gplus_off' => $ptx['gplus_off'],
+            'txt_gplus_on' => $ptx['gplus_on'],
+            'perma_option' => $pcf['gplus_perma_option'],
+            'display_name' => $ptx['gplus_display_name'],
+            'referrer_track' => $pcf['gplus_referrer_track'],
+            'language' => $lang
         );
     }
 
@@ -231,43 +294,10 @@ EOT;
      * Returns the requirements information view.
      *
      * @return string (X)HTML
-     *
-     * @global array The paths of system files and folders.
-     * @global array The localization of the core.
-     * @global array The localization of the plugins.
      */
     protected static function renderSystemCheck()
     {
-        global $pth, $tx, $plugin_tx;
-
-        $phpVersion = '5.2.0';
-        $ptx = $plugin_tx['socialshareprivacy'];
-        $imgdir = $pth['folder']['plugins'] . 'socialshareprivacy/images/';
-        $ok = tag('img src="' . $imgdir . 'ok.png" alt="ok"');
-        $warn = tag('img src="' . $imgdir . 'warn.png" alt="warning"');
-        $fail = tag('img src="' . $imgdir . 'fail.png" alt="failure"');
-        $o = '<h4>' . $ptx['syscheck_title'] . '</h4>'
-            . (version_compare(PHP_VERSION, $phpVersion) >= 0 ? $ok : $fail)
-            . '&nbsp;&nbsp;' . sprintf($ptx['syscheck_phpversion'], $phpVersion)
-            . tag('br');
-        foreach (array('json') as $ext) {
-            $o .= (extension_loaded($ext) ? $ok : $fail)
-                . '&nbsp;&nbsp;' . sprintf($ptx['syscheck_extension'], $ext)
-                . tag('br');
-        }
-        $o .= (!get_magic_quotes_runtime() ? $ok : $fail)
-            . '&nbsp;&nbsp;' . $ptx['syscheck_magic_quotes'] . tag('br') . tag('br');
-        $o .= (strtoupper($tx['meta']['codepage']) == 'UTF-8' ? $ok : $warn)
-            . '&nbsp;&nbsp;' . $ptx['syscheck_encoding'] . tag('br') . tag('br');
-        foreach (array('config/', 'css/', 'languages/') as $folder) {
-            $folders[] = $pth['folder']['plugins'] . 'socialshareprivacy/' . $folder;
-        }
-        foreach ($folders as $folder) {
-            $o .= (is_writable($folder) ? $ok : $warn)
-                . '&nbsp;&nbsp;' . sprintf($ptx['syscheck_writable'], $folder)
-                . tag('br');
-        }
-        return $o;
+        return Socialshareprivacy_SystemCheck::render();
     }
 }
 

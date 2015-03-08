@@ -26,6 +26,9 @@ $plugin_tx['socialshareprivacy']['menu_info']="Info";
 $plugin_tx['socialshareprivacy']['alt_logo']="Doppeltes Daumen hoch";
 
 $plugin_tx['socialshareprivacy']['syscheck_title']="System Prüfung";
+$plugin_tx['socialshareprivacy']['syscheck_alt_ok']="OK";
+$plugin_tx['socialshareprivacy']['syscheck_alt_warn']="Warnung";
+$plugin_tx['socialshareprivacy']['syscheck_alt_fail']="Fehler";
 $plugin_tx['socialshareprivacy']['syscheck_phpversion']="PHP-Version &ge; %s";
 $plugin_tx['socialshareprivacy']['syscheck_extension']="Erweiterung '%s' geladen";
 $plugin_tx['socialshareprivacy']['syscheck_encoding']="Kodierung 'UTF-8' eingestellt";

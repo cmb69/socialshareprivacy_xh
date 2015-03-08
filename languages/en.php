@@ -25,6 +25,9 @@ $plugin_tx['socialshareprivacy']['menu_info']="Info";
 $plugin_tx['socialshareprivacy']['alt_logo']="Double thumbs up";
 
 $plugin_tx['socialshareprivacy']['syscheck_title']="System check";
+$plugin_tx['socialshareprivacy']['syscheck_alt_ok']="OK";
+$plugin_tx['socialshareprivacy']['syscheck_alt_warn']="Warning";
+$plugin_tx['socialshareprivacy']['syscheck_alt_fail']="Failure";
 $plugin_tx['socialshareprivacy']['syscheck_phpversion']="PHP version &ge; %s";
 $plugin_tx['socialshareprivacy']['syscheck_extension']="Extension '%s' loaded";
 $plugin_tx['socialshareprivacy']['syscheck_encoding']="Encoding 'UTF-8' configured";
