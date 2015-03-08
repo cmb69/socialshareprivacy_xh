@@ -88,14 +88,14 @@
         </move>
         <jsMin targetDir="dist" suffix="" failonerror="true">
             <fileset dir="export">
-                <include name="jquery.socialshareprivacy.js"/>
+                <include name="jquery.socialshareprivacy-xl.js"/>
             </fileset>
         </jsMin>
         <move todir="dist">
             <fileset dir="export">
                 <exclude name="build.xml"/>
                 <exclude name="composer.*"/>
-                <exclude name="jquery.socialshareprivacy.js"/>
+                <exclude name="jquery.socialshareprivacy-xl.js"/>
                 <exclude name="phpcompatinfo.json"/>
                 <exclude name="tests/**"/>
             </fileset>

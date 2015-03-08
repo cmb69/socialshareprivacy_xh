@@ -21,6 +21,16 @@ $plugin_tx['socialshareprivacy']['gplus_off']="nicht mit Google+ verbunden";
 $plugin_tx['socialshareprivacy']['gplus_on']="mit Google+ verbunden";
 $plugin_tx['socialshareprivacy']['gplus_display_name']="Google+";
 
+$plugin_tx['socialshareprivacy']['xing_info']="2 Klicks f&uuml;r mehr Datenschutz: Erst wenn Sie hier klicken, wird der Button aktiv und Sie k&ouml;nnen Ihre Empfehlung an XING senden. Schon beim Aktivieren werden Daten an Dritte &uuml;bertragen &ndash; siehe <em>i</em>.";
+$plugin_tx['socialshareprivacy']['xing_off']="nicht mit XING verbunden";
+$plugin_tx['socialshareprivacy']['xing_on']="mit XING verbunden";
+$plugin_tx['socialshareprivacy']['xing_display_name']="XING";
+
+$plugin_tx['socialshareprivacy']['linkedin_info']="2 Klicks f&uuml;r mehr Datenschutz: Erst wenn Sie hier klicken, wird der Button aktiv und Sie k&ouml;nnen Ihre Empfehlung an LinkedIn senden. Schon beim Aktivieren werden Daten an Dritte &uuml;bertragen &ndash; siehe <em>i</em>.";
+$plugin_tx['socialshareprivacy']['linkedin_off']="nicht mit LinkedIn verbunden";
+$plugin_tx['socialshareprivacy']['linkedin_on']="mit LinkedIn verbunden";
+$plugin_tx['socialshareprivacy']['linkedin_display_name']="LinkedIn";
+
 $plugin_tx['socialshareprivacy']['menu_info']="Info";
 
 $plugin_tx['socialshareprivacy']['alt_logo']="Doppeltes Daumen hoch";
@@ -47,5 +57,11 @@ $plugin_tx['socialshareprivacy']['cf_twitter_referrer_track']="Wird ans Ende der
 $plugin_tx['socialshareprivacy']['cf_gplus_status']="Ob der User Google+ zur Auswahl hat: \"on\" (ja) oder \"off\" (nein).";
 $plugin_tx['socialshareprivacy']['cf_gplus_perma_option']="Ob der User die Option hat, sich Google+ dauerhaft einblenden zu lassen (mittels Cookie): \"on\" (ja) oder \"off\" (nein).";
 $plugin_tx['socialshareprivacy']['cf_gplus_referrer_track']="Wird ans Ende der URL gehängt, kann zum Tracken des Referrers genutzt werden.";
+$plugin_tx['socialshareprivacy']['cf_xing_status']="Ob der User XING zur Auswahl hat: \"on\" (ja) oder \"off\" (nein).";
+$plugin_tx['socialshareprivacy']['cf_xing_perma_option']="Ob der User die Option hat, sich XING dauerhaft einblenden zu lassen (mittels Cookie): \"on\" (ja) oder \"off\" (nein).";
+$plugin_tx['socialshareprivacy']['cf_xing_referrer_track']="Wird ans Ende der URL gehängt, kann zum Tracken des Referrers genutzt werden.";
+$plugin_tx['socialshareprivacy']['cf_linkedin_status']="Ob der User LinkedIn zur Auswahl hat: \"on\" (ja) oder \"off\" (nein).";
+$plugin_tx['socialshareprivacy']['cf_linkedin_perma_option']="Ob der User die Option hat, sich LinkedIn dauerhaft einblenden zu lassen (mittels Cookie): \"on\" (ja) oder \"off\" (nein).";
+$plugin_tx['socialshareprivacy']['cf_linkedin_referrer_track']="Wird ans Ende der URL gehängt, kann zum Tracken des Referrers genutzt werden.";
 
 ?>

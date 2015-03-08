@@ -1,60 +1,105 @@
-ul.social_share_privacy_area {
+/*
+ * Front-end
+ */
+
+.social_share_privacy_area {
     clear: both;
     margin: 20px 0 !important;
-    list-style: none;
+    list-style-type: none;
     padding: 0 !important;
     width: auto;
-    height: 25px;
+    height: 100%;
     display: block;
 }
-ul.social_share_privacy_area li {
+.social_share_privacy_area li {
     margin: 0 !important;
     padding: 0 !important;
     height: 21px;
     float: left;
+    width:100%;
 }
-ul.social_share_privacy_area li .dummy_btn {
+.social_share_privacy_area li .dummy_btn {
     float: left;
     margin: 0 0 0 10px;
     cursor: pointer;
     padding: 0;
     height: inherit;
 }
-ul.social_share_privacy_area li div iframe {
+.social_share_privacy_area li div iframe {
     overflow: hidden;
     height: inherit;
     width: inherit;
 }
-/* Facebook begin */
-ul.social_share_privacy_area .facebook {
-    width: 125px;
+
+/*
+ * Facebook
+ */
+.social_share_privacy_area .facebook {
+    width: 100px;
+    height: 30px;
     display: inline-block;
 }
-ul.social_share_privacy_area .facebook .fb_like iframe {
-    width: 90px;
+.social_share_privacy_area .facebook .fb_like iframe {
+    width: 100px;
+    height: 30px;
 }
-/* Facebook end */
-/* Twitter begin */
-ul.social_share_privacy_area .twitter {
-    width: 125px;
-}
-ul.social_share_privacy_area li div.tweet {
-    width: 92px;
-}
-/* Twitter end */
-/* Google+ begin */
-ul.social_share_privacy_area .gplus {
+
+/*
+ * Twitter
+ */
+.social_share_privacy_area .twitter {
+    height: 30px;
     width: 100px;
 }
-ul.social_share_privacy_area li div.gplusone {
-    width: 67px;
+.social_share_privacy_area li div.tweet {
+    width: px;
+    height: 30px;
 }
-/* Google+ end */
-/* Switch begin */
-ul.social_share_privacy_area li .switch {
-    display: none; /*inline-block;*/
+
+/*
+ * Google+
+ */
+.social_share_privacy_area .gplus {
+    width: 100px;
+    height: 30px;
+}
+.social_share_privacy_area li div.gplusone {
+    width: 100px;
+    height: 30px;
+}
+
+/*
+ * XING
+ */
+.social_share_privacy_area .xing {
+    width: 100px;
+    height: 30px;
+}
+.social_share_privacy_area li div.Xing {
+    width: 100px;
+    height: 30px;
+}
+
+/*
+ * LinkedIn
+ */
+.social_share_privacy_area .linkedin {
+    width: 100px;
+    height: 30px;
+}
+.social_share_privacy_area li div.LinkedIn {
+    width: 100px;
+    height: 30px;
+}
+
+/*
+ * Switch
+ */
+.social_share_privacy_area li .switch {
+    display: inline-block;
     text-indent: -9999em;
-    background: transparent url(images/socialshareprivacy_on_off.png) no-repeat 0 0 scroll;
+    background: transparent url(images/socialshareprivacy_on_off.png)
+        no-repeat 0 0 scroll;
     width: 23px;
     height: 12px;
     overflow: hidden;
@@ -63,16 +108,19 @@ ul.social_share_privacy_area li .switch {
     padding: 0;
     cursor: pointer;
 }
-ul.social_share_privacy_area li .switch.on {
+.social_share_privacy_area li .switch.on {
     background-position: 0 -12px;
 }
-/* Switch end */
-/* Tooltips begin */
-ul.social_share_privacy_area li.help_info {
+
+/*
+ * Tooltips
+ */
+.social_share_privacy_area li.help_info {
     position: relative;
+    width:100%;
 }
-ul.social_share_privacy_area li.help_info .info,
-ul.social_share_privacy_area li .help_info.icon .info {
+.social_share_privacy_area li.help_info .info,
+.social_share_privacy_area li .help_info.icon .info {
     display: none;
     position: absolute;
     bottom: 40px;
@@ -94,22 +142,23 @@ ul.social_share_privacy_area li .help_info.icon .info {
     color: #000;
     z-index: 500;
 }
-ul.social_share_privacy_area li.gplus.help_info .info {
+.social_share_privacy_area li.gplus.help_info .info {
     left: -60px;
 }
-ul.social_share_privacy_area li .help_info.icon .info {
+.social_share_privacy_area li .help_info.icon .info {
     left: -243px;
     width: 350px;
 }
-ul.social_share_privacy_area li.help_info.display .info,
-ul.social_share_privacy_area li .help_info.icon.display .info {
+.social_share_privacy_area li.help_info.display .info,
+.social_share_privacy_area li .help_info.icon.display .info {
     display: block;
 }
-ul.social_share_privacy_area li.help_info.info_off.display .info {
+.social_share_privacy_area li.help_info.info_off.display .info {
     display: none;
 }
-ul.social_share_privacy_area li .help_info.icon {
-    background: #fff url(images/socialshareprivacy_info.png) no-repeat center center scroll;
+.social_share_privacy_area li .help_info.icon {
+    background: #fff url(images/socialshareprivacy_info.png) no-repeat
+        center center scroll;
     width: 25px;
     height: 20px;
     position: relative;
@@ -123,27 +172,31 @@ ul.social_share_privacy_area li .help_info.icon {
     margin: 0;
     padding: 0;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu.on .help_info.icon {
+.social_share_privacy_area li.settings_info .settings_info_menu.on
+        .help_info.icon {
     border-top-width: 0;
     border-left-width: 0;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu.perma_option_off .help_info.icon {
+.social_share_privacy_area li.settings_info .settings_info_menu.perma_option_off
+        .help_info.icon {
     border-right-width: 2px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
 }
-/* Tooltips end */
-/* Settings/Info begin */
-ul.social_share_privacy_area li.settings_info {
+
+/*
+ * Settings/Info
+ */
+.social_share_privacy_area li.settings_info {
     position: relative;
     top: -2px;
 }
-ul.social_share_privacy_area li.settings_info a {
+.social_share_privacy_area li.settings_info a {
     text-decoration: none;
     margin: 0 !important;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu {
+.social_share_privacy_area li.settings_info .settings_info_menu {
     background-color: #f3f4f5;
     border: 2px solid #e7e3e3;
     -moz-border-radius: 5px;
@@ -160,19 +213,21 @@ ul.social_share_privacy_area li.settings_info .settings_info_menu {
     margin: 0;
     padding: 0;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu.off {
+.social_share_privacy_area li.settings_info .settings_info_menu.off {
     border-width: 0;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
     background-color: transparent;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu.off form {
+.social_share_privacy_area li.settings_info .settings_info_menu.off form
+    {
     display: none;
     margin: 0;
     padding: 0;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu .settings {
+.social_share_privacy_area li.settings_info .settings_info_menu .settings
+    {
     text-indent: -9999em;
     display: inline-block;
     background: #fff url(images/settings.png) no-repeat center center scroll;
@@ -186,15 +241,18 @@ ul.social_share_privacy_area li.settings_info .settings_info_menu .settings {
     margin: 0;
     padding: 0;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu.on .settings {
+.social_share_privacy_area li.settings_info .settings_info_menu.on .settings
+    {
     border-top-width: 0;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu form fieldset {
+.social_share_privacy_area li.settings_info .settings_info_menu form fieldset
+    {
     border-width: 0;
     margin: 0;
     padding: 0 10px 10px;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu form fieldset legend {
+.social_share_privacy_area li.settings_info .settings_info_menu form fieldset
+        legend {
     font-size: 11px;
     font-weight: bold;
     line-height: 14px;
@@ -202,13 +260,15 @@ ul.social_share_privacy_area li.settings_info .settings_info_menu form fieldset 
     padding: 10px 0;
     width: 115px;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu form fieldset input {
+.social_share_privacy_area li.settings_info .settings_info_menu form fieldset
+        input {
     clear: both;
     float: left;
     margin: 4px 10px 4px 0;
     padding: 0;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu form fieldset label {
+.social_share_privacy_area li.settings_info .settings_info_menu form fieldset
+        label {
     display: inline-block;
     float: left;
     font-size: 12px;
@@ -220,7 +280,8 @@ ul.social_share_privacy_area li.settings_info .settings_info_menu form fieldset 
     margin: 0;
     padding: 0;
 }
-ul.social_share_privacy_area li.settings_info .settings_info_menu form fieldset label.checked {
+.social_share_privacy_area li.settings_info .settings_info_menu form fieldset
+        label.checked {
     color: #090;
 }
 

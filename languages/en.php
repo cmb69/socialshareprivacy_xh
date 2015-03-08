@@ -20,6 +20,16 @@ $plugin_tx['socialshareprivacy']['gplus_off']="not connected to Google+";
 $plugin_tx['socialshareprivacy']['gplus_on']="connected to Google+";
 $plugin_tx['socialshareprivacy']['gplus_display_name']="Google+";
 
+$plugin_tx['socialshareprivacy']['xing_info']="2 clicks for more privacy: only after clicking the button is active and you can sent your recommendation to XING. As soon as you activate the button, data will be transmitted to third parties &ndash; see <em>i</em>.";
+$plugin_tx['socialshareprivacy']['xing_off']="not connected to XING";
+$plugin_tx['socialshareprivacy']['xing_on']="connected to XING";
+$plugin_tx['socialshareprivacy']['xing_display_name']="XING";
+
+$plugin_tx['socialshareprivacy']['linkedin_info']="2 clicks for more privacy: only after clicking the button is active and you can sent your recommendation to LinkedIn. As soon as you activate the button, data will be transmitted to third parties &ndash; see <em>i</em>.";
+$plugin_tx['socialshareprivacy']['linkedin_off']="not connected to LinkedIn";
+$plugin_tx['socialshareprivacy']['linkedin_on']="connected to LinkedIn";
+$plugin_tx['socialshareprivacy']['linkedin_display_name']="LinkedIn";
+
 $plugin_tx['socialshareprivacy']['menu_info']="Info";
 
 $plugin_tx['socialshareprivacy']['alt_logo']="Double thumbs up";
@@ -46,5 +56,11 @@ $plugin_tx['socialshareprivacy']['cf_twitter_referrer_track']="Will be appended 
 $plugin_tx['socialshareprivacy']['cf_gplus_status']="Whether the user has Google+ available: \"on\" (yes) or \"off\" (no).";
 $plugin_tx['socialshareprivacy']['cf_gplus_perma_option']="Whether the user has the option to activate Google+ permanently (cookies must be enabled): \"on\" (yes) or \"off\" (no).";
 $plugin_tx['socialshareprivacy']['cf_gplus_referrer_track']="Will be appended to the URL; can be used to track the referrer.";
+$plugin_tx['socialshareprivacy']['cf_xing_status']="Whether the user has XING available: \"on\" (yes) or \"off\" (no).";
+$plugin_tx['socialshareprivacy']['cf_xing_perma_option']="Whether the user has the option to activate XING permanently (cookies must be enabled): \"on\" (yes) or \"off\" (no).";
+$plugin_tx['socialshareprivacy']['cf_xing_referrer_track']="Will be appended to the URL; can be used to track the referrer.";
+$plugin_tx['socialshareprivacy']['cf_linkedin_status']="Whether the user has LinkedIn available: \"on\" (yes) or \"off\" (no).";
+$plugin_tx['socialshareprivacy']['cf_linkedin_perma_option']="Whether the user has the option to activate LinkedIn permanently (cookies must be enabled): \"on\" (yes) or \"off\" (no).";
+$plugin_tx['socialshareprivacy']['cf_linkedin_referrer_track']="Will be appended to the URL; can be used to track the referrer.";
 
 ?>

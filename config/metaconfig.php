@@ -8,6 +8,10 @@ $plugin_mcf['socialshareprivacy']['twitter_status']="enum:on,off";
 $plugin_mcf['socialshareprivacy']['twitter_perma_option']="enum:on,off";
 $plugin_mcf['socialshareprivacy']['gplus_status']="enum:on,off";
 $plugin_mcf['socialshareprivacy']['gplus_perma_option']="enum:on,off";
+$plugin_mcf['socialshareprivacy']['xing_status']="enum:on,off";
+$plugin_mcf['socialshareprivacy']['xing_perma_option']="enum:on,off";
+$plugin_mcf['socialshareprivacy']['linkedin_status']="enum:on,off";
+$plugin_mcf['socialshareprivacy']['linkedin_perma_option']="enum:on,off";
 
 
 ?>

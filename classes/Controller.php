@@ -73,7 +73,7 @@ class Socialshareprivacy_Controller
         include_jQueryPlugin(
             'socialshareprivacy',
             $pth['folder']['plugins']
-            . 'socialshareprivacy/jquery.socialshareprivacy.js'
+            . 'socialshareprivacy/jquery.socialshareprivacy-xl.js'
         );
         $bjs .= '<script type="text/javascript">/* <![CDATA[ */'
             . 'jQuery(function() {'
@@ -109,7 +109,9 @@ class Socialshareprivacy_Controller
             'services' => array(
                 'facebook' => self::getFacebookConfiguration(),
                 'twitter' => self::getTwitterConfiguration(),
-                'gplus' => self::getGPlusConfiguration()
+                'gplus' => self::getGPlusConfiguration(),
+                'xing' => self::getXINGConfiguration(),
+                'linkedin' => self::getLinkedInConfiguration()
             )
         );
     }
@@ -207,6 +209,70 @@ class Socialshareprivacy_Controller
             'perma_option' => $pcf['gplus_perma_option'],
             'display_name' => $ptx['gplus_display_name'],
             'referrer_track' => $pcf['gplus_referrer_track'],
+            'language' => $lang
+        );
+    }
+
+    /**
+     * Returns the XING configuration.
+     *
+     * @return array
+     *
+     * @global array  The paths of system files and folders.
+     * @global string The requested language.
+     * @global array  The configuration of the core.
+     * @global array  The configuration of the plugins.
+     * @global array  The localization of the plugins.
+     */
+    protected static function getXINGConfiguration()
+    {
+        global $pth, $sl, $cf, $plugin_cf, $plugin_tx;
+
+        $pcf = $plugin_cf['socialshareprivacy'];
+        $ptx = $plugin_tx['socialshareprivacy'];
+        $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
+        $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
+        return array(
+            'status' => $pcf['xing_status'],
+            'dummy_img' => $dir . 'css/images/dummy_xing.png',
+            'txt_info' => $ptx['xing_info'],
+            'txt_gplus_off' => $ptx['xing_off'],
+            'txt_gplus_on' => $ptx['xing_on'],
+            'perma_option' => $pcf['xing_perma_option'],
+            'display_name' => $ptx['xing_display_name'],
+            'referrer_track' => $pcf['xing_referrer_track'],
+            'language' => $lang
+        );
+    }
+
+    /**
+     * Returns the LinkedIn configuration.
+     *
+     * @return array
+     *
+     * @global array  The paths of system files and folders.
+     * @global string The requested language.
+     * @global array  The configuration of the core.
+     * @global array  The configuration of the plugins.
+     * @global array  The localization of the plugins.
+     */
+    protected static function getLinkedInConfiguration()
+    {
+        global $pth, $sl, $cf, $plugin_cf, $plugin_tx;
+
+        $pcf = $plugin_cf['socialshareprivacy'];
+        $ptx = $plugin_tx['socialshareprivacy'];
+        $dir = $pth['folder']['plugins'] . 'socialshareprivacy/';
+        $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
+        return array(
+            'status' => $pcf['linkedin_status'],
+            'dummy_img' => $dir . 'css/images/dummy_linkedin.png',
+            'txt_info' => $ptx['linkedin_info'],
+            'txt_gplus_off' => $ptx['linkedin_off'],
+            'txt_gplus_on' => $ptx['linkedin_on'],
+            'perma_option' => $pcf['linkedin_perma_option'],
+            'display_name' => $ptx['linkedin_display_name'],
+            'referrer_track' => $pcf['linkedin_referrer_track'],
             'language' => $lang
         );
     }
