@@ -1,3 +1,6 @@
+Version 1.0 - released 2015-04-10
+* fixed bug, where permanent activation of the buttons didn't work on localhost
+
 Version 1rc3 - released 2015-03-08
 * lifted the requirements to CMSimple_XH >= 1.5.4 and PHP >= 5.2.0
 * fixed info link (sugg. by learnandcode)
