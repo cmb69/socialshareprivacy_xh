@@ -1,3 +1,6 @@
+Version 1.1 - released 2015-04-12
+* fixed bug, where on/off texts were not properly displayed (reported by marcus)
+
 Version 1.0 - released 2015-04-10
 * fixed bug, where permanent activation of the buttons didn't work on localhost
 
