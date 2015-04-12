@@ -112,8 +112,8 @@
                         'status'            : 'on',
                         'dummy_img'         : 'socialshareprivacy/images/dummy_facebook.png',
                         'txt_info'          : '2 Klicks f&uuml;r mehr Datenschutz: Erst wenn Sie hier klicken, wird der Button aktiv und Sie k&ouml;nnen Ihre Empfehlung an Facebook senden. Schon beim Aktivieren werden Daten an Dritte &uuml;bertragen &ndash; siehe <em>i</em>.',
-                        'txt_fb_off'        : 'nicht mit Facebook verbunden',
-                        'txt_fb_on'         : 'mit Facebook verbunden',
+                        'txt_facebook_off'  : 'nicht mit Facebook verbunden',
+                        'txt_facebook_on'   : 'mit Facebook verbunden',
                         'perma_option'      : 'on',
                         'display_name'      : 'Facebook',
                         'referrer_track'    : '',
@@ -162,8 +162,8 @@
                         'status'            : 'on',
                         'dummy_img'         : 'socialshareprivacy/images/dummy_linkedin.png',
                         'txt_info'          : '2 Klicks f&uuml;r mehr Datenschutz: Erst wenn Sie hier klicken, wird der Button aktiv und Sie k&ouml;nnen Ihre Empfehlung an LinkedIn senden. Schon beim Aktivieren werden Daten an Dritte &uuml;bertragen &ndash; siehe <em>i</em>.',
-                        'txt_xing_off'     : 'nicht mit LinkedIn verbunden',
-                        'txt_xing_on'      : 'mit LinkedIn verbunden',
+                        'txt_linkedin_off'  : 'nicht mit LinkedIn verbunden',
+                        'txt_linkedin_on'   : 'mit LinkedIn verbunden',
                         'perma_option'      : 'on',
                         'display_name'      : 'LinkedIn',
                         'referrer_track'    : '',
@@ -232,18 +232,18 @@
 
                 var fb_dummy_btn = '<img src="' + options.services.facebook.dummy_img + '" alt="Facebook &quot;Like&quot;-Dummy" class="fb_like_privacy_dummy" />';
 
-                context.append('<li class="facebook help_info"><span class="info">' + options.services.facebook.txt_info + '</span><span class="switch off">' + options.services.facebook.txt_fb_off + '</span><div class="fb_like dummy_btn">' + fb_dummy_btn + '</div></li>');
+                context.append('<li class="facebook help_info"><span class="info">' + options.services.facebook.txt_info + '</span><span class="switch off" title="' + options.services.facebook.txt_facebook_off + '">' + options.services.facebook.txt_facebook_off + '</span><div class="fb_like dummy_btn">' + fb_dummy_btn + '</div></li>');
 
                 var $container_fb = $('li.facebook', context);
 
                 live(context, 'li.facebook div.fb_like img.fb_like_privacy_dummy,li.facebook span.switch', 'click', function () {
                     if ($container_fb.find('span.switch').hasClass('off')) {
                         $container_fb.addClass('info_off');
-                        $container_fb.find('span.switch').addClass('on').removeClass('off').html(options.services.facebook.txt_fb_on);
+                        $container_fb.find('span.switch').addClass('on').removeClass('off').prop('title', options.services.facebook.txt_facebook_on).html(options.services.facebook.txt_facebook_on);
                         $container_fb.find('img.fb_like_privacy_dummy').replaceWith(fb_code);
                     } else {
                         $container_fb.removeClass('info_off');
-                        $container_fb.find('span.switch').addClass('off').removeClass('on').html(options.services.facebook.txt_fb_off);
+                        $container_fb.find('span.switch').addClass('off').removeClass('on').prop('title', options.services.facebook.txt_facebook_off).html(options.services.facebook.txt_facebook_off);
                         $container_fb.find('.fb_like').html(fb_dummy_btn);
                     }
                 });
@@ -273,18 +273,18 @@
 
                 var twitter_dummy_btn = '<img src="' + options.services.twitter.dummy_img + '" alt="&quot;Tweet this&quot;-Dummy" class="tweet_this_dummy" />';
 
-                context.append('<li class="twitter help_info"><span class="info">' + options.services.twitter.txt_info + '</span><span class="switch off">' + options.services.twitter.txt_twitter_off + '</span><div class="tweet dummy_btn">' + twitter_dummy_btn + '</div></li>');
+                context.append('<li class="twitter help_info"><span class="info">' + options.services.twitter.txt_info + '</span><span class="switch off" title="' + options.services.twitter.txt_twitter_off + '">' + options.services.twitter.txt_twitter_off + '</span><div class="tweet dummy_btn">' + twitter_dummy_btn + '</div></li>');
 
                 var $container_tw = $('li.twitter', context);
 
                 live(context, 'li.twitter div.tweet img,li.twitter span.switch', 'click', function () {
                     if ($container_tw.find('span.switch').hasClass('off')) {
                         $container_tw.addClass('info_off');
-                        $container_tw.find('span.switch').addClass('on').removeClass('off').html(options.services.twitter.txt_twitter_on);
+                        $container_tw.find('span.switch').addClass('on').removeClass('off').prop('title', options.services.twitter.txt_twitter_on).html(options.services.twitter.txt_twitter_on);
                         $container_tw.find('img.tweet_this_dummy').replaceWith(twitter_code);
                     } else {
                         $container_tw.removeClass('info_off');
-                        $container_tw.find('span.switch').addClass('off').removeClass('on').html(options.services.twitter.txt_twitter_off);
+                        $container_tw.find('span.switch').addClass('off').removeClass('on').prop('title', options.services.twitter.txt_twitter_off).html(options.services.twitter.txt_twitter_off);
                         $container_tw.find('.tweet').html(twitter_dummy_btn);
                     }
                 });
@@ -310,18 +310,18 @@
 
                 var gplus_dummy_btn = '<img src="' + options.services.gplus.dummy_img + '" alt="&quot;Google+1&quot;-Dummy" class="gplus_one_dummy" />';
 
-                context.append('<li class="gplus help_info"><span class="info">' + options.services.gplus.txt_info + '</span><span class="switch off">' + options.services.gplus.txt_gplus_off + '</span><div class="gplusone dummy_btn">' + gplus_dummy_btn + '</div></li>');
+                context.append('<li class="gplus help_info"><span class="info">' + options.services.gplus.txt_info + '</span><span class="switch off" title="' + options.services.gplus.txt_gplus_off + '">' + options.services.gplus.txt_gplus_off + '</span><div class="gplusone dummy_btn">' + gplus_dummy_btn + '</div></li>');
 
                 var $container_gplus = $('li.gplus', context);
 
                 live(context, 'li.gplus div.gplusone img,li.gplus span.switch', 'click', function () {
                     if ($container_gplus.find('span.switch').hasClass('off')) {
                         $container_gplus.addClass('info_off');
-                        $container_gplus.find('span.switch').addClass('on').removeClass('off').html(options.services.gplus.txt_gplus_on);
+                        $container_gplus.find('span.switch').addClass('on').removeClass('off').prop('title', options.services.gplus.txt_gplus_on).html(options.services.gplus.txt_gplus_on);
                         $container_gplus.find('img.gplus_one_dummy').replaceWith(gplus_code);
                     } else {
                         $container_gplus.removeClass('info_off');
-                        $container_gplus.find('span.switch').addClass('off').removeClass('on').html(options.services.gplus.txt_gplus_off);
+                        $container_gplus.find('span.switch').addClass('off').removeClass('on').prop('title', options.services.gplus.txt_gplus_off).html(options.services.gplus.txt_gplus_off);
                         $container_gplus.find('.gplusone').html(gplus_dummy_btn);
                     }
                 });
@@ -345,18 +345,18 @@
 
                 var xing_dummy_btn = '<img src="' + options.services.xing.dummy_img + '" alt="Xing &quot;Share&quot;-Dummy" class="xing_privacy_dummy" />';
 
-                context.append('<li class="xing help_info"><span class="info">' + options.services.xing.txt_info + '</span><span class="switch off">' + options.services.xing.txt_off + '</span><div class="xing dummy_btn">' + xing_dummy_btn + '</div></li>');
+                context.append('<li class="xing help_info"><span class="info">' + options.services.xing.txt_info + '</span><span class="switch off" title="' + options.services.xing.txt_xing_off + '">' + options.services.xing.txt_xing_off + '</span><div class="xing dummy_btn">' + xing_dummy_btn + '</div></li>');
 
                 var $container_xing = $('li.xing', context);
 
                 live(context, 'li.xing div.xing img.xing_privacy_dummy,li.xing span.switch', 'click', function () {
                     if ($container_xing.find('span.switch').hasClass('off')) {
                         $container_xing.addClass('info_off');
-                        $container_xing.find('span.switch').addClass('on').removeClass('off').html(options.services.xing.txt_xing_on);
+                        $container_xing.find('span.switch').addClass('on').removeClass('off').prop('title', options.services.xing.txt_xing_on).html(options.services.xing.txt_xing_on);
                         $container_xing.find('img.xing_privacy_dummy').replaceWith(xing_code);
                     } else {
                         $container_xing.removeClass('info_off');
-                        $container_xing.find('span.switch').addClass('off').removeClass('on').html(options.services.xing.txt_xing_off);
+                        $container_xing.find('span.switch').addClass('off').removeClass('on').prop('title', options.services.xing.txt_xing_off).html(options.services.xing.txt_xing_off);
                         $container_xing.find('.Xing').html(xing_dummy_btn);
                     }
                 });
@@ -379,18 +379,18 @@
 
                 var linkedin_dummy_btn = '<img src="' + options.services.linkedin.dummy_img + '" alt="LinkedIn &quot;Share&quot;-Dummy" class="linkedin_privacy_dummy" />';
 
-                context.append('<li class="linkedin help_info"><span class="info">' + options.services.linkedin.txt_info + '</span><span class="switch off">' + options.services.linkedin.txt_off + '</span><div class="linkedin dummy_btn">' + linkedin_dummy_btn + '</div></li>');
+                context.append('<li class="linkedin help_info"><span class="info">' + options.services.linkedin.txt_info + '</span><span class="switch off" title="' + options.services.linkedin.txt_linkedin_off + '">' + options.services.linkedin.txt_linkedin_off + '</span><div class="linkedin dummy_btn">' + linkedin_dummy_btn + '</div></li>');
 
                 var $container_linkedin = $('li.linkedin', context);
 
                 live(context, 'li.linkedin div.linkedin img.linkedin_privacy_dummy,li.linkedin span.switch', 'click', function () {
                     if ($container_linkedin.find('span.switch').hasClass('off')) {
                         $container_linkedin.addClass('info_off');
-                        $container_linkedin.find('span.switch').addClass('on').removeClass('off').html(options.services.linkedin.txt_linkedin_on);
+                        $container_linkedin.find('span.switch').addClass('on').removeClass('off').prop('title', options.services.linkedin.txt_linkedin_on).html(options.services.linkedin.txt_linkedin_on);
                         $container_linkedin.find('img.linkedin_privacy_dummy').replaceWith(linkedin_code);
                     } else {
                         $container_linkedin.removeClass('info_off');
-                        $container_linkedin.find('span.switch').addClass('off').removeClass('on').html(options.services.linkedin.txt_linkedin_off);
+                        $container_linkedin.find('span.switch').addClass('off').removeClass('on').prop('title', options.services.linkedin.txt_linkedin_off).html(options.services.linkedin.txt_linkedin_off);
                         $container_linkedin.find('.LinkedIn').html(linkedin_dummy_btn);
                     }
                 });
