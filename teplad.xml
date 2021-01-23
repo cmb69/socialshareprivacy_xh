@@ -104,11 +104,6 @@
       JavaScript-Dateien herumbasteln zu müssen, konfigurieren zu können.
    </description>
     <!-- additional languages are possible, i.e. da, fr, pl, ... -->
-    <description lang="cs">
-      Slideshow_XH usnadňuje zobrazení všech obrázků v dané složce jako prezentace.
-      Tyto prezentace neumožňují žádnou interakci návštěvníka.
-      Použití více prezentací s různými efekty a časováním je možné.
-   </description>
     <!-- The use of this language is limited by the website where the repository is hosted. -->
   </descriptions>
   <!-- If there no screenshots, enter this follows! - <screenshots></screenshots> -->
