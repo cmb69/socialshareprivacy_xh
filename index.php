@@ -16,7 +16,7 @@
 /**
  * The plugin version.
  */
-define('SOCIALSHAREPRIVACY_VERSION', '@SOCIALSHAREPRIVACY_VERSION@');
+define('SOCIALSHAREPRIVACY_VERSION', '1.1');
 
 /**
  * Displays the social buttons.
