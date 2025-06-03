@@ -49,13 +49,13 @@ class InfoCommand
     /** @return list<string> */
     private function checks(): array
     {
-        $checks = [];
-        $checks[] = $this->checkPHPVersion('7.4.0');
-        $checks[] = $this->checkXHVersion('1.7.0');
-        foreach ($this->getWritableFolders() as $folder) {
-            $checks[] = $this->checkWritability($folder);
-        }
-        return $checks;
+        return [
+            $this->checkPHPVersion('7.4.0'),
+            $this->checkXHVersion('1.7.0'),
+            $this->checkWritability($this->pluginFolder . "config/"),
+            $this->checkWritability($this->pluginFolder . "css/"),
+            $this->checkWritability($this->pluginFolder . "languages/"),
+        ];
     }
 
     private function checkPHPVersion(string $version): string
@@ -66,28 +66,13 @@ class InfoCommand
 
     private function checkXHVersion(string $version): string
     {
-        $kind = $this->hasXHVersion($version) ? 'success' : 'fail';
+        $kind = $this->systemChecker->checkVersion(CMSIMPLE_XH_VERSION, "CMSimple_XH {$version}") ? 'success' : 'fail';
         return $this->view->message($kind, "syscheck_xhversion", $version);
-    }
-
-    private function hasXHVersion(string $version): bool
-    {
-        return $this->systemChecker->checkVersion(CMSIMPLE_XH_VERSION, "CMSimple_XH {$version}");
     }
 
     private function checkWritability(string $filename): string
     {
         $kind = $this->systemChecker->checkWritability($filename) ? 'success' : 'warning';
         return $this->view->message($kind, "syscheck_writable", $filename);
-    }
-
-    /** @return list<string> */
-    private function getWritableFolders(): array
-    {
-        $folders = array();
-        foreach (array('config/', 'css/', 'languages/') as $folder) {
-            $folders[] = $this->pluginFolder . $folder;
-        }
-        return $folders;
     }
 }
