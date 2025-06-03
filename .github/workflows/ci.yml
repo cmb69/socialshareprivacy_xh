@@ -1,0 +1,52 @@
+name: checks
+on:
+  pull_request:
+  push:
+  schedule:
+    - cron: '00 00 * * *'
+  workflow_dispatch:
+jobs:
+  checks:
+    strategy:
+      matrix:
+        php: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{matrix.php}}
+          ini-values: short_open_tag=1
+          tools: phive
+      - name: Checkout CMSimple_XH
+        uses: actions/checkout@v4
+        with:
+          repository: cmsimple-xh/cmsimple-xh
+          ref: '1.8.0'
+          path: cmsimplexh
+      - name: Checkout Plib_XH
+        uses: actions/checkout@v4
+        with:
+          repository: cmb69/plib_xh
+          path: cmsimplexh/plugins/plib
+      - name: Checkout Socialshareprivacy_XH
+        uses: actions/checkout@v4
+        with:
+          path: cmsimplexh/plugins/socialshareprivacy
+      - name: Cache tools
+        id: cache-tools
+        uses: actions/cache@v4
+        with:
+          path: cmsimplexh/plugins/socialshareprivacy/tools
+          key: tools-${{hashFiles('cmsimplexh/plugins/socialshareprivacy/.phive')}}
+      - if: ${{steps.cache-tools.outputs.cache-hit != 'true'}}
+        name: phive install
+        run: cd cmsimplexh/plugins/socialshareprivacy && phive --no-progress install --copy --force-accept-unsigned --trust-gpg-keys 0x0F9684B8B16B7AB0,0x31C7E470E2138192,0x51C67305FFC2E5C0,0xA978220305CD5C32,0xCF1A108D0E7AE720,0xD5F0CB76E2DD74F8
+      - name: composer install
+        run: cd cmsimplexh/plugins/socialshareprivacy && composer install
+      - name: phing sniff
+        run: cd cmsimplexh/plugins/socialshareprivacy && PATH=tools:vendor/bin:$PATH phing sniff
+      - name: phing stan
+        run: cd cmsimplexh/plugins/socialshareprivacy && PATH=tools:vendor/bin:$PATH phing stan
+      - name: phing test
+        run: cd cmsimplexh/plugins/socialshareprivacy && PATH=tools:vendor/bin:$PATH phing test
