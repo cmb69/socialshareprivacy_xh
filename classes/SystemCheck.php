@@ -22,45 +22,42 @@
 namespace Socialshareprivacy;
 
 use Plib\SystemChecker;
+use Plib\View;
 
 class SystemCheck
 {
     private string $pluginFolder;
     private SystemChecker $systemChecker;
+    private View $view;
 
-    public function __construct(string $pluginFolder, SystemChecker $systemChecker)
+    public function __construct(string $pluginFolder, SystemChecker $systemChecker, View $view)
     {
         $this->pluginFolder = $pluginFolder;
         $this->systemChecker = $systemChecker;
+        $this->view = $view;
     }
 
     public function render(): string
     {
-        global $plugin_tx;
-
-        $o = '<h4>' . $plugin_tx['socialshareprivacy']['syscheck_title'] . '</h4>' . "\n"
-            . $this->checkPHPVersion('7.4.0') . "\n";
-        $o .= $this->checkXHVersion('1.7.0') . "\n";
+        $o = '<h4>' . $this->view->text("syscheck_title") . '</h4>' . "\n"
+            . $this->checkPHPVersion('7.4.0');
+        $o .= $this->checkXHVersion('1.7.0');
         foreach ($this->getWritableFolders() as $folder) {
-            $o .= $this->checkWritability($folder) . "\n";
+            $o .= $this->checkWritability($folder);
         }
         return $o;
     }
 
     private function checkPHPVersion(string $version): string
     {
-        global $plugin_tx;
-
         $kind = $this->systemChecker->checkVersion(PHP_VERSION, $version) ? 'success' : 'fail';
-        return XH_message($kind, $plugin_tx['socialshareprivacy']['syscheck_phpversion'], $version);
+        return $this->view->message($kind, "syscheck_phpversion", $version);
     }
 
     private function checkXHVersion(string $version): string
     {
-        global $plugin_tx;
-
         $kind = $this->hasXHVersion($version) ? 'success' : 'fail';
-        return XH_message($kind, $plugin_tx['socialshareprivacy']['syscheck_xhversion'], $version);
+        return $this->view->message($kind, "syscheck_xhversion", $version);
     }
 
     private function hasXHVersion(string $version): bool
@@ -70,10 +67,8 @@ class SystemCheck
 
     private function checkWritability(string $filename): string
     {
-        global $plugin_tx;
-
         $kind = $this->systemChecker->checkWritability($filename) ? 'success' : 'warning';
-        return XH_message($kind, $plugin_tx['socialshareprivacy']['syscheck_writable'], $filename);
+        return $this->view->message($kind, "syscheck_writable", $filename);
     }
 
     private function getWritableFolders(): array

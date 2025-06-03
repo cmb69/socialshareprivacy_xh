@@ -22,6 +22,7 @@
 namespace Socialshareprivacy;
 
 use Plib\SystemChecker;
+use Plib\View;
 
 class Controller
 {
@@ -199,7 +200,12 @@ EOT;
 
     private static function renderSystemCheck(): string
     {
-        global $pth;
-        return (new SystemCheck($pth["folder"]["plugins"] . "socialshareprivacy/", new SystemChecker()))->render();
+        global $pth, $plugin_tx;
+        $systemCheck = new SystemCheck(
+            $pth["folder"]["plugins"] . "socialshareprivacy/",
+            new SystemChecker(),
+            new View($pth["folder"]["plugins"] . "socialshareprivacy/views/", $plugin_tx["socialshareprivacy"])
+        );
+        return $systemCheck->render();
     }
 }

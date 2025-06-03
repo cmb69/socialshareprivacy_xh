@@ -6,6 +6,7 @@ require_once "../../cmsimple/functions.php";
 require_once "../../cmsimple/compat.php";
 
 require_once "../plib/classes/SystemChecker.php";
+require_once "../plib/classes/View.php";
 require_once "../plib/classes/FakeSystemChecker.php";
 
 require_once "./classes/SystemCheck.php";
