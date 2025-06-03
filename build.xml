@@ -25,17 +25,6 @@
         </phpcodesniffer>
     </target>
 
-    <target name="mess" description="detects code flaws">
-        <phpmd rulesets="codesize,unusedcode">
-            <fileset refid="php-sources"/>
-            <fileset refid="unit-tests"/>
-         </phpmd>
-    </target>
-
-    <target name="compat" description="checks PHP requirements">
-        <exec command="phpcompatinfo analyser:run ." logoutput="true"/>
-    </target>
-
     <target name="unit-tests" description="runs all unit tests">
         <phpunit haltonerror="true" haltonfailure="true">
             <formatter type="plain" usefile="false"/>
@@ -89,7 +78,6 @@
                 <exclude name="build.xml"/>
                 <exclude name="composer.*"/>
                 <exclude name="jquery.socialshareprivacy-xl.js"/>
-                <exclude name="phpcompatinfo.json"/>
                 <exclude name="tests/**"/>
             </fileset>
         </move>
