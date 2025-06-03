@@ -31,13 +31,13 @@ if (!defined("CMSIMPLE_XH_VERSION")) {
  * @var array<string,array<string,string>> $plugin_cf
  */
 if ($plugin_cf["socialshareprivacy"]["template_call"]) {
-    Plugin::controller()->init(Request::current());
+    Plugin::controller()->init(Request::current())();
 }
 
 define('SOCIALSHAREPRIVACY_VERSION', '2.0-dev');
 
 function socialshareprivacy(): string
 {
-    Plugin::controller()->init(Request::current());
+    Plugin::controller()->init(Request::current())();
     return '<div class="socialshareprivacy"></div>';
 }

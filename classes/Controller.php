@@ -23,6 +23,7 @@ namespace Socialshareprivacy;
 
 use Plib\Jquery;
 use Plib\Request;
+use Plib\Response;
 
 class Controller
 {
@@ -35,18 +36,18 @@ class Controller
         $this->jquery = $jquery;
     }
 
-    public function init(Request $request): void
+    public function init(Request $request): Response
     {
-        global $bjs;
         $this->jquery->include();
         $this->jquery->includePlugin('socialshareprivacy', $this->pluginFolder . 'jquery.socialshareprivacy-xl.js');
-        $bjs .= '<script type="text/javascript">/* <![CDATA[ */'
+        $bjs = '<script type="text/javascript">/* <![CDATA[ */'
             . 'jQuery(function() {'
             . 'jQuery(".socialshareprivacy").socialSharePrivacy('
             . json_encode($this->getConfiguration($request))
             . ');'
             . '});'
             . '/* ]]> */</script>';
+        return Response::create()->withBjs($bjs);
     }
 
     /** @return array<string,mixed> */
