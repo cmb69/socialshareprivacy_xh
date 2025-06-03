@@ -30,8 +30,11 @@ class Plugin
 
     public static function controller(): Controller
     {
+        global $pth;
         if (self::$controller === null) {
-            self::$controller = new Controller();
+            self::$controller = new Controller(
+                $pth["folder"]["plugins"]
+            );
         }
         return self::$controller;
     }

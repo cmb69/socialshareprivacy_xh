@@ -23,15 +23,21 @@ namespace Socialshareprivacy;
 
 class Controller
 {
+    private string $pluginsFolder;
+
+    public function __construct(string $pluginsFolder)
+    {
+        $this->pluginsFolder = $pluginsFolder;
+    }
+
     public function init(): void
     {
-        global $bjs, $pth;
-        include_once $pth['folder']['plugins'] . 'jquery/jquery.inc.php';
+        global $bjs;
+        include_once $this->pluginsFolder . 'jquery/jquery.inc.php';
         include_jQuery();
         include_jQueryPlugin(
             'socialshareprivacy',
-            $pth['folder']['plugins']
-            . 'socialshareprivacy/jquery.socialshareprivacy-xl.js'
+            $this->pluginsFolder . 'socialshareprivacy/jquery.socialshareprivacy-xl.js'
         );
         $bjs .= '<script type="text/javascript">/* <![CDATA[ */'
             . 'jQuery(function() {'
@@ -96,11 +102,10 @@ class Controller
 
     private function getServiceImage(string $service): string
     {
-        global $pth, $sl, $cf;
+        global $sl;
 
-        $folder = $pth['folder']['plugins'] . 'socialshareprivacy/';
-        $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
-        $image = "{$folder}css/images/dummy_{$service}_{$lang}.png";
+        $folder = $this->pluginsFolder . 'socialshareprivacy/';
+        $image = "{$folder}css/images/dummy_{$service}_{$sl}.png";
         if (!file_exists($image)) {
             $image = "{$folder}css/images/dummy_{$service}.png";
         }
@@ -109,9 +114,9 @@ class Controller
 
     private function getServiceLanguage(string $service): string
     {
-        global $sl, $cf, $plugin_tx;
+        global $sl, $plugin_tx;
 
-        $lang = strlen($sl) == 2 ? $sl : $cf['language']['default'];
+        $lang = $sl;
         if (in_array($service, array('facebook', 'linkedin'))) {
             $lang .= '_'
                 . $plugin_tx['socialshareprivacy']['general_country_code'];
