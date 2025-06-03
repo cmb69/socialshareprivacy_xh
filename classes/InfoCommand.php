@@ -39,14 +39,21 @@ class InfoCommand
 
     public function render(): string
     {
-        $o = "<h1>Socialshareprivacy " . XH_hsc(SOCIALSHAREPRIVACY_VERSION) . "</h1>\n"
+        return "<h1>Socialshareprivacy " . XH_hsc(SOCIALSHAREPRIVACY_VERSION) . "</h1>\n"
             . '<h4>' . $this->view->text("syscheck_title") . '</h4>' . "\n"
-            . $this->checkPHPVersion('7.4.0');
-        $o .= $this->checkXHVersion('1.7.0');
+            . implode("", $this->checks());
+    }
+
+    /** @return list<string> */
+    private function checks(): array
+    {
+        $checks = [];
+        $checks[] = $this->checkPHPVersion('7.4.0');
+        $checks[] = $this->checkXHVersion('1.7.0');
         foreach ($this->getWritableFolders() as $folder) {
-            $o .= $this->checkWritability($folder);
+            $checks[] = $this->checkWritability($folder);
         }
-        return $o;
+        return $checks;
     }
 
     private function checkPHPVersion(string $version): string
