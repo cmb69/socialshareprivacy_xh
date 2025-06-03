@@ -31,10 +31,8 @@ class Controller
             self::init();
         }
         if (defined('XH_ADM') && XH_ADM) {
-            if (function_exists('XH_registerStandardPluginMenuItems')) {
-                XH_registerStandardPluginMenuItems(false);
-            }
-            if (self::isAdministrationRequested()) {
+            XH_registerStandardPluginMenuItems(false);
+            if (XH_wantsPluginAdministration('socialshareprivacy')) {
                 self::handleAdministration();
             }
         }
@@ -142,31 +140,17 @@ class Controller
         return $lang;
     }
 
-    private static function isAdministrationRequested(): bool
-    {
-        global $socialshareprivacy;
-
-        return function_exists('XH_wantsPluginAdministration')
-            && XH_wantsPluginAdministration('socialshareprivacy')
-            || isset($socialshareprivacy) && $socialshareprivacy == 'true';
-    }
-
     private static function handleAdministration(): void
     {
-        global $action, $admin, $o;
+        global $admin, $o;
 
         $o .= print_plugin_admin('off');
         switch ($admin) {
             case '':
-                $o .= self::renderInfo();
+                $o .= Plugin::infoCommand()->render();
                 break;
             default:
-                $o .= plugin_admin_common($action, $admin, 'socialshareprivacy'); // @phpstan-ignore-line
+                $o .= plugin_admin_common();
         }
-    }
-
-    private static function renderInfo(): string
-    {
-        return Plugin::infoCommand()->render();
     }
 }
