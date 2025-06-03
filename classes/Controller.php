@@ -25,7 +25,7 @@ class Controller
 {
     public static function dispatch(): void
     {
-        global $plugin_cf;
+        global $plugin_cf, $admin, $o;
 
         if ($plugin_cf['socialshareprivacy']['template_call']) {
             self::init();
@@ -33,7 +33,14 @@ class Controller
         if (defined('XH_ADM') && XH_ADM) {
             XH_registerStandardPluginMenuItems(false);
             if (XH_wantsPluginAdministration('socialshareprivacy')) {
-                self::handleAdministration();
+                $o .= print_plugin_admin('off');
+                switch ($admin) {
+                    case '':
+                        $o .= Plugin::infoCommand()->render();
+                        break;
+                    default:
+                        $o .= plugin_admin_common();
+                }
             }
         }
     }
@@ -138,19 +145,5 @@ class Controller
                 . $plugin_tx['socialshareprivacy']['general_country_code'];
         }
         return $lang;
-    }
-
-    private static function handleAdministration(): void
-    {
-        global $admin, $o;
-
-        $o .= print_plugin_admin('off');
-        switch ($admin) {
-            case '':
-                $o .= Plugin::infoCommand()->render();
-                break;
-            default:
-                $o .= plugin_admin_common();
-        }
     }
 }
