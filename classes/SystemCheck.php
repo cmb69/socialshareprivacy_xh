@@ -43,7 +43,7 @@ class SystemCheck
             $o .= self::checkExtension($ext) . tag('br');
         }
         $o .= self::checkXHVersion('1.7.0') . tag('br')
-            . self::checkUTF8Encoding() . tag('br') . tag('br');
+            . tag('br');
         foreach (self::getWritableFolders() as $folder) {
             $o .= self::checkWritability($folder) . tag('br');
         }
@@ -122,23 +122,6 @@ class SystemCheck
         return defined('CMSIMPLE_XH_VERSION')
             && strpos(CMSIMPLE_XH_VERSION, 'CMSimple_XH') === 0
             && version_compare(CMSIMPLE_XH_VERSION, "CMSimple_XH {$version}", 'gt');
-    }
-
-    /**
-     * Renders the UTF-8 encoding check.
-     *
-     * @return string (X)HTML
-     *
-     * @global array The localization of the core.
-     * @global array The localization of the plugins.
-     */
-    protected static function checkUTF8Encoding()
-    {
-        global $tx, $plugin_tx;
-
-        $kind = strtoupper($tx['meta']['codepage']) == 'UTF-8' ? 'ok' : 'warn';
-        return self::renderCheckIcon($kind) . '&nbsp;&nbsp;'
-            . $plugin_tx['socialshareprivacy']['syscheck_encoding'];
     }
 
     /**
