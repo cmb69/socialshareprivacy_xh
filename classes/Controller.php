@@ -15,25 +15,9 @@
 
 namespace Socialshareprivacy;
 
-/**
- * The plugin controller.
- *
- * @category CMSimple_XH
- * @package  Socialshareprivacy
- * @author   Christoph M. Becker <cmbecker69@gmx.de>
- * @license  http://www.gnu.org/licenses/gpl-3.0.en.html GNU GPLv3
- * @link     http://3-magi.net/?CMSimple_XH/Socialshareprivacy_XH
- */
 class Controller
 {
-    /**
-     * Dispatches on plugin related requests.
-     *
-     * @return void
-     *
-     * @global array The configuration of the plugins.
-     */
-    public static function dispatch()
+    public static function dispatch(): void
     {
         global $plugin_cf;
 
@@ -50,18 +34,7 @@ class Controller
         }
     }
 
-    /**
-     * Embeds the necessary JS into the <head> to display the social buttons.
-     *
-     * @return void
-     *
-     * @global string The (X)HTML fragment to insert at the bottom of the body.
-     * @global string The requested language.
-     * @global array  The paths of system files and folders.
-     *
-     * @staticvar bool $again Whether the function has already been called.
-     */
-    public static function init()
+    public static function init(): void
     {
         global $bjs, $pth;
         static $again = false;
@@ -86,16 +59,7 @@ class Controller
             . '/* ]]> */</script>';
     }
 
-    /**
-     * Returns the JS configuration array.
-     *
-     * @return array
-     *
-     * @global string The script name.
-     * @global array  The configuration of the plugins.
-     * @global array  The localization of the plugins.
-     */
-    protected static function getConfiguration()
+    protected static function getConfiguration(): array
     {
         global $sn, $plugin_cf, $plugin_tx;
 
@@ -122,17 +86,7 @@ class Controller
         return $config;
     }
 
-    /**
-     * Returns the configuration for a certain service.
-     *
-     * @param string $service A service name.
-     *
-     * @return array
-     *
-     * @global array The configuration of the plugins.
-     * @global array The localization of the plugins.
-     */
-    protected static function getServiceConfiguration($service)
+    protected static function getServiceConfiguration(string $service): array
     {
         global $plugin_cf, $plugin_tx;
 
@@ -155,18 +109,7 @@ class Controller
         return $config;
     }
 
-    /**
-     * Returns the path of the image of a certain service.
-     *
-     * @param string $service A service name.
-     *
-     * @return string
-     *
-     * @global array  The paths of system files and folders.
-     * @global string The requested language.
-     * @global array  The configuration of the core.
-     */
-    protected static function getServiceImage($service)
+    protected static function getServiceImage(string $service): string
     {
         global $pth, $sl, $cf;
 
@@ -179,18 +122,7 @@ class Controller
         return $image;
     }
 
-    /**
-     * Returns the language code for a certain service.
-     *
-     * @param string $service A service name.
-     *
-     * @return string
-     *
-     * @global string The requested language.
-     * @global array  The configuration of the core.
-     * @global array  The localization of the plugins.
-     */
-    protected static function getServiceLanguage($service)
+    protected static function getServiceLanguage(string $service): string
     {
         global $sl, $cf, $plugin_tx;
 
@@ -202,14 +134,7 @@ class Controller
         return $lang;
     }
 
-    /**
-     * Returns whether the plugin administration is requested.
-     *
-     * @return bool
-     *
-     * @global string Whether the plugin administration is requested.
-     */
-    protected static function isAdministrationRequested()
+    protected static function isAdministrationRequested(): bool
     {
         global $socialshareprivacy;
 
@@ -218,16 +143,7 @@ class Controller
             || isset($socialshareprivacy) && $socialshareprivacy == 'true';
     }
 
-    /**
-     * Handles the plugin administration.
-     *
-     * @return void
-     *
-     * @global string The value of the <var>action</var> GP parameter.
-     * @global string The value of the <var>admin</var> GP parameter.
-     * @global string The (X)HTML fragment to insert into the contents area.
-     */
-    protected static function handleAdministration()
+    protected static function handleAdministration(): void
     {
         global $action, $admin, $o;
 
@@ -241,15 +157,7 @@ class Controller
         }
     }
 
-    /**
-     * Returns the version information view.
-     *
-     * @return string (X)HTML
-     *
-     * @global array The paths of system files and folders.
-     * @global array The localization of the plugins.
-     */
-    protected static function renderVersion()
+    protected static function renderVersion(): string
     {
         global $pth, $plugin_tx;
 
@@ -281,12 +189,7 @@ href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
 EOT;
     }
 
-    /**
-     * Returns the requirements information view.
-     *
-     * @return string (X)HTML
-     */
-    protected static function renderSystemCheck()
+    protected static function renderSystemCheck(): string
     {
         return SystemCheck::render();
     }

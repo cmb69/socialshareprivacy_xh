@@ -15,17 +15,9 @@
 
 use Socialshareprivacy\Controller;
 
-/**
- * The plugin version.
- */
 define('SOCIALSHAREPRIVACY_VERSION', '2.0-dev');
 
-/**
- * Displays the social buttons.
- *
- * @return string (X)HTML
- */
-function socialshareprivacy()
+function socialshareprivacy(): string
 {
     Controller::init();
     return '<div class="socialshareprivacy"></div>';
