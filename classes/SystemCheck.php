@@ -39,9 +39,6 @@ class SystemCheck
 
         $o = '<h4>' . $plugin_tx['socialshareprivacy']['syscheck_title'] . '</h4>'
             . self::checkPHPVersion('7.4.0') . tag('br');
-        foreach (array('json') as $ext) {
-            $o .= self::checkExtension($ext) . tag('br');
-        }
         $o .= self::checkXHVersion('1.7.0') . tag('br')
             . tag('br');
         foreach (self::getWritableFolders() as $folder) {
@@ -67,26 +64,6 @@ class SystemCheck
         return self::renderCheckIcon($kind) . '&nbsp;&nbsp;'
             . sprintf(
                 $plugin_tx['socialshareprivacy']['syscheck_phpversion'], $version
-            );
-    }
-
-    /**
-     * Renders the extension availability check.
-     *
-     * @param string $name An extension name.
-     *
-     * @return string (X)HTML
-     *
-     * @global array The localization of the plugins.
-     */
-    protected static function checkExtension($name)
-    {
-        global $plugin_tx;
-
-        $kind = extension_loaded($name) ? 'ok' : 'fail';
-        return self::renderCheckIcon($kind) . '&nbsp;&nbsp;'
-            . sprintf(
-                $plugin_tx['socialshareprivacy']['syscheck_extension'], $name
             );
     }
 
