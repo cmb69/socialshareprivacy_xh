@@ -292,16 +292,3 @@
         label.checked {
     color: #090;
 }
-
-/*
- * Back-end
- */
-.socialshareprivacy_logo {
-    float:left;
-    width: 128px;
-    height: 128px;
-    margin: 0 16px 8px 0;
-}
-.socialshareprivacy_license {
-    text-align: justify;
-}
