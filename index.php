@@ -13,6 +13,8 @@
  * @link      http://3-magi.net/?CMSimple_XH/Socialshareprivacy_XH
  */
 
+use Socialshareprivacy\Controller;
+
 /**
  * The plugin version.
  */
@@ -25,10 +27,10 @@ define('SOCIALSHAREPRIVACY_VERSION', '2.0-dev');
  */
 function socialshareprivacy()
 {
-    Socialshareprivacy_Controller::init();
+    Controller::init();
     return '<div class="socialshareprivacy"></div>';
 }
 
-Socialshareprivacy_Controller::dispatch();
+Controller::dispatch();
 
 ?>

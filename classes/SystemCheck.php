@@ -13,6 +13,8 @@
  * @link      http://3-magi.net/?CMSimple_XH/Socialshareprivacy_XH
  */
 
+namespace Socialshareprivacy;
+
 /**
  * The system check.
  *
@@ -22,7 +24,7 @@
  * @license  http://www.gnu.org/licenses/gpl-3.0.en.html GNU GPLv3
  * @link     http://3-magi.net/?CMSimple_XH/Socialshareprivacy_XH
  */
-class Socialshareprivacy_SystemCheck
+class SystemCheck
 {
     /**
      * Returns the requirements information view.
