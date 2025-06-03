@@ -71,7 +71,7 @@
     <demo_url></demo_url>
   </url>
   <!-- compatibility with versions of XH, i.e. 1.6, 1.6.7 - 1.7.2, ≥ 1.7, ... -->
-  <compatibility>≥ 1.5.4</compatibility>
+  <compatibility>≥ 1.7.0</compatibility>
   <!-- minimum version of PHP that is required, i.e. 5.3, 5.6, 7, ≥ 5.6, ... -->
   <!-- If there no specification, e.g. for templates, enter this follows! - <php_ver></php_ver> -->
   <php_ver>≥ 7.4.0</php_ver>

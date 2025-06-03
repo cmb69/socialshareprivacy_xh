@@ -42,7 +42,7 @@ class SystemCheck
         foreach (array('json') as $ext) {
             $o .= self::checkExtension($ext) . tag('br');
         }
-        $o .= self::checkXHVersion('1.5.4') . tag('br')
+        $o .= self::checkXHVersion('1.7.0') . tag('br')
             . self::checkUTF8Encoding() . tag('br') . tag('br');
         foreach (self::getWritableFolders() as $folder) {
             $o .= self::checkWritability($folder) . tag('br');
