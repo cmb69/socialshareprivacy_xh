@@ -58,10 +58,17 @@
     </jsMin>
     <move todir="dist">
       <fileset dir="export">
+        <exclude name=".github/**"/>
+        <exclude name=".phive/**"/>
+        <exclude name="help/template.htm"/>
+        <exclude name="tests/**"/>
         <exclude name="build.xml"/>
         <exclude name="composer.*"/>
         <exclude name="jquery.socialshareprivacy-xl.js"/>
-        <exclude name="tests/**"/>
+        <exclude name="phpstan.*"/>
+        <exclude name="phpunit.xml"/>
+        <exclude name="README*.md"/>
+        <exclude name="teplad.xml"/>
       </fileset>
     </move>
     <delete dir="export"/>
