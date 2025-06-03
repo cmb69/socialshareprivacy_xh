@@ -21,9 +21,6 @@
 
 namespace Socialshareprivacy;
 
-use Plib\SystemChecker;
-use Plib\View;
-
 class Controller
 {
     public static function dispatch(): void
@@ -168,12 +165,6 @@ class Controller
 
     private static function renderInfo(): string
     {
-        global $pth, $plugin_tx;
-        $systemCheck = new InfoCommand(
-            $pth["folder"]["plugins"] . "socialshareprivacy/",
-            new SystemChecker(),
-            new View($pth["folder"]["plugins"] . "socialshareprivacy/views/", $plugin_tx["socialshareprivacy"])
-        );
-        return $systemCheck->render();
+        return Plugin::infoCommand()->render();
     }
 }

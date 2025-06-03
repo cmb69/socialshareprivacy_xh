@@ -10,6 +10,7 @@ require_once "../plib/classes/View.php";
 require_once "../plib/classes/FakeSystemChecker.php";
 
 require_once "./classes/InfoCommand.php";
+require_once "./classes/Plugin.php";
 
 const CMSIMPLE_XH_VERSION = "CMSimple_XH 1.7.5";
 
