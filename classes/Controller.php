@@ -61,7 +61,7 @@ class Controller
      *
      * @staticvar bool $again Whether the function has already been called.
      */
-    static function init()
+    public static function init()
     {
         global $bjs, $pth;
         static $again = false;
@@ -233,11 +233,11 @@ class Controller
 
         $o .= print_plugin_admin('off');
         switch ($admin) {
-        case '':
-            $o .= self::renderVersion() . self::renderSystemCheck();
-            break;
-        default:
-            $o .= plugin_admin_common($action, $admin, 'socialshareprivacy'); // @phpstan-ignore-line
+            case '':
+                $o .= self::renderVersion() . self::renderSystemCheck();
+                break;
+            default:
+                $o .= plugin_admin_common($action, $admin, 'socialshareprivacy'); // @phpstan-ignore-line
         }
     }
 
@@ -291,5 +291,3 @@ EOT;
         return SystemCheck::render();
     }
 }
-
-?>

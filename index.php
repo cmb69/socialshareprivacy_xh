@@ -32,5 +32,3 @@ function socialshareprivacy()
 }
 
 Controller::dispatch();
-
-?>

@@ -62,9 +62,7 @@ class SystemCheck
 
         $kind = version_compare(PHP_VERSION, $version) >= 0 ? 'ok' : 'fail';
         return self::renderCheckIcon($kind) . '&nbsp;&nbsp;'
-            . sprintf(
-                $plugin_tx['socialshareprivacy']['syscheck_phpversion'], $version
-            );
+            . sprintf($plugin_tx['socialshareprivacy']['syscheck_phpversion'], $version);
     }
 
     /**
@@ -82,9 +80,7 @@ class SystemCheck
 
         $kind = self::hasXHVersion($version) ? 'ok' : 'fail';
         return self::renderCheckIcon($kind) . '&nbsp;&nbsp;'
-            . sprintf(
-                $plugin_tx['socialshareprivacy']['syscheck_xhversion'], $version
-            );
+            . sprintf($plugin_tx['socialshareprivacy']['syscheck_xhversion'], $version);
     }
 
     /**
@@ -116,9 +112,7 @@ class SystemCheck
 
         $kind = is_writable($filename) ? 'ok' : 'warn';
         return self::renderCheckIcon($kind) . '&nbsp;&nbsp;'
-            . sprintf(
-                $plugin_tx['socialshareprivacy']['syscheck_writable'], $filename
-            );
+            . sprintf($plugin_tx['socialshareprivacy']['syscheck_writable'], $filename);
     }
 
     /**
@@ -159,5 +153,3 @@ class SystemCheck
         return $folders;
     }
 }
-
-?>
