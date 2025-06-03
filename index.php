@@ -19,7 +19,7 @@
  * along with Socialshareprivacy_XH.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-use Socialshareprivacy\Controller;
+use Socialshareprivacy\Plugin;
 
 if (!defined("CMSIMPLE_XH_VERSION")) {
     http_response_code(403);
@@ -30,13 +30,13 @@ if (!defined("CMSIMPLE_XH_VERSION")) {
  * @var array<string,array<string,string>> $plugin_cf
  */
 if ($plugin_cf["socialshareprivacy"]["template_call"]) {
-    (new Controller())->init();
+    Plugin::controller()->init();
 }
 
 define('SOCIALSHAREPRIVACY_VERSION', '2.0-dev');
 
 function socialshareprivacy(): string
 {
-    (new Controller())->init();
+    Plugin::controller()->init();
     return '<div class="socialshareprivacy"></div>';
 }

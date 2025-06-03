@@ -9,6 +9,7 @@ require_once "../plib/classes/SystemChecker.php";
 require_once "../plib/classes/View.php";
 require_once "../plib/classes/FakeSystemChecker.php";
 
+require_once "./classes/Controller.php";
 require_once "./classes/InfoCommand.php";
 require_once "./classes/Plugin.php";
 

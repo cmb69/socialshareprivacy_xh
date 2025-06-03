@@ -26,6 +26,11 @@ use Plib\View;
 
 class Plugin
 {
+    public static function controller(): Controller
+    {
+        return new Controller();
+    }
+
     public static function infoCommand(): InfoCommand
     {
         global $pth, $plugin_tx;
