@@ -2,4 +2,5 @@
 <phive xmlns="https://phar.io/phive">
   <phar name="phing" version="^3.0.1" installed="3.0.1" location="./tools/phing" copy="false"/>
   <phar name="phpcs" version="^3.13.0" installed="3.13.0" location="./tools/phpcs" copy="false"/>
+  <phar name="phpstan" version="^1.12.27" installed="1.12.27" location="./tools/phpstan" copy="false"/>
 </phive>

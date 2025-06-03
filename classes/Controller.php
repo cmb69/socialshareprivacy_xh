@@ -235,7 +235,7 @@ class Socialshareprivacy_Controller
             $o .= self::renderVersion() . self::renderSystemCheck();
             break;
         default:
-            $o .= plugin_admin_common($action, $admin, 'socialshareprivacy');
+            $o .= plugin_admin_common($action, $admin, 'socialshareprivacy'); // @phpstan-ignore-line
         }
     }
 
