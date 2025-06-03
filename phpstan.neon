@@ -13,4 +13,4 @@ parameters:
     - ../../cmsimple/compat.php
     - ../jquery/jquery.inc.php
   scanDirectories:
-#    - ../plib/classes
+    - ../plib/classes

@@ -21,8 +21,19 @@
 
 namespace Socialshareprivacy;
 
+use Plib\SystemChecker;
+
 class SystemCheck
 {
+    private string $pluginFolder;
+    private SystemChecker $systemChecker;
+
+    public function __construct(string $pluginFolder, SystemChecker $systemChecker)
+    {
+        $this->pluginFolder = $pluginFolder;
+        $this->systemChecker = $systemChecker;
+    }
+
     public function render(): string
     {
         global $plugin_tx;
@@ -41,7 +52,7 @@ class SystemCheck
     {
         global $plugin_tx;
 
-        $kind = version_compare(PHP_VERSION, $version) >= 0 ? 'ok' : 'fail';
+        $kind = $this->systemChecker->checkVersion(PHP_VERSION, $version) ? 'ok' : 'fail';
         return $this->renderCheckIcon($kind) . '&nbsp;&nbsp;'
             . sprintf($plugin_tx['socialshareprivacy']['syscheck_phpversion'], $version);
     }
@@ -57,25 +68,23 @@ class SystemCheck
 
     private function hasXHVersion(string $version): bool
     {
-        return defined('CMSIMPLE_XH_VERSION')
-            && strpos(CMSIMPLE_XH_VERSION, 'CMSimple_XH') === 0
-            && version_compare(CMSIMPLE_XH_VERSION, "CMSimple_XH {$version}", 'gt');
+        return $this->systemChecker->checkVersion(CMSIMPLE_XH_VERSION, "CMSimple_XH {$version}");
     }
 
     private function checkWritability(string $filename): string
     {
         global $plugin_tx;
 
-        $kind = is_writable($filename) ? 'ok' : 'warn';
+        $kind = $this->systemChecker->checkWritability($filename) ? 'ok' : 'warn';
         return $this->renderCheckIcon($kind) . '&nbsp;&nbsp;'
             . sprintf($plugin_tx['socialshareprivacy']['syscheck_writable'], $filename);
     }
 
     private function renderCheckIcon(string $kind): string
     {
-        global $pth, $plugin_tx;
+        global $plugin_tx;
 
-        $path = $pth['folder']['plugins'] . 'socialshareprivacy/images/'
+        $path = $this->pluginFolder . 'images/'
             . $kind . '.png';
         $alt = $plugin_tx['socialshareprivacy']['syscheck_alt_' . $kind];
         return tag('img src="' . $path  . '" alt="' . $alt . '"');
@@ -87,7 +96,7 @@ class SystemCheck
 
         $folders = array();
         foreach (array('config/', 'css/', 'languages/') as $folder) {
-            $folders[] = $pth['folder']['plugins'] . 'socialshareprivacy/' . $folder;
+            $folders[] = $this->pluginFolder . $folder;
         }
         return $folders;
     }

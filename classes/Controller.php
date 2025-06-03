@@ -21,6 +21,8 @@
 
 namespace Socialshareprivacy;
 
+use Plib\SystemChecker;
+
 class Controller
 {
     public static function dispatch(): void
@@ -197,6 +199,7 @@ EOT;
 
     private static function renderSystemCheck(): string
     {
-        return (new SystemCheck())->render();
+        global $pth;
+        return (new SystemCheck($pth["folder"]["plugins"] . "socialshareprivacy/", new SystemChecker()))->render();
     }
 }
