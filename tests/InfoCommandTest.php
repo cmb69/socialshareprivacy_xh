@@ -28,7 +28,7 @@ class InfoCommandTest extends TestCase
 
     public function testRendersSystemCheck(): void
     {
-        $response = $this->sut()->render();
-        Approvals::verifyHtml($response);
+        $response = $this->sut()();
+        Approvals::verifyHtml($response->output());
     }
 }

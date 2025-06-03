@@ -36,7 +36,7 @@ if (XH_wantsPluginAdministration("socialshareprivacy")) {
     $o .= print_plugin_admin("off");
     switch ($admin) {
         case "":
-            $o .= Plugin::infoCommand()->render();
+            $o .= Plugin::infoCommand()()();
             break;
         default:
             $o .= plugin_admin_common();

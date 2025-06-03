@@ -21,6 +21,7 @@
 
 namespace Socialshareprivacy;
 
+use Plib\Response;
 use Plib\SystemChecker;
 use Plib\View;
 
@@ -37,12 +38,12 @@ class InfoCommand
         $this->view = $view;
     }
 
-    public function render(): string
+    public function __invoke(): Response
     {
-        return $this->view->render("info", [
+        return Response::create($this->view->render("info", [
             "version" => Plugin::VERSION,
             "checks" => $this->checks(),
-        ]);
+        ]));
     }
 
     /** @return list<string> */
