@@ -37,7 +37,7 @@ class SystemCheck
         return $o;
     }
 
-    protected static function checkPHPVersion(string $version): string
+    private static function checkPHPVersion(string $version): string
     {
         global $plugin_tx;
 
@@ -46,7 +46,7 @@ class SystemCheck
             . sprintf($plugin_tx['socialshareprivacy']['syscheck_phpversion'], $version);
     }
 
-    protected static function checkXHVersion(string $version): string
+    private static function checkXHVersion(string $version): string
     {
         global $plugin_tx;
 
@@ -55,14 +55,14 @@ class SystemCheck
             . sprintf($plugin_tx['socialshareprivacy']['syscheck_xhversion'], $version);
     }
 
-    protected static function hasXHVersion(string $version): bool
+    private static function hasXHVersion(string $version): bool
     {
         return defined('CMSIMPLE_XH_VERSION')
             && strpos(CMSIMPLE_XH_VERSION, 'CMSimple_XH') === 0
             && version_compare(CMSIMPLE_XH_VERSION, "CMSimple_XH {$version}", 'gt');
     }
 
-    protected static function checkWritability(string $filename): string
+    private static function checkWritability(string $filename): string
     {
         global $plugin_tx;
 
@@ -71,7 +71,7 @@ class SystemCheck
             . sprintf($plugin_tx['socialshareprivacy']['syscheck_writable'], $filename);
     }
 
-    protected static function renderCheckIcon(string $kind): string
+    private static function renderCheckIcon(string $kind): string
     {
         global $pth, $plugin_tx;
 
@@ -81,7 +81,7 @@ class SystemCheck
         return tag('img src="' . $path  . '" alt="' . $alt . '"');
     }
 
-    protected static function getWritableFolders(): array
+    private static function getWritableFolders(): array
     {
         global $pth;
 

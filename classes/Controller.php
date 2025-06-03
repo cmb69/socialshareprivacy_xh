@@ -65,7 +65,7 @@ class Controller
             . '/* ]]> */</script>';
     }
 
-    protected static function getConfiguration(): array
+    private static function getConfiguration(): array
     {
         global $sn, $plugin_cf, $plugin_tx;
 
@@ -92,7 +92,7 @@ class Controller
         return $config;
     }
 
-    protected static function getServiceConfiguration(string $service): array
+    private static function getServiceConfiguration(string $service): array
     {
         global $plugin_cf, $plugin_tx;
 
@@ -115,7 +115,7 @@ class Controller
         return $config;
     }
 
-    protected static function getServiceImage(string $service): string
+    private static function getServiceImage(string $service): string
     {
         global $pth, $sl, $cf;
 
@@ -128,7 +128,7 @@ class Controller
         return $image;
     }
 
-    protected static function getServiceLanguage(string $service): string
+    private static function getServiceLanguage(string $service): string
     {
         global $sl, $cf, $plugin_tx;
 
@@ -140,7 +140,7 @@ class Controller
         return $lang;
     }
 
-    protected static function isAdministrationRequested(): bool
+    private static function isAdministrationRequested(): bool
     {
         global $socialshareprivacy;
 
@@ -149,7 +149,7 @@ class Controller
             || isset($socialshareprivacy) && $socialshareprivacy == 'true';
     }
 
-    protected static function handleAdministration(): void
+    private static function handleAdministration(): void
     {
         global $action, $admin, $o;
 
@@ -163,7 +163,7 @@ class Controller
         }
     }
 
-    protected static function renderVersion(): string
+    private static function renderVersion(): string
     {
         global $pth, $plugin_tx;
 
@@ -195,7 +195,7 @@ href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
 EOT;
     }
 
-    protected static function renderSystemCheck(): string
+    private static function renderSystemCheck(): string
     {
         return SystemCheck::render();
     }
