@@ -8,7 +8,7 @@ use Plib\FakeSystemChecker;
 use Plib\SystemChecker;
 use Plib\View;
 
-class SystemCheckTest extends TestCase
+class InfoCommandTest extends TestCase
 {
     private SystemChecker $systemChecker;
     private View $view;
@@ -21,9 +21,9 @@ class SystemCheckTest extends TestCase
         $this->view = new View("./views/", $plugin_tx["socialshareprivacy"]);
     }
 
-    private function sut(): SystemCheck
+    private function sut(): InfoCommand
     {
-        return new SystemCheck("./plugins/socialshareprivacy", $this->systemChecker, $this->view);
+        return new InfoCommand("./plugins/socialshareprivacy", $this->systemChecker, $this->view);
     }
 
     public function testRendersSystemCheck(): void

@@ -9,6 +9,8 @@ require_once "../plib/classes/SystemChecker.php";
 require_once "../plib/classes/View.php";
 require_once "../plib/classes/FakeSystemChecker.php";
 
-require_once "./classes/SystemCheck.php";
+require_once "./classes/InfoCommand.php";
 
 const CMSIMPLE_XH_VERSION = "CMSimple_XH 1.7.5";
+
+const SOCIALSHAREPRIVACY_VERSION = "2.0-dev";

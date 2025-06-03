@@ -159,18 +159,17 @@ class Controller
         $o .= print_plugin_admin('off');
         switch ($admin) {
             case '':
-                $o .= "<h1>Socialshareprivacy " . XH_hsc(SOCIALSHAREPRIVACY_VERSION) . "</h1>\n"
-                    . self::renderSystemCheck();
+                $o .= self::renderInfo();
                 break;
             default:
                 $o .= plugin_admin_common($action, $admin, 'socialshareprivacy'); // @phpstan-ignore-line
         }
     }
 
-    private static function renderSystemCheck(): string
+    private static function renderInfo(): string
     {
         global $pth, $plugin_tx;
-        $systemCheck = new SystemCheck(
+        $systemCheck = new InfoCommand(
             $pth["folder"]["plugins"] . "socialshareprivacy/",
             new SystemChecker(),
             new View($pth["folder"]["plugins"] . "socialshareprivacy/views/", $plugin_tx["socialshareprivacy"])

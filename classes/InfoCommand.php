@@ -24,7 +24,7 @@ namespace Socialshareprivacy;
 use Plib\SystemChecker;
 use Plib\View;
 
-class SystemCheck
+class InfoCommand
 {
     private string $pluginFolder;
     private SystemChecker $systemChecker;
@@ -39,7 +39,8 @@ class SystemCheck
 
     public function render(): string
     {
-        $o = '<h4>' . $this->view->text("syscheck_title") . '</h4>' . "\n"
+        $o = "<h1>Socialshareprivacy " . XH_hsc(SOCIALSHAREPRIVACY_VERSION) . "</h1>\n"
+            . '<h4>' . $this->view->text("syscheck_title") . '</h4>' . "\n"
             . $this->checkPHPVersion('7.4.0');
         $o .= $this->checkXHVersion('1.7.0');
         foreach ($this->getWritableFolders() as $folder) {
