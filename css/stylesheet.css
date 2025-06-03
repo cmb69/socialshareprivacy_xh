@@ -292,3 +292,8 @@
         label.checked {
     color: #090;
 }
+
+/* plugin info */
+
+article.socialshareprivacy_pluginfo {}
+article.socialshareprivacy_pluginfo .socialshareprivacy_syscheck {}
