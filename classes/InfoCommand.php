@@ -72,6 +72,7 @@ class InfoCommand
         return $this->view->message($kind, "syscheck_writable", $filename);
     }
 
+    /** @return list<string> */
     private function getWritableFolders(): array
     {
         $folders = array();

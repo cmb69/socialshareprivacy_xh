@@ -65,6 +65,7 @@ class Controller
             . '/* ]]> */</script>';
     }
 
+    /** @return array<string,mixed> */
     private static function getConfiguration(): array
     {
         global $sn, $plugin_cf, $plugin_tx;
@@ -92,6 +93,7 @@ class Controller
         return $config;
     }
 
+    /** @return array<string,string> */
     private static function getServiceConfiguration(string $service): array
     {
         global $plugin_cf, $plugin_tx;
