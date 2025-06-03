@@ -197,6 +197,6 @@ EOT;
 
     private static function renderSystemCheck(): string
     {
-        return SystemCheck::render();
+        return (new SystemCheck())->render();
     }
 }

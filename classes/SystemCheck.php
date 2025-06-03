@@ -23,55 +23,55 @@ namespace Socialshareprivacy;
 
 class SystemCheck
 {
-    public static function render(): string
+    public function render(): string
     {
         global $plugin_tx;
 
         $o = '<h4>' . $plugin_tx['socialshareprivacy']['syscheck_title'] . '</h4>'
-            . self::checkPHPVersion('7.4.0') . tag('br');
-        $o .= self::checkXHVersion('1.7.0') . tag('br')
+            . $this->checkPHPVersion('7.4.0') . tag('br');
+        $o .= $this->checkXHVersion('1.7.0') . tag('br')
             . tag('br');
-        foreach (self::getWritableFolders() as $folder) {
-            $o .= self::checkWritability($folder) . tag('br');
+        foreach ($this->getWritableFolders() as $folder) {
+            $o .= $this->checkWritability($folder) . tag('br');
         }
         return $o;
     }
 
-    private static function checkPHPVersion(string $version): string
+    private function checkPHPVersion(string $version): string
     {
         global $plugin_tx;
 
         $kind = version_compare(PHP_VERSION, $version) >= 0 ? 'ok' : 'fail';
-        return self::renderCheckIcon($kind) . '&nbsp;&nbsp;'
+        return $this->renderCheckIcon($kind) . '&nbsp;&nbsp;'
             . sprintf($plugin_tx['socialshareprivacy']['syscheck_phpversion'], $version);
     }
 
-    private static function checkXHVersion(string $version): string
+    private function checkXHVersion(string $version): string
     {
         global $plugin_tx;
 
-        $kind = self::hasXHVersion($version) ? 'ok' : 'fail';
-        return self::renderCheckIcon($kind) . '&nbsp;&nbsp;'
+        $kind = $this->hasXHVersion($version) ? 'ok' : 'fail';
+        return $this->renderCheckIcon($kind) . '&nbsp;&nbsp;'
             . sprintf($plugin_tx['socialshareprivacy']['syscheck_xhversion'], $version);
     }
 
-    private static function hasXHVersion(string $version): bool
+    private function hasXHVersion(string $version): bool
     {
         return defined('CMSIMPLE_XH_VERSION')
             && strpos(CMSIMPLE_XH_VERSION, 'CMSimple_XH') === 0
             && version_compare(CMSIMPLE_XH_VERSION, "CMSimple_XH {$version}", 'gt');
     }
 
-    private static function checkWritability(string $filename): string
+    private function checkWritability(string $filename): string
     {
         global $plugin_tx;
 
         $kind = is_writable($filename) ? 'ok' : 'warn';
-        return self::renderCheckIcon($kind) . '&nbsp;&nbsp;'
+        return $this->renderCheckIcon($kind) . '&nbsp;&nbsp;'
             . sprintf($plugin_tx['socialshareprivacy']['syscheck_writable'], $filename);
     }
 
-    private static function renderCheckIcon(string $kind): string
+    private function renderCheckIcon(string $kind): string
     {
         global $pth, $plugin_tx;
 
@@ -81,7 +81,7 @@ class SystemCheck
         return tag('img src="' . $path  . '" alt="' . $alt . '"');
     }
 
-    private static function getWritableFolders(): array
+    private function getWritableFolders(): array
     {
         global $pth;
 
