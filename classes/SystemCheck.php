@@ -39,10 +39,10 @@ class SystemCheck
         global $plugin_tx;
 
         $o = '<h4>' . $plugin_tx['socialshareprivacy']['syscheck_title'] . '</h4>' . "\n"
-            . $this->checkPHPVersion('7.4.0') . tag('br') . "\n";
-        $o .= $this->checkXHVersion('1.7.0') . tag('br') . tag('br') . "\n";
+            . $this->checkPHPVersion('7.4.0') . "\n";
+        $o .= $this->checkXHVersion('1.7.0') . "\n";
         foreach ($this->getWritableFolders() as $folder) {
-            $o .= $this->checkWritability($folder) . tag('br') . "\n";
+            $o .= $this->checkWritability($folder) . "\n";
         }
         return $o;
     }
@@ -51,18 +51,16 @@ class SystemCheck
     {
         global $plugin_tx;
 
-        $kind = $this->systemChecker->checkVersion(PHP_VERSION, $version) ? 'ok' : 'fail';
-        return $this->renderCheckIcon($kind) . '&nbsp;&nbsp;'
-            . sprintf($plugin_tx['socialshareprivacy']['syscheck_phpversion'], $version);
+        $kind = $this->systemChecker->checkVersion(PHP_VERSION, $version) ? 'success' : 'fail';
+        return XH_message($kind, $plugin_tx['socialshareprivacy']['syscheck_phpversion'], $version);
     }
 
     private function checkXHVersion(string $version): string
     {
         global $plugin_tx;
 
-        $kind = $this->hasXHVersion($version) ? 'ok' : 'fail';
-        return $this->renderCheckIcon($kind) . '&nbsp;&nbsp;'
-            . sprintf($plugin_tx['socialshareprivacy']['syscheck_xhversion'], $version);
+        $kind = $this->hasXHVersion($version) ? 'success' : 'fail';
+        return XH_message($kind, $plugin_tx['socialshareprivacy']['syscheck_xhversion'], $version);
     }
 
     private function hasXHVersion(string $version): bool
@@ -74,25 +72,12 @@ class SystemCheck
     {
         global $plugin_tx;
 
-        $kind = $this->systemChecker->checkWritability($filename) ? 'ok' : 'warn';
-        return $this->renderCheckIcon($kind) . '&nbsp;&nbsp;'
-            . sprintf($plugin_tx['socialshareprivacy']['syscheck_writable'], $filename);
-    }
-
-    private function renderCheckIcon(string $kind): string
-    {
-        global $plugin_tx;
-
-        $path = $this->pluginFolder . 'images/'
-            . $kind . '.png';
-        $alt = $plugin_tx['socialshareprivacy']['syscheck_alt_' . $kind];
-        return tag('img src="' . $path  . '" alt="' . $alt . '"');
+        $kind = $this->systemChecker->checkWritability($filename) ? 'success' : 'warning';
+        return XH_message($kind, $plugin_tx['socialshareprivacy']['syscheck_writable'], $filename);
     }
 
     private function getWritableFolders(): array
     {
-        global $pth;
-
         $folders = array();
         foreach (array('config/', 'css/', 'languages/') as $folder) {
             $folders[] = $this->pluginFolder . $folder;

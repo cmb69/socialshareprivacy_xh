@@ -39,10 +39,10 @@ $plugin_tx['socialshareprivacy']['syscheck_title']="System Prüfung";
 $plugin_tx['socialshareprivacy']['syscheck_alt_ok']="OK";
 $plugin_tx['socialshareprivacy']['syscheck_alt_warn']="Warnung";
 $plugin_tx['socialshareprivacy']['syscheck_alt_fail']="Fehler";
-$plugin_tx['socialshareprivacy']['syscheck_phpversion']="PHP-Version &ge; %s";
+$plugin_tx['socialshareprivacy']['syscheck_phpversion']="PHP-Version ≥ %s";
 $plugin_tx['socialshareprivacy']['syscheck_extension']="Erweiterung '%s' geladen";
 $plugin_tx['socialshareprivacy']['syscheck_writable']="Ordner '%s' schreibbar";
-$plugin_tx['socialshareprivacy']['syscheck_xhversion']="CMSimple_XH Version &ge; %s";
+$plugin_tx['socialshareprivacy']['syscheck_xhversion']="CMSimple_XH Version ≥ %s";
 
 $plugin_tx['socialshareprivacy']['cf_template_call']="Ob das Plugin im Template aufgerufen wird: \"1\" (ja) oder \"0\" (nein).";
 $plugin_tx['socialshareprivacy']['cf_url']="Der URL, auf den sich Likes, Tweets und Shares beziehen. Leer lassen, um den URL automatisch erkennen zu lassen. Siehe den  Abschnitt \"Verwendung\" im Handbuch für Details.";

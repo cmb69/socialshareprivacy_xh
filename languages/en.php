@@ -38,10 +38,10 @@ $plugin_tx['socialshareprivacy']['syscheck_title']="System check";
 $plugin_tx['socialshareprivacy']['syscheck_alt_ok']="OK";
 $plugin_tx['socialshareprivacy']['syscheck_alt_warn']="Warning";
 $plugin_tx['socialshareprivacy']['syscheck_alt_fail']="Failure";
-$plugin_tx['socialshareprivacy']['syscheck_phpversion']="PHP version &ge; %s";
+$plugin_tx['socialshareprivacy']['syscheck_phpversion']="PHP version ≥ %s";
 $plugin_tx['socialshareprivacy']['syscheck_extension']="Extension '%s' loaded";
 $plugin_tx['socialshareprivacy']['syscheck_writable']="Folder '%s' writable";
-$plugin_tx['socialshareprivacy']['syscheck_xhversion']="CMSimple_XH version &ge; %s";
+$plugin_tx['socialshareprivacy']['syscheck_xhversion']="CMSimple_XH version ≥ %s";
 
 $plugin_tx['socialshareprivacy']['cf_template_call']="Whether the plugin is called in the template: \"1\" (yes) or \"0\" (no).";
 $plugin_tx['socialshareprivacy']['cf_url']="The URL that will be liked, tweeted resp. shared. Leave blank for automatic detection of the URL. See the \"Usage\" section in the manual for details.";

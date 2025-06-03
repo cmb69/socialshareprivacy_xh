@@ -146,9 +146,6 @@ Veröffentlichung unter MIT-Lizenz. Und natürlich vielen Dank an *Christian*, d
 mich auf socialshareprivacy aufmerksam gemacht hat, und *Martin*, der mich auf
 socialshareprivacy-xl aufmerksam gemacht hat.
 
-Dieses Plugin verwendet freie Anwendungs-Icons von [Aha-Soft](http://www.aha-soft.com/).
-Vielen Dank für die freie Verwendbarkeit dieser Icons.
-
 Vielen Dank an die Gemeinschaft im [CMSimple_XH Forum](https://www.cmsimpleforum.com/)
 für Tipps, Vorschläge und das Testen.
 
