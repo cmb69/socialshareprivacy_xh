@@ -21,6 +21,18 @@
 
 use Socialshareprivacy\Controller;
 
+if (!defined("CMSIMPLE_XH_VERSION")) {
+    http_response_code(403);
+    exit;
+}
+
+/**
+ * @var array<string,array<string,string>> $plugin_cf
+ */
+if ($plugin_cf["socialshareprivacy"]["template_call"]) {
+    Controller::init();
+}
+
 define('SOCIALSHAREPRIVACY_VERSION', '2.0-dev');
 
 function socialshareprivacy(): string
@@ -28,5 +40,3 @@ function socialshareprivacy(): string
     Controller::init();
     return '<div class="socialshareprivacy"></div>';
 }
-
-Controller::dispatch();

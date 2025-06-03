@@ -23,28 +23,6 @@ namespace Socialshareprivacy;
 
 class Controller
 {
-    public static function dispatch(): void
-    {
-        global $plugin_cf, $admin, $o;
-
-        if ($plugin_cf['socialshareprivacy']['template_call']) {
-            self::init();
-        }
-        if (defined('XH_ADM') && XH_ADM) {
-            XH_registerStandardPluginMenuItems(false);
-            if (XH_wantsPluginAdministration('socialshareprivacy')) {
-                $o .= print_plugin_admin('off');
-                switch ($admin) {
-                    case '':
-                        $o .= Plugin::infoCommand()->render();
-                        break;
-                    default:
-                        $o .= plugin_admin_common();
-                }
-            }
-        }
-    }
-
     public static function init(): void
     {
         global $bjs, $pth;
