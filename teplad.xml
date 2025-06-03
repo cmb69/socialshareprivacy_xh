@@ -47,7 +47,7 @@
   <!-- Date this xml-file was updated, yyyy.mm.dd -->
   <date_update>2021.01.23</date_update>
   <!-- version of Plugin -->
-  <version>1.1</version>
+  <version>2.0-dev</version>
   <!-- date of publication, yyyy.mm.dd -->
   <date_version>2015.04.12</date_version>
   <!-- the name of the programmer -->
@@ -62,10 +62,10 @@
   <url>
     <!-- URL where you can download the plugin -->
     <!-- If there no Download-URL, enter this follows! - <download_url></download_url> -->
-    <download_url>https://github.com/cmb69/socialshareprivacy_xh/releases/1.1</download_url>
+    <download_url>https://github.com/cmb69/socialshareprivacy_xh/releases/2.0-dev</download_url>
     <!-- URL of the programmer's website -->
     <!-- If there no Website, enter this follows! - <coder_url></coder_url> -->
-    <coder_url>https://3-magi.net</coder_url>
+    <coder_url>https://3-magi.net/</coder_url>
     <!-- URL where find a demo -->
     <!-- If there no Demo-Website, enter this follows! - <demo_url></demo_url> -->
     <demo_url></demo_url>
