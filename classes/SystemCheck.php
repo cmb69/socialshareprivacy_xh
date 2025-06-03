@@ -40,8 +40,7 @@ class Socialshareprivacy_SystemCheck
         foreach (array('json') as $ext) {
             $o .= self::checkExtension($ext) . tag('br');
         }
-        $o .= self::checkMagicQuotesRuntime() . tag('br') . tag('br')
-            . self::checkXHVersion('1.5.4') . tag('br')
+        $o .= self::checkXHVersion('1.5.4') . tag('br')
             . self::checkUTF8Encoding() . tag('br') . tag('br');
         foreach (self::getWritableFolders() as $folder) {
             $o .= self::checkWritability($folder) . tag('br');
@@ -87,22 +86,6 @@ class Socialshareprivacy_SystemCheck
             . sprintf(
                 $plugin_tx['socialshareprivacy']['syscheck_extension'], $name
             );
-    }
-
-    /**
-     * Renders the magic_quotes_runtime check.
-     *
-     * @return string (X)HTML
-     *
-     * @global array The localization of the plugins.
-     */
-    protected static function checkMagicQuotesRuntime()
-    {
-        global $plugin_tx;
-
-        $kind = get_magic_quotes_runtime() ? 'fail' : 'ok';
-        return self::renderCheckIcon($kind). '&nbsp;&nbsp;'
-            . $plugin_tx['socialshareprivacy']['syscheck_magic_quotes'];
     }
 
     /**
