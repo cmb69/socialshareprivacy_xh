@@ -41,8 +41,6 @@ $plugin_tx['socialshareprivacy']['syscheck_alt_warn']="Warnung";
 $plugin_tx['socialshareprivacy']['syscheck_alt_fail']="Fehler";
 $plugin_tx['socialshareprivacy']['syscheck_phpversion']="PHP-Version &ge; %s";
 $plugin_tx['socialshareprivacy']['syscheck_extension']="Erweiterung '%s' geladen";
-$plugin_tx['socialshareprivacy']['syscheck_encoding']="Kodierung 'UTF-8' eingestellt";
-$plugin_tx['socialshareprivacy']['syscheck_magic_quotes']="Magic quotes runtime off";
 $plugin_tx['socialshareprivacy']['syscheck_writable']="Ordner '%s' schreibbar";
 $plugin_tx['socialshareprivacy']['syscheck_xhversion']="CMSimple_XH Version &ge; %s";
 
