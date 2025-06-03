@@ -9,11 +9,14 @@
         <echo>${help}</echo>
     </target>
 
-    <target name="sniff" description="checks adherence to coding standards">
+  <target name="sniff" description="checks adherence to coding standards">
     <exec executable="phpcs" passthru="true" checkreturn="true">
       <arg line="--standard=PSR12 --runtime-set ignore_warnings_on_exit true classes tests index.php"/>
     </exec>
-    </target>
+    <exec executable="phpcs" passthru="true" checkreturn="true">
+      <arg line="--standard=PSR12 --runtime-set ignore_warnings_on_exit true --exclude=Generic.Files.LineLength config languages"/>
+    </exec>
+  </target>
 
   <target name="stan" description="run static analysis">
     <exec executable="phpstan" passthru="true" checkreturn="true">
