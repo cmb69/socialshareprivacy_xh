@@ -39,6 +39,7 @@ $plugin_tx['socialshareprivacy']['syscheck_alt_ok'] = "OK";
 $plugin_tx['socialshareprivacy']['syscheck_alt_warn'] = "Warning";
 $plugin_tx['socialshareprivacy']['syscheck_alt_fail'] = "Failure";
 $plugin_tx['socialshareprivacy']['syscheck_phpversion'] = "PHP version ≥ %s";
+$plugin_tx['socialshareprivacy']['syscheck_plibversion'] = "Plib_XH version ≥ %s";
 $plugin_tx['socialshareprivacy']['syscheck_extension'] = "Extension '%s' loaded";
 $plugin_tx['socialshareprivacy']['syscheck_writable'] = "Folder '%s' writable";
 $plugin_tx['socialshareprivacy']['syscheck_xhversion'] = "CMSimple_XH version ≥ %s";

@@ -52,6 +52,7 @@ class InfoCommand
         return [
             $this->checkPHPVersion('7.4.0'),
             $this->checkXHVersion('1.7.0'),
+            $this->checkPlibVersion("1.10"),
             $this->checkWritability($this->pluginFolder . "config/"),
             $this->checkWritability($this->pluginFolder . "css/"),
             $this->checkWritability($this->pluginFolder . "languages/"),
@@ -68,6 +69,12 @@ class InfoCommand
     {
         $kind = $this->systemChecker->checkVersion(CMSIMPLE_XH_VERSION, "CMSimple_XH {$version}") ? 'success' : 'fail';
         return $this->view->message($kind, "syscheck_xhversion", $version);
+    }
+
+    private function checkPlibVersion(string $version): string
+    {
+        $kind = $this->systemChecker->checkPlugin("plib", $version) ? "success" : "fail";
+        return $this->view->message($kind, "syscheck_plibversion", $version);
     }
 
     private function checkWritability(string $filename): string
