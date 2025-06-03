@@ -43,7 +43,7 @@ class InfoCommand
         return Response::create($this->view->render("info", [
             "version" => Plugin::VERSION,
             "checks" => $this->checks(),
-        ]));
+        ]))->withTitle("Socialshareprivacy " . $this->view->esc(Plugin::VERSION));
     }
 
     /** @return list<string> */

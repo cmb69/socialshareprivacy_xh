@@ -29,6 +29,7 @@ class InfoCommandTest extends TestCase
     public function testRendersSystemCheck(): void
     {
         $response = $this->sut()();
+        $this->assertSame("Socialshareprivacy 2.0-dev", $response->title());
         Approvals::verifyHtml($response->output());
     }
 }
