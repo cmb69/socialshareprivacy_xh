@@ -19,5 +19,3 @@ require_once "./classes/InfoCommand.php";
 require_once "./classes/Plugin.php";
 
 const CMSIMPLE_XH_VERSION = "CMSimple_XH 1.7.5";
-
-const SOCIALSHAREPRIVACY_VERSION = "2.0-dev";

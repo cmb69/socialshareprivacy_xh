@@ -40,7 +40,7 @@ class InfoCommand
     public function render(): string
     {
         return $this->view->render("info", [
-            "version" => SOCIALSHAREPRIVACY_VERSION,
+            "version" => Plugin::VERSION,
             "checks" => $this->checks(),
         ]);
     }

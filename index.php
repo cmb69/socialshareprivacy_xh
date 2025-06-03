@@ -34,8 +34,6 @@ if ($plugin_cf["socialshareprivacy"]["template_call"]) {
     Plugin::controller()->init(Request::current())();
 }
 
-define('SOCIALSHAREPRIVACY_VERSION', '2.0-dev');
-
 function socialshareprivacy(): string
 {
     Plugin::controller()->init(Request::current())();

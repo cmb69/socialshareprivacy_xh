@@ -27,6 +27,8 @@ use Plib\View;
 
 class Plugin
 {
+    public const VERSION = "2.0-dev";
+
     private static ?Controller $controller = null;
 
     public static function controller(): Controller
