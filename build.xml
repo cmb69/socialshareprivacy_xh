@@ -46,7 +46,6 @@
   </target>
 
   <target name="build" description="builds distributable ZIP archive">
-    <fail unless="version" message="version is not defined!"/>
     <exec executable="git" checkreturn="true">
       <arg line="archive -o export.tar HEAD"/>
     </exec>
@@ -68,7 +67,7 @@
     <delete dir="export"/>
     <copy file="dist/config/config.php" tofile="dist/config/defaultconfig.php"/>
     <copy file="dist/languages/en.php" tofile="dist/languages/default.php"/>
-    <zip destfile="Socialshareprivacy_XH-${version}.zip" basedir="dist" prefix="socialshareprivacy/"/>
+    <zip destfile="Socialshareprivacy_XH-2.0-dev.zip" basedir="dist" prefix="socialshareprivacy/"/>
     <delete dir="dist"/>
   </target>
 
