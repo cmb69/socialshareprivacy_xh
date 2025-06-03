@@ -36,7 +36,7 @@ class Socialshareprivacy_SystemCheck
         global $plugin_tx;
 
         $o = '<h4>' . $plugin_tx['socialshareprivacy']['syscheck_title'] . '</h4>'
-            . self::checkPHPVersion('5.2.0') . tag('br');
+            . self::checkPHPVersion('7.4.0') . tag('br');
         foreach (array('json') as $ext) {
             $o .= self::checkExtension($ext) . tag('br');
         }
