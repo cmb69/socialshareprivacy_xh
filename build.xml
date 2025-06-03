@@ -24,6 +24,12 @@
     </exec>
     </target>
 
+  <target name="stan" description="run static analysis">
+    <exec executable="phpstan" passthru="true" checkreturn="true">
+      <arg line="--ansi analyze"/>
+    </exec>
+  </target>
+
     <target name="unit-tests" description="runs all unit tests">
         <phpunit haltonerror="true" haltonfailure="true">
             <formatter type="plain" usefile="false"/>
