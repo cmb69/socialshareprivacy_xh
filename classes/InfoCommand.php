@@ -39,9 +39,10 @@ class InfoCommand
 
     public function render(): string
     {
-        return "<h1>Socialshareprivacy " . XH_hsc(SOCIALSHAREPRIVACY_VERSION) . "</h1>\n"
-            . '<h4>' . $this->view->text("syscheck_title") . '</h4>' . "\n"
-            . implode("", $this->checks());
+        return $this->view->render("info", [
+            "version" => SOCIALSHAREPRIVACY_VERSION,
+            "checks" => $this->checks(),
+        ]);
     }
 
     /** @return list<string> */
