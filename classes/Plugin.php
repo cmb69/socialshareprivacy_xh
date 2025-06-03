@@ -26,9 +26,14 @@ use Plib\View;
 
 class Plugin
 {
+    private static ?Controller $controller = null;
+
     public static function controller(): Controller
     {
-        return new Controller();
+        if (self::$controller === null) {
+            self::$controller = new Controller();
+        }
+        return self::$controller;
     }
 
     public static function infoCommand(): InfoCommand

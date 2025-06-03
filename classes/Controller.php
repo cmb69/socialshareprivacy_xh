@@ -26,12 +26,6 @@ class Controller
     public function init(): void
     {
         global $bjs, $pth;
-        static $again = false;
-
-        if ($again) {
-            return;
-        }
-        $again = true;
         include_once $pth['folder']['plugins'] . 'jquery/jquery.inc.php';
         include_jQuery();
         include_jQueryPlugin(
