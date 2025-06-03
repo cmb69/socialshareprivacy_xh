@@ -21,6 +21,7 @@
 
 namespace Socialshareprivacy;
 
+use Plib\Jquery;
 use Plib\SystemChecker;
 use Plib\View;
 
@@ -33,7 +34,8 @@ class Plugin
         global $pth;
         if (self::$controller === null) {
             self::$controller = new Controller(
-                $pth["folder"]["plugins"]
+                $pth["folder"]["plugins"] . "socialshareprivacy/",
+                new Jquery($pth["folder"]["plugins"] . "jquery/")
             );
         }
         return self::$controller;

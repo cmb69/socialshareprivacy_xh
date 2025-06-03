@@ -21,26 +21,25 @@
 
 namespace Socialshareprivacy;
 
+use Plib\Jquery;
 use Plib\Request;
 
 class Controller
 {
-    private string $pluginsFolder;
+    private string $pluginFolder;
+    private Jquery $jquery;
 
-    public function __construct(string $pluginsFolder)
+    public function __construct(string $pluginFolder, Jquery $jquery)
     {
-        $this->pluginsFolder = $pluginsFolder;
+        $this->pluginFolder = $pluginFolder;
+        $this->jquery = $jquery;
     }
 
     public function init(Request $request): void
     {
         global $bjs;
-        include_once $this->pluginsFolder . 'jquery/jquery.inc.php';
-        include_jQuery();
-        include_jQueryPlugin(
-            'socialshareprivacy',
-            $this->pluginsFolder . 'socialshareprivacy/jquery.socialshareprivacy-xl.js'
-        );
+        $this->jquery->include();
+        $this->jquery->includePlugin('socialshareprivacy', $this->pluginFolder . 'jquery.socialshareprivacy-xl.js');
         $bjs .= '<script type="text/javascript">/* <![CDATA[ */'
             . 'jQuery(function() {'
             . 'jQuery(".socialshareprivacy").socialSharePrivacy('
@@ -104,10 +103,9 @@ class Controller
 
     private function getServiceImage(Request $request, string $service): string
     {
-        $folder = $this->pluginsFolder . 'socialshareprivacy/';
-        $image = "{$folder}css/images/dummy_{$service}_{$request->language()}.png";
+        $image = "{$this->pluginFolder}css/images/dummy_{$service}_{$request->language()}.png";
         if (!file_exists($image)) {
-            $image = "{$folder}css/images/dummy_{$service}.png";
+            $image = "{$this->pluginFolder}css/images/dummy_{$service}.png";
         }
         return $image;
     }
