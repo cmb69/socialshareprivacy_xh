@@ -38,6 +38,9 @@ figure.socialshareprivacy_share a.socialshareprivacy_xing {
 figure.socialshareprivacy_share a.socialshareprivacy_linkedin {
     background-color: #007BB5;
 }
+figure.socialshareprivacy_share a.socialshareprivacy_mastodon {
+    background-color: #563acc;
+}
 figure.socialshareprivacy_share a[target=_blank]::after {
     content: "";
 }

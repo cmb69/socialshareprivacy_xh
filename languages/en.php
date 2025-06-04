@@ -4,12 +4,14 @@ $plugin_tx['socialshareprivacy']['alt_facebook'] = "facebook logo";
 $plugin_tx['socialshareprivacy']['alt_x'] = "X logo";
 $plugin_tx['socialshareprivacy']['alt_xing'] = "XING logo";
 $plugin_tx['socialshareprivacy']['alt_linkedin'] = "LinkedIn logo";
+$plugin_tx['socialshareprivacy']['alt_mastodon'] = "Mastodon logo";
 
 $plugin_tx['socialshareprivacy']['label_share'] = "Share this page";
 $plugin_tx['socialshareprivacy']['label_share_facebook'] = "Share on facebook";
 $plugin_tx['socialshareprivacy']['label_share_x'] = "Share on X";
 $plugin_tx['socialshareprivacy']['label_share_xing'] = "Share on XING";
 $plugin_tx['socialshareprivacy']['label_share_linkedin'] = "Share on LinkedIn";
+$plugin_tx['socialshareprivacy']['label_share_mastodon'] = "Share on Mastodon";
 
 $plugin_tx['socialshareprivacy']['syscheck_title'] = "System check";
 $plugin_tx['socialshareprivacy']['syscheck_alt_ok'] = "OK";
@@ -26,3 +28,4 @@ $plugin_tx['socialshareprivacy']['cf_allow_facebook'] = "Allow to share on faceb
 $plugin_tx['socialshareprivacy']['cf_allow_x'] = "Allow to share on X.";
 $plugin_tx['socialshareprivacy']['cf_allow_xing'] = "Allow to share on XING.";
 $plugin_tx['socialshareprivacy']['cf_allow_linkedin'] = "Allow to share on LinkedIn.";
+$plugin_tx['socialshareprivacy']['cf_allow_mastodon'] = "Allow to share on Mastodon.";
