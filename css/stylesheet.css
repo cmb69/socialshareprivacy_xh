@@ -41,21 +41,6 @@ figure.socialshareprivacy_share a.socialshareprivacy_linkedin {
 figure.socialshareprivacy_share a[target=_blank]::after {
     content: "";
 }
-figure.socialshareprivacy_share img {
-    width: 1.5em;
-    height: 1.5em;
-}
-figure.socialshareprivacy_share a.socialshareprivacy_facebook img,
-figure.socialshareprivacy_share a.socialshareprivacy_xing img {
-    width: 2em;
-    height: 2em;
-}
-figure.socialshareprivacy_share a.socialshareprivacy_x img {
-    padding: 0 0 0 0.2em;
-}
-figure.socialshareprivacy_share a.socialshareprivacy_linkedin img {
-    padding: 0 0 0.1em 0.2em;
-}
 
 /* plugin info */
 
