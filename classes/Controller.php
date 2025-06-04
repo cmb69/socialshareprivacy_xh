@@ -27,7 +27,7 @@ use Plib\View;
 
 class Controller
 {
-    private string $pluginFolder; // @phpstan-ignore-line
+    private string $pluginFolder;
     /** @var array<string,string> */
     private array $conf;
     private View $view;
@@ -44,10 +44,19 @@ class Controller
     {
         return Response::create($this->view->render("share", [
             "url" => urlencode($this->conf["url"] ?: $request->url()->absolute()),
+            "script" => $this->script(),
             "facebook" => $this->conf["allow_facebook"],
             "x" => $this->conf["allow_x"],
             "xing" => $this->conf["allow_xing"],
             "linkedin" => $this->conf["allow_linkedin"],
         ]));
+    }
+
+    private function script(): string
+    {
+        if (is_file($this->pluginFolder . "socialshareprivacy.min.js")) {
+            return $this->pluginFolder . "socialshareprivacy.min.js";
+        }
+        return $this->pluginFolder . "socialshareprivacy.js";
     }
 }

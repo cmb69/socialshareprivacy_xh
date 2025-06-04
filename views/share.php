@@ -7,6 +7,7 @@ if (!defined("CMSIMPLE_XH_VERSION")) {http_response_code(403); exit;}
 /**
  * @var View $this
  * @var string $url
+ * @var string $script
  * @var bool $facebook
  * @var bool $x
  * @var bool $xing
@@ -14,20 +15,21 @@ if (!defined("CMSIMPLE_XH_VERSION")) {http_response_code(403); exit;}
  */
 ?>
 
+<script type="module" src="<?=$this->esc($script)?>"></script>
 <figure class="socialshareprivacy_share">
   <figcaption>Share</figcaption>
   <div class="socialshareprivacy_links">
 <?if ($facebook):?>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=<?=$this->esc($url)?>" target="_blank">facebook</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<?=$this->esc($url)?>" data-share-url="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">facebook</a>
 <?endif?>
 <?if ($x):?>
-    <a href="https://x.com/intent/post?url=<?=$this->esc($url)?>" target="_blank">X</a>
+    <a href="https://x.com/intent/post?url=<?=$this->esc($url)?>" data-share-url="https://x.com/intent/post?url=" target="_blank">X</a>
 <?endif?>
 <?if ($xing):?>
-    <a href="https://www.xing.com/social/share/spi?url=<?=$this->esc($url)?>" target="_blank">XING</a>
+    <a href="https://www.xing.com/social/share/spi?url=<?=$this->esc($url)?>" data-share-url="https://www.xing.com/social/share/spi?url=" target="_blank">XING</a>
 <?endif?>
 <?if ($linkedin):?>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?=$this->esc($url)?>" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?=$this->esc($url)?>" data-share-url="https://www.linkedin.com/sharing/share-offsite/?url=" target="_blank">LinkedIn</a>
 <?endif?>
   </div>
 </figure>
