@@ -1,10 +1,18 @@
 /* share widget */
 
-figure.socialshareprivacy_share {}
+figure.socialshareprivacy_share {
+    margin: 0;
+}
+figure.socialshareprivacy_share figcaption {
+    font-size: larger;
+    font-weight: bold;
+}
 figure.socialshareprivacy_share .socialshareprivacy_links {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    padding: 1em 0 0 1em;
+    margin: 1em 0;
 }
 figure.socialshareprivacy_share a {
     margin: 0 1em 1em 0;
@@ -41,6 +49,9 @@ figure.socialshareprivacy_share a.socialshareprivacy_facebook img,
 figure.socialshareprivacy_share a.socialshareprivacy_xing img {
     width: 2em;
     height: 2em;
+}
+figure.socialshareprivacy_share a.socialshareprivacy_x img {
+    padding: 0 0 0 0.2em;
 }
 figure.socialshareprivacy_share a.socialshareprivacy_linkedin img {
     padding: 0 0 0.1em 0.2em;
