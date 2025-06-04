@@ -114,6 +114,9 @@ Slovakische Übersetzung © Dr. Martin Sereday
 
 ## Danksagung
 
+Das Plugin-Logo wurde von [Heise Zeitschriften Verlag GmbH & Co. KG](http://www.heise.de/) entworfen.
+Vielen Dank für die Veröffentlichung dieses Icons unter MIT Lizenz.
+
 Vielen Dank an die Gemeinschaft im [CMSimple_XH Forum](https://www.cmsimpleforum.com/)
 für Tipps, Vorschläge und das Testen.
 

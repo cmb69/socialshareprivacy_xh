@@ -108,6 +108,9 @@ Slovak translation © Dr. Martin Sereday
 
 ## Credits
 
+The plugin logo is designed by [Heise Zeitschriften Verlag GmbH & Co. KG](http://www.heise.de/).
+Many thanks for releasing this icon under MIT license.
+
 Many thanks to the community at the [CMSimple_XH forum](https://www.cmsimpleforum.com/)
 for tips, suggestions and testing.
 
