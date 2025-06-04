@@ -127,6 +127,9 @@ Besonders möchte ich *olape* danken, der ein
 [Plugin](https://olaf.penschke.net/?CMSimple_XH/Plugins/Shariff_XH) für
 [Shariff](https://www.heise.de/hintergrund/Ein-Shariff-fuer-mehr-Datenschutz-2467514.html)
 entwickelt hat, was eine bessere Lösung ist als das was Socialshareprivacy_XH 1.x anbot.
+Besonderer Dank geht an *hufnala*, der die Entwicklung von Socialshareprivacy_XH 2.x
+ausgelöst hat, da eine Anfrage für Mastodon-Unterstützung für Shariff_XH offenbarte,
+dass Shariff etwas überholt ist.
 
 Und zu guter letzt vielen Dank an [Peter Harteg](https://www.harteg.dk/),
 den „Vater“ von CMSimple, und allen Entwicklern von [CMSimple_XH](https://www.cmsimple-xh.org/de/)
