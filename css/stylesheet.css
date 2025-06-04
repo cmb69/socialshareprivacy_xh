@@ -4,9 +4,46 @@ figure.socialshareprivacy_share {}
 figure.socialshareprivacy_share .socialshareprivacy_links {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
-figure.socialshareprivacy_share .socialshareprivacy_links a {
-    margin-right: 1em;
+figure.socialshareprivacy_share a {
+    margin: 0 1em 1em 0;
+    text-decoration: none;
+    border: none;
+    width: 3em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #cccccc;
+}
+figure.socialshareprivacy_share a.socialshareprivacy_facebook {
+    background-color: #1877f2;
+}
+figure.socialshareprivacy_share a.socialshareprivacy_x {
+    background-color: #000000;
+}
+figure.socialshareprivacy_share a.socialshareprivacy_xing {
+    background-color: #ffffff;
+}
+figure.socialshareprivacy_share a.socialshareprivacy_linkedin {
+    background-color: #007BB5;
+}
+figure.socialshareprivacy_share a[target=_blank]::after {
+    content: "";
+}
+figure.socialshareprivacy_share img {
+    width: 1.5em;
+    height: 1.5em;
+}
+figure.socialshareprivacy_share a.socialshareprivacy_facebook img,
+figure.socialshareprivacy_share a.socialshareprivacy_xing img {
+    width: 2em;
+    height: 2em;
+}
+figure.socialshareprivacy_share a.socialshareprivacy_linkedin img {
+    padding: 0 0 0.1em 0.2em;
 }
 
 /* plugin info */

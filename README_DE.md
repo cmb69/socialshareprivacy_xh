@@ -117,6 +117,10 @@ Slovakische Übersetzung © Dr. Martin Sereday
 Das Plugin-Logo wurde von [Heise Zeitschriften Verlag GmbH & Co. KG](http://www.heise.de/) entworfen.
 Vielen Dank für die Veröffentlichung dieses Icons unter MIT Lizenz.
 
+Die Logos der sozialen Netzwerke sind von
+[iconfinder.com](https://www.iconfinder.com/search/icons?price=free&category=social-media&q=social+media).
+Vielen Dank für die freie Bereitstellung dieser Icons.
+
 Vielen Dank an die Gemeinschaft im [CMSimple_XH Forum](https://www.cmsimpleforum.com/)
 für Tipps, Vorschläge und das Testen.
 
