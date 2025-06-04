@@ -26,7 +26,7 @@ use Plib\View;
 
 class Plugin
 {
-    public const VERSION = "2.0-dev";
+    public const VERSION = "2.0RC1";
 
     private static ?Controller $controller = null;
 
