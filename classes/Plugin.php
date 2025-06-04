@@ -37,7 +37,8 @@ class Plugin
         if (self::$controller === null) {
             self::$controller = new Controller(
                 $pth["folder"]["plugins"] . "socialshareprivacy/",
-                new Jquery($pth["folder"]["plugins"] . "jquery/")
+                new Jquery($pth["folder"]["plugins"] . "jquery/"),
+                self::view()
             );
         }
         return self::$controller;
@@ -45,11 +46,17 @@ class Plugin
 
     public static function infoCommand(): InfoCommand
     {
-        global $pth, $plugin_tx;
+        global $pth;
         return new InfoCommand(
             $pth["folder"]["plugins"] . "socialshareprivacy/",
             new SystemChecker(),
-            new View($pth["folder"]["plugins"] . "socialshareprivacy/views/", $plugin_tx["socialshareprivacy"])
+            self::view()
         );
+    }
+
+    private static function view(): View
+    {
+        global $pth, $plugin_tx;
+        return new View($pth["folder"]["plugins"] . "socialshareprivacy/views/", $plugin_tx["socialshareprivacy"]);
     }
 }

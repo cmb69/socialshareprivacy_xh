@@ -36,6 +36,6 @@ if ($plugin_cf["socialshareprivacy"]["template_call"]) {
 
 function socialshareprivacy(): string
 {
-    Plugin::controller()->init(Request::current())();
-    return '<div class="socialshareprivacy"></div>';
+    $o = Plugin::controller()->init(Request::current())();
+    return $o . '<div class="socialshareprivacy"></div>';
 }

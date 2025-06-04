@@ -24,16 +24,19 @@ namespace Socialshareprivacy;
 use Plib\Jquery;
 use Plib\Request;
 use Plib\Response;
+use Plib\View;
 
 class Controller
 {
     private string $pluginFolder;
     private Jquery $jquery;
+    private View $view;
 
-    public function __construct(string $pluginFolder, Jquery $jquery)
+    public function __construct(string $pluginFolder, Jquery $jquery, View $view)
     {
         $this->pluginFolder = $pluginFolder;
         $this->jquery = $jquery;
+        $this->view = $view;
     }
 
     public function init(Request $request): Response
@@ -47,7 +50,13 @@ class Controller
             . ');'
             . '});'
             . '/* ]]> */</script>';
-        return Response::create()->withBjs($bjs);
+        return Response::create($this->view->render("share", [
+            "url" => urlencode($request->url()->absolute()),
+            "facebook" => true,
+            "x" => true,
+            "xing" => true,
+            "linkedin" => true,
+        ]))->withBjs($bjs);
     }
 
     /** @return array<string,mixed> */

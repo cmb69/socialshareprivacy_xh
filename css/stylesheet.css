@@ -293,6 +293,17 @@
     color: #090;
 }
 
+/* share widget */
+
+figure.socialshareprivacy_share {}
+figure.socialshareprivacy_share .socialshareprivacy_links {
+    display: flex;
+    justify-content: flex-start;
+}
+figure.socialshareprivacy_share .socialshareprivacy_links a {
+    margin-right: 1em;
+}
+
 /* plugin info */
 
 article.socialshareprivacy_pluginfo {}

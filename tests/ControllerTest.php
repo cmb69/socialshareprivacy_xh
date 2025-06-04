@@ -7,11 +7,13 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Plib\FakeRequest;
 use Plib\Jquery;
+use Plib\View;
 
 class ControllerTest extends TestCase
 {
     /** @var Jquery&MockObject */
     private $jquery;
+    private View $view;
 
     protected function setUp(): void
     {
@@ -19,14 +21,12 @@ class ControllerTest extends TestCase
         $plugin_cf = XH_includeVar("./config/config.php", "plugin_cf");
         $plugin_tx = XH_includeVar("./languages/en.php", "plugin_tx");
         $this->jquery = $this->createMock(Jquery::class);
+        $this->view = new View("./views/", $plugin_tx["socialshareprivacy"]);
     }
 
     private function sut(): Controller
     {
-        return new Controller(
-            "./",
-            $this->jquery
-        );
+        return new Controller("./", $this->jquery, $this->view);
     }
 
     public function testRendersScripts(): void
@@ -36,5 +36,12 @@ class ControllerTest extends TestCase
         $request = new FakeRequest();
         $response = $this->sut()->init($request);
         Approvals::verifyHtml($response->bjs());
+    }
+
+    public function testRendersWidget(): void
+    {
+        $request = new FakeRequest();
+        $response = $this->sut()->init($request);
+        Approvals::verifyHtml($response->output());
     }
 }
