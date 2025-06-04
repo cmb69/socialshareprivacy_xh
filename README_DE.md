@@ -123,6 +123,10 @@ Vielen Dank für die freie Bereitstellung dieser Icons.
 
 Vielen Dank an die Gemeinschaft im [CMSimple_XH Forum](https://www.cmsimpleforum.com/)
 für Tipps, Vorschläge und das Testen.
+Besonders möchte ich *olape* danken, der ein
+[Plugin](https://olaf.penschke.net/?CMSimple_XH/Plugins/Shariff_XH) für
+[Shariff](https://www.heise.de/hintergrund/Ein-Shariff-fuer-mehr-Datenschutz-2467514.html)
+entwickelt hat, was eine bessere Lösung ist als das was Socialshareprivacy_XH 1.x anbot.
 
 Und zu guter letzt vielen Dank an [Peter Harteg](https://www.harteg.dk/),
 den „Vater“ von CMSimple, und allen Entwicklern von [CMSimple_XH](https://www.cmsimple-xh.org/de/)
