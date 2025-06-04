@@ -29,12 +29,16 @@ use Plib\View;
 class Controller
 {
     private string $pluginFolder;
+    /** @var array<string,string> */
+    private array $conf;
     private Jquery $jquery;
     private View $view;
 
-    public function __construct(string $pluginFolder, Jquery $jquery, View $view)
+    /** @param array<string,string> $conf */
+    public function __construct(string $pluginFolder, array $conf, Jquery $jquery, View $view)
     {
         $this->pluginFolder = $pluginFolder;
+        $this->conf = $conf;
         $this->jquery = $jquery;
         $this->view = $view;
     }
@@ -52,10 +56,10 @@ class Controller
             . '/* ]]> */</script>';
         return Response::create($this->view->render("share", [
             "url" => urlencode($request->url()->absolute()),
-            "facebook" => true,
-            "x" => true,
-            "xing" => true,
-            "linkedin" => true,
+            "facebook" => $this->conf["allow_facebook"],
+            "x" => $this->conf["allow_x"],
+            "xing" => $this->conf["allow_xing"],
+            "linkedin" => $this->conf["allow_linkedin"],
         ]))->withBjs($bjs);
     }
 

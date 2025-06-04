@@ -33,10 +33,11 @@ class Plugin
 
     public static function controller(): Controller
     {
-        global $pth;
+        global $pth, $plugin_cf;
         if (self::$controller === null) {
             self::$controller = new Controller(
                 $pth["folder"]["plugins"] . "socialshareprivacy/",
+                $plugin_cf["socialshareprivacy"],
                 new Jquery($pth["folder"]["plugins"] . "jquery/"),
                 self::view()
             );

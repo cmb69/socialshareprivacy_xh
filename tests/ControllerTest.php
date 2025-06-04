@@ -11,6 +11,8 @@ use Plib\View;
 
 class ControllerTest extends TestCase
 {
+    /** @var array<string,string> */
+    private array $conf;
     /** @var Jquery&MockObject */
     private $jquery;
     private View $view;
@@ -20,13 +22,14 @@ class ControllerTest extends TestCase
         global $plugin_cf, $plugin_tx;
         $plugin_cf = XH_includeVar("./config/config.php", "plugin_cf");
         $plugin_tx = XH_includeVar("./languages/en.php", "plugin_tx");
+        $this->conf = $plugin_cf["socialshareprivacy"];
         $this->jquery = $this->createMock(Jquery::class);
         $this->view = new View("./views/", $plugin_tx["socialshareprivacy"]);
     }
 
     private function sut(): Controller
     {
-        return new Controller("./", $this->jquery, $this->view);
+        return new Controller("./", $this->conf, $this->jquery, $this->view);
     }
 
     public function testRendersScripts(): void

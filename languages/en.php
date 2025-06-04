@@ -46,6 +46,10 @@ $plugin_tx['socialshareprivacy']['syscheck_xhversion'] = "CMSimple_XH version â‰
 
 $plugin_tx['socialshareprivacy']['cf_template_call'] = "Whether the plugin is called in the template: \"1\" (yes) or \"0\" (no).";
 $plugin_tx['socialshareprivacy']['cf_url'] = "The URL that will be liked, tweeted resp. shared. Leave blank for automatic detection of the URL. See the \"Usage\" section in the manual for details.";
+$plugin_tx['socialshareprivacy']['cf_allow_facebook'] = "Allow to share on facebook.";
+$plugin_tx['socialshareprivacy']['cf_allow_x'] = "Allow to share on X.";
+$plugin_tx['socialshareprivacy']['cf_allow_xing'] = "Allow to share on XING.";
+$plugin_tx['socialshareprivacy']['cf_allow_linkedin'] = "Allow to share on LinkedIn.";
 $plugin_tx['socialshareprivacy']['cf_cookie_expires'] = "The period the cookie is valid (in days).";
 $plugin_tx['socialshareprivacy']['cf_facebook_status'] = "Whether the user has Facebook available: \"on\" (yes) or \"off\" (no).";
 $plugin_tx['socialshareprivacy']['cf_facebook_perma_option'] = "Whether the user has the option to activate Facebook permanently (cookies must be enabled): \"on\" (yes) or \"off\" (no).";
