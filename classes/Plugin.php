@@ -21,7 +21,6 @@
 
 namespace Socialshareprivacy;
 
-use Plib\Jquery;
 use Plib\SystemChecker;
 use Plib\View;
 
@@ -38,7 +37,6 @@ class Plugin
             self::$controller = new Controller(
                 $pth["folder"]["plugins"] . "socialshareprivacy/",
                 $plugin_cf["socialshareprivacy"],
-                new Jquery($pth["folder"]["plugins"] . "jquery/"),
                 self::view()
             );
         }

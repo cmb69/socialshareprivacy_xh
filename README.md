@@ -2,16 +2,11 @@
 
 <img src="../socialshareprivacy.png" alt="Double thumbs up" align="right">
 
-Socialshareprivacy_XH facilitates to have
-Facebook, Twitter, Google+, XING and/or LinkedIn buttons on your website without
-violating your visitor's privacy. Before any data are transmitted to Facebook,
-Twitter, Google+, XING resp. LinkedIn, the visitor has to agree explicitely.
-This plugin is only a wrapper around the jQuery plugin
-[socialshareprivacy-xl](http://www.illusions-schmiede.com/Socialshareprivacy-XL)
-by [Illusions-Schmiede](http://www.illusions-schmiede.com/).
-Socialshareprivacy_XH doesn't provide any additional features, but is merely
-meant as a simple way to use and configure the jQuery plugin without the need to
-mess around in JavaScript files.
+Socialshareprivacy_XH facilitates to have share buttons for several social
+networks on your website without violating the privacy of visitors.
+Contrary to the code snippets these networks offer to embed on websites,
+Socialshareprivacy_XH does not include any third-party JavaScript or other assets,
+so no data are transferred to third-party servers until visitors press a share button.
 
 - [Requirements](#requirements)
 - [Download](#download)
@@ -66,20 +61,13 @@ The look of Socialshareprivacy_XH can be customized under `Stylesheet`.
 
 ## Usage
 
-At first make sure that the language settings have the appropriate
-[ISO-3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-under `General` → `Country code`.
-Otherwise the localization of the buttons might not work.
+To display the share buttons on a page or in a newsbox insert:
 
-To display the social buttons on a page or in a newsbox insert:
+    {{{socialshareprivacy}}}
 
-    {{{socialshareprivacy()}}}
-
-To display the social buttons on every page insert into your template:
+To display the share buttons on every page insert into your template:
 
     <?=socialshareprivacy()?>
-
-In this case it's necessary to activate `Template` → `Call` in the configuration.
 
 Note that the likes, tweets and shares refer to the currently displayed page,
 including all additional query parameters, i.e. what is shown in the browser's
@@ -88,16 +76,6 @@ be used, however. If you prefer that all likes, tweets and shares refer to a
 certain URL, you can set this URL in the configuration.
 
 ## Limitations
-
-The plugin requires JavaScript to be enabled in the visitor's browser;
-otherwise nothing will be displayed. Actually this is not really a limitation,
-as liking, tweeting and sharing requires JavaScript to be enabled anyway.
-
-In old browsers which doesn't implement the JSON object (e.g. IE 7 and
-before), the possibility to permanently activate the buttons is not available.
-In browsers which doesn't understand the value "inline-block" for the "display"
-declaration (e.g. IE 7 and before), the layout is broken. Despite these
-limitations the plugin is still usable on IE 6 and 7.
 
 When testing on localhost, some of the buttons might not properly work,
 because the domain localhost might not be accepted by the services. You can use
@@ -129,15 +107,6 @@ Copyright © Christoph M. Becker
 Slovak translation © Dr. Martin Sereday
 
 ## Credits
-
-Socialshareprivacy_XH is powered by
-[socialshareprivacy-xl](http://www.illusions-schmiede.com/Socialshareprivacy-XL)
-which is based on [socialshareprivacy](http://www.heise.de/extras/socialshareprivacy/).
-Many thanks to [Heise Zeitschriften Verlag GmbH & Co. KG](http://www.heise.de/)
-and [Illusions-Schmiede](http://www.illusions-schmiede.com/) for releasing
-these jQuery plugins under MIT license.  And of course many thanks to *Christian*
-for pointing me to socialshareprivacy and *Martin*  for pointing me to
-socialshareprivacy-xl.
 
 Many thanks to the community at the [CMSimple_XH forum](https://www.cmsimpleforum.com/)
 for tips, suggestions and testing.

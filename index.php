@@ -27,15 +27,7 @@ if (!defined("CMSIMPLE_XH_VERSION")) {
     exit;
 }
 
-/**
- * @var array<string,array<string,string>> $plugin_cf
- */
-if ($plugin_cf["socialshareprivacy"]["template_call"]) {
-    Plugin::controller()->init(Request::current())();
-}
-
 function socialshareprivacy(): string
 {
-    $o = Plugin::controller()->init(Request::current())();
-    return $o . '<div class="socialshareprivacy"></div>';
+    return Plugin::controller()->init(Request::current())();
 }

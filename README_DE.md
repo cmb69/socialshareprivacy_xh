@@ -2,16 +2,12 @@
 
 <img src="../socialshareprivacy.png" alt="Zwei Daumen hoch" align="right">
 
-Socialshareprivacy_XH ermöglicht es Facebook,
-Twitter, Google+, XING und/oder LinkedIn Buttons auf Ihrer Website zu zeigen,
-ohne die Privatsphäre Ihrer Besucher zu verletzen. Bevor Daten an Facebook,
-Twitter, Google+, XING bzw. LinkedIn übertragen werden, muss der Besucher
-explizit einwilligen. Dieses Plugin ist nur ein Wrapper für das jQuery-Plugin
-[socialshareprivacy-xl](http://www.illusions-schmiede.com/Socialshareprivacy-XL)
-von der [Illusions-Schmiede](http://www.illusions-schmiede.com/).
-Socialshareprivacy_XH bietet keine zusätzlichen Features, sondern ist lediglich
-als einfache Möglichkeit gedacht, das jQuery-Plugin zu verwenden, und, ohne an
-JavaScript-Dateien herumbasteln zu müssen, konfigurieren zu können.
+Socialshareprivacy_XH ermöglicht die Einbindung von Teilen-Schaltern für verschiedene
+soziale Netzwerke auf Ihrer Website, ohne die Privatsphäre Ihrer Besucher zu verletzen.
+Im Gegensatz zu den Code-Schnipseln, die diese Netwerke zum Einbinden auf Websites
+anbieten, verwendet Socialshareprivacy_XH kein JavaScript oder andere Assets der
+Anbieter, so dass keine Daten zu Fremdservern übertragen werden, bevor Besucher
+einen Teilen-Schalter anklicken.
 
 - [Voraussetzungen](#voraussetzungen)
 - [Download](#download)
@@ -66,23 +62,15 @@ Das Aussehen von Socialshareprivacy_XH kann unter `Stylesheet` angepasst werden.
 
 ## Verwendung
 
-Stellen Sie zunächst sicher, dass in den Spracheinstellungen der passende
-[ISO-3166-1 alpha-2 Sprachcode](http://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste)
-unter `General` → `Country code` hinterlegt ist.
-Andernfalls funktioniert die Lokalisierung der Buttons möglicherweise nicht.
-
-Um die Gefällt-Mir-Buttons auf einer Seite oder in einer Newsbox anzuzeigen,
+Um die Teilen-Buttons auf einer Seite oder in einer Newsbox anzuzeigen,
 fügen Sie dort ein:
 
-    {{{socialshareprivacy()}}}
+    {{{socialshareprivacy}}}
 
-Um die Gefällt-Mir-Buttons auf jeder Seite anzuzeigen, fügen Sie in Ihr
+Um die Teilen-Buttons auf jeder Seite anzuzeigen, fügen Sie in Ihr
 Template ein:
 
     <?=socialshareprivacy()?>
-
-In diesem Fall ist es notwendig, in der Konfiguration `Template` → `Call` zu
-aktivieren.
 
 Beachten Sie, dass die Likes, Tweet und Shares sich auf die aktuell
 angezeigte Seite beziehen, inklusive aller zusätzlicher Query-Parameter, d.h.
@@ -93,17 +81,6 @@ Shares auf eine bestimmte URL beziehen, können Sie diesen in der Konfiguration
 hinterlegen.
 
 ## Einschränkungen
-
-Das Plugin erfordert, dass JavaScript im Browser des Besuchers aktiviert ist;
-andernfalls wird nichts angezeigt. Eigentlich ist das keine wirkliche
-Beschränkung, da Likes, Tweets und Shares ohnehin erfordern, dass JavaScript
-aktiviert ist.
-
-In alten Browsern, die das JSON-Objekt nicht implementieren (z.B. IE 7 und
-früher), ist die Möglichkeit die Buttons permanent zu aktivieren nicht
-vorhanden. In Browsern die den Wert "inline-block" für die "display" Deklaration
-nicht verstehen (z.B. IE 7 und früher), ist das Layout defekt. Trotz dieser
-Beschränkungen ist das Plugin in IE 6 und 7 verwendbar.
 
 Wenn Sie auf dem localhost testen, können einige der Buttons nicht
 ordnungsgemäß funktionieren, da die Domain localhost von den Diensten eventuell
@@ -136,15 +113,6 @@ Copyright © Christoph M. Becker
 Slovakische Übersetzung © Dr. Martin Sereday
 
 ## Danksagung
-
-Socialshareprivacy_XH basiert auf
-[socialshareprivacy-xl](http://www.illusions-schmiede.com/Socialshareprivacy-XL),
-das auf [socialshareprivacy](http://www.heise.de/extras/socialshareprivacy/)
-basiert. Vielen Dank an die [Heise Zeitschriften Verlag GmbH & Co. KG](http://www.heise.de/)
-und die [Illusions-Schmiede](http://www.illusions-schmiede.com/) für die
-Veröffentlichung unter MIT-Lizenz. Und natürlich vielen Dank an *Christian*, der
-mich auf socialshareprivacy aufmerksam gemacht hat, und *Martin*, der mich auf
-socialshareprivacy-xl aufmerksam gemacht hat.
 
 Vielen Dank an die Gemeinschaft im [CMSimple_XH Forum](https://www.cmsimpleforum.com/)
 für Tipps, Vorschläge und das Testen.
