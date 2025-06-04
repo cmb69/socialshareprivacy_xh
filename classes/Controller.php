@@ -43,7 +43,7 @@ class Controller
     public function init(Request $request): Response
     {
         return Response::create($this->view->render("share", [
-            "url" => urlencode($request->url()->absolute()),
+            "url" => urlencode($this->conf["url"] ?: $request->url()->absolute()),
             "facebook" => $this->conf["allow_facebook"],
             "x" => $this->conf["allow_x"],
             "xing" => $this->conf["allow_xing"],

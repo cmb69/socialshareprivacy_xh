@@ -33,4 +33,13 @@ class ControllerTest extends TestCase
         $response = $this->sut()->init($request);
         Approvals::verifyHtml($response->output());
     }
+
+    public function testUsesConfiguredUrl(): void
+    {
+        $url = "https://cmsimple-xh.org/";
+        $this->conf["url"] = $url;
+        $request = new FakeRequest();
+        $response = $this->sut()->init($request);
+        $this->assertStringContainsString(urlencode($url), $response->output());
+    }
 }
