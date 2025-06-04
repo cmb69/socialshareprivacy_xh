@@ -108,7 +108,7 @@ Slovak translation © Dr. Martin Sereday
 
 ## Credits
 
-The plugin logo is designed by [Heise Zeitschriften Verlag GmbH & Co. KG](http://www.heise.de/).
+The plugin logo is designed by [Heise Zeitschriften Verlag GmbH & Co. KG](https://www.heise.de/).
 Many thanks for releasing this icon under MIT license.
 
 The logos of the social networks are from

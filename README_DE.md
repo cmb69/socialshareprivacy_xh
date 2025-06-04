@@ -114,7 +114,7 @@ Slovakische Übersetzung © Dr. Martin Sereday
 
 ## Danksagung
 
-Das Plugin-Logo wurde von [Heise Zeitschriften Verlag GmbH & Co. KG](http://www.heise.de/) entworfen.
+Das Plugin-Logo wurde von [Heise Zeitschriften Verlag GmbH & Co. KG](https://www.heise.de/) entworfen.
 Vielen Dank für die Veröffentlichung dieses Icons unter MIT Lizenz.
 
 Die Logos der sozialen Netzwerke sind von
