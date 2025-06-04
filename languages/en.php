@@ -3,6 +3,16 @@
 $plugin_tx['socialshareprivacy']['menu_info'] = "Info";
 
 $plugin_tx['socialshareprivacy']['alt_logo'] = "Double thumbs up";
+$plugin_tx['socialshareprivacy']['alt_facebook'] = "facebook logo";
+$plugin_tx['socialshareprivacy']['alt_x'] = "X logo";
+$plugin_tx['socialshareprivacy']['alt_xing'] = "XING logo";
+$plugin_tx['socialshareprivacy']['alt_linkedin'] = "LinkedIn logo";
+
+$plugin_tx['socialshareprivacy']['label_share'] = "Share this page";
+$plugin_tx['socialshareprivacy']['label_share_facebook'] = "Share on facebook";
+$plugin_tx['socialshareprivacy']['label_share_x'] = "Share on X";
+$plugin_tx['socialshareprivacy']['label_share_xing'] = "Share on XING";
+$plugin_tx['socialshareprivacy']['label_share_linkedin'] = "Share on LinkedIn";
 
 $plugin_tx['socialshareprivacy']['syscheck_title'] = "System check";
 $plugin_tx['socialshareprivacy']['syscheck_alt_ok'] = "OK";
