@@ -51,9 +51,9 @@
     </exec>
     <untar file="export.tar" todir="export"/>
     <delete file="export.tar"/>
-    <jsMin targetDir="dist" suffix="" failonerror="true">
+    <jsMin targetDir="dist" suffix=".min" failonerror="true">
       <fileset dir="export">
-        <include name="jquery.socialshareprivacy-xl.js"/>
+        <include name="socialshareprivacy.js"/>
       </fileset>
     </jsMin>
     <move todir="dist">
@@ -74,7 +74,6 @@
         <exclude name="tests/**"/>
         <exclude name="build.xml"/>
         <exclude name="composer.*"/>
-        <exclude name="jquery.socialshareprivacy-xl.js"/>
         <exclude name="phpstan.*"/>
         <exclude name="phpunit.xml"/>
         <exclude name="README*.md"/>

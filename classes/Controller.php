@@ -21,105 +21,42 @@
 
 namespace Socialshareprivacy;
 
-use Plib\Jquery;
 use Plib\Request;
 use Plib\Response;
+use Plib\View;
 
 class Controller
 {
     private string $pluginFolder;
-    private Jquery $jquery;
+    /** @var array<string,string> */
+    private array $conf;
+    private View $view;
 
-    public function __construct(string $pluginFolder, Jquery $jquery)
+    /** @param array<string,string> $conf */
+    public function __construct(string $pluginFolder, array $conf, View $view)
     {
         $this->pluginFolder = $pluginFolder;
-        $this->jquery = $jquery;
+        $this->conf = $conf;
+        $this->view = $view;
     }
 
     public function init(Request $request): Response
     {
-        $this->jquery->include();
-        $this->jquery->includePlugin('socialshareprivacy', $this->pluginFolder . 'jquery.socialshareprivacy-xl.js');
-        $bjs = '<script type="text/javascript">/* <![CDATA[ */'
-            . 'jQuery(function() {'
-            . 'jQuery(".socialshareprivacy").socialSharePrivacy('
-            . json_encode($this->getConfiguration($request))
-            . ');'
-            . '});'
-            . '/* ]]> */</script>';
-        return Response::create()->withBjs($bjs);
+        return Response::create($this->view->render("share", [
+            "url" => urlencode($this->conf["url"] ?: $request->url()->absolute()),
+            "script" => $this->script(),
+            "facebook" => $this->conf["allow_facebook"],
+            "x" => $this->conf["allow_x"],
+            "xing" => $this->conf["allow_xing"],
+            "linkedin" => $this->conf["allow_linkedin"],
+        ]));
     }
 
-    /** @return array<string,mixed> */
-    private function getConfiguration(Request $request): array
+    private function script(): string
     {
-        global $sn, $plugin_cf, $plugin_tx;
-
-        $pcf = $plugin_cf['socialshareprivacy'];
-        $ptx = $plugin_tx['socialshareprivacy'];
-        $config = array(
-            'info_link' => $ptx['general_info_link'],
-            'txt_help' => $ptx['general_help'],
-            'settings_perma' => $ptx['general_settings_perma'],
-            'cookie_path' => $sn,
-            'cookie_expires' => $pcf['cookie_expires'],
-            'css_path' => '',
-            'services' => array(
-                'facebook' => $this->getServiceConfiguration($request, 'facebook'),
-                'twitter' => $this->getServiceConfiguration($request, 'twitter'),
-                'gplus' => $this->getServiceConfiguration($request, 'gplus'),
-                'xing' => $this->getServiceConfiguration($request, 'xing'),
-                'linkedin' => $this->getServiceConfiguration($request, 'linkedin')
-            )
-        );
-        if ($pcf['url'] != '') {
-            $config['uri'] = $pcf['url'];
+        if (is_file($this->pluginFolder . "socialshareprivacy.min.js")) {
+            return $this->pluginFolder . "socialshareprivacy.min.js";
         }
-        return $config;
-    }
-
-    /** @return array<string,string> */
-    private function getServiceConfiguration(Request $request, string $service): array
-    {
-        global $plugin_cf, $plugin_tx;
-
-        $pcf = $plugin_cf['socialshareprivacy'];
-        $ptx = $plugin_tx['socialshareprivacy'];
-        $config = array(
-            'status' => $pcf["{$service}_status"],
-            'dummy_img' => $this->getServiceImage($request, $service),
-            'txt_info' => $ptx["{$service}_info"],
-            "txt_{$service}_off" => $ptx["{$service}_off"],
-            "txt_{$service}_on" => $ptx["{$service}_on"],
-            'perma_option' => $pcf["{$service}_perma_option"],
-            'display_name' => $ptx["{$service}_display_name"],
-            'referrer_track' => $pcf["{$service}_referrer_track"],
-            'language' => $this->getServiceLanguage($request, $service)
-        );
-        if ($service == 'facebook') {
-            $config['action'] = $pcf['facebook_action'];
-        }
-        return $config;
-    }
-
-    private function getServiceImage(Request $request, string $service): string
-    {
-        $image = "{$this->pluginFolder}css/images/dummy_{$service}_{$request->language()}.png";
-        if (!file_exists($image)) {
-            $image = "{$this->pluginFolder}css/images/dummy_{$service}.png";
-        }
-        return $image;
-    }
-
-    private function getServiceLanguage(Request $request, string $service): string
-    {
-        global $plugin_tx;
-
-        $lang = $request->language();
-        if (in_array($service, array('facebook', 'linkedin'))) {
-            $lang .= '_'
-                . $plugin_tx['socialshareprivacy']['general_country_code'];
-        }
-        return $lang;
+        return $this->pluginFolder . "socialshareprivacy.js";
     }
 }

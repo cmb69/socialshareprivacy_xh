@@ -3,38 +3,43 @@
 namespace Socialshareprivacy;
 
 use ApprovalTests\Approvals;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Plib\FakeRequest;
-use Plib\Jquery;
+use Plib\View;
 
 class ControllerTest extends TestCase
 {
-    /** @var Jquery&MockObject */
-    private $jquery;
+    /** @var array<string,string> */
+    private array $conf;
+    private View $view;
 
     protected function setUp(): void
     {
         global $plugin_cf, $plugin_tx;
         $plugin_cf = XH_includeVar("./config/config.php", "plugin_cf");
         $plugin_tx = XH_includeVar("./languages/en.php", "plugin_tx");
-        $this->jquery = $this->createMock(Jquery::class);
+        $this->conf = $plugin_cf["socialshareprivacy"];
+        $this->view = new View("./views/", $plugin_tx["socialshareprivacy"]);
     }
 
     private function sut(): Controller
     {
-        return new Controller(
-            "./",
-            $this->jquery
-        );
+        return new Controller("./", $this->conf, $this->view);
     }
 
-    public function testRendersScripts(): void
+    public function testRendersWidget(): void
     {
-        $this->jquery->expects($this->once())->method("include");
-        $this->jquery->expects($this->once())->method("includePlugin")->with("socialshareprivacy");
         $request = new FakeRequest();
         $response = $this->sut()->init($request);
-        Approvals::verifyHtml($response->bjs());
+        Approvals::verifyHtml($response->output());
+    }
+
+    public function testUsesConfiguredUrl(): void
+    {
+        $url = "https://cmsimple-xh.org/";
+        $this->conf["url"] = $url;
+        $request = new FakeRequest();
+        $response = $this->sut()->init($request);
+        $this->assertStringContainsString(urlencode($url), $response->output());
     }
 }

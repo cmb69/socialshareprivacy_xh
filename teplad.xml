@@ -81,27 +81,20 @@
   <descriptions>
     <!-- description of the plugin, ca. 200 characters, you can use <br/>, <ol></ol>, <ul></ul>, <li></li>, <b></b>, <i></i>. -->
     <description lang="en">
-      Socialshareprivacy_XH facilitates to have Facebook, Twitter, Google+, XING
-      and/or LinkedIn buttons on your website without violating your visitor's privacy.
-      Before any data are transmitted to Facebook, Twitter, Google+, XING resp. LinkedIn,
-      the visitor has to agree explicitely.
-      This plugin is only a wrapper around the jQuery plugin socialshareprivacy-xl
-      by Illusions-Schmiede.
-      Socialshareprivacy_XH does not provide any additional features, but is merely
-      meant as a simple way to use and configure the jQuery plugin without the need to
-      mess around in JavaScript files.
+      Socialshareprivacy_XH facilitates to have share buttons for several social
+      networks on your website without violating the privacy of visitors.
+      Contrary to the code snippets these networks offer to embed on websites,
+      Socialshareprivacy_XH does not include any third-party JavaScript or other assets,
+      so no data are transferred to third-party servers until visitors press a share button.
     </description>
     <!-- Beschreibung des Plugins, ca. 200 Zeichen, es können <br/>, <ol></ol>, <ul></ul>, <li></li>, <b></b>, <i></i> genutzt werden. -->
     <description lang="de">
-      Socialshareprivacy_XH ermöglicht es Facebook, Twitter, Google+, XING und/oder
-      LinkedIn Buttons auf Ihrer Website zu zeigen, ohne die Privatsphäre Ihrer Besucher zu verletzen.
-      Bevor Daten an Facebook, Twitter, Google+, XING bzw. LinkedIn übertragen werden,
-      muss der Besucher explizit einwilligen.
-      Dieses Plugin ist nur ein Wrapper für das jQuery-Plugin socialshareprivacy-xl
-      von der Illusions-Schmiede.
-      Socialshareprivacy_XH bietet keine zusätzlichen Features, sondern ist lediglich
-      als einfache Möglichkeit gedacht, das jQuery-Plugin zu verwenden, und, ohne an
-      JavaScript-Dateien herumbasteln zu müssen, konfigurieren zu können.
+      Socialshareprivacy_XH ermöglicht die Einbindung von Teilen-Schaltern für verschiedene
+      soziale Netzwerke auf Ihrer Website, ohne die Privatsphäre Ihrer Besucher zu verletzen.
+      Im Gegensatz zu den Code-Schnipseln, die diese Netwerke zum Einbinden auf Websites
+      anbieten, verwendet Socialshareprivacy_XH kein JavaScript oder andere Assets der
+      Anbieter, so dass keine Daten zu Fremdservern übertragen werden, bevor Besucher
+      einen Teilen-Schalter anklicken.
    </description>
     <!-- additional languages are possible, i.e. da, fr, pl, ... -->
     <!-- The use of this language is limited by the website where the repository is hosted. -->

@@ -34,7 +34,7 @@
 <body>
 <h1 id="socialshareprivacy_xh">Socialshareprivacy_XH</h1>
 <p><img src="../socialshareprivacy.png" alt="Double thumbs up" align="right"></p>
-<p>Socialshareprivacy_XH facilitates to have Facebook, Twitter, Google+, XING and/or LinkedIn buttons on your website without violating your visitor’s privacy. Before any data are transmitted to Facebook, Twitter, Google+, XING resp. LinkedIn, the visitor has to agree explicitely. This plugin is only a wrapper around the jQuery plugin <a href="http://www.illusions-schmiede.com/Socialshareprivacy-XL">socialshareprivacy-xl</a> by <a href="http://www.illusions-schmiede.com/">Illusions-Schmiede</a>. Socialshareprivacy_XH doesn’t provide any additional features, but is merely meant as a simple way to use and configure the jQuery plugin without the need to mess around in JavaScript files.</p>
+<p>Socialshareprivacy_XH facilitates to have share buttons for several social networks on your website without violating the privacy of visitors. Contrary to the code snippets these networks offer to embed on websites, Socialshareprivacy_XH does not include any third-party JavaScript or other assets, so no data are transferred to third-party servers until visitors press a share button.</p>
 <ul>
 <li><a href="#requirements">Requirements</a></li>
 <li><a href="#download">Download</a></li>
@@ -65,16 +65,12 @@
 <p>Localization is done under <code>Language</code>. You can translate the character strings to your own language if there is no appropriate language file available, or customize them according to your needs.</p>
 <p>The look of Socialshareprivacy_XH can be customized under <code>Stylesheet</code>.</p>
 <h2 id="usage">Usage</h2>
-<p>At first make sure that the language settings have the appropriate <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO-3166-1 alpha-2 country code</a> under <code>General</code> → <code>Country code</code>. Otherwise the localization of the buttons might not work.</p>
-<p>To display the social buttons on a page or in a newsbox insert:</p>
-<pre><code>{{{socialshareprivacy()}}}</code></pre>
-<p>To display the social buttons on every page insert into your template:</p>
+<p>To display the share buttons on a page or in a newsbox insert:</p>
+<pre><code>{{{socialshareprivacy}}}</code></pre>
+<p>To display the share buttons on every page insert into your template:</p>
 <pre><code>&lt;?=socialshareprivacy()?&gt;</code></pre>
-<p>In this case it’s necessary to activate <code>Template</code> → <code>Call</code> in the configuration.</p>
 <p>Note that the likes, tweets and shares refer to the currently displayed page, including all additional query parameters, i.e. what is shown in the browser’s address bar. If a canonical link is contained in the page’s (X)HTML, this will be used, however. If you prefer that all likes, tweets and shares refer to a certain URL, you can set this URL in the configuration.</p>
 <h2 id="limitations">Limitations</h2>
-<p>The plugin requires JavaScript to be enabled in the visitor’s browser; otherwise nothing will be displayed. Actually this is not really a limitation, as liking, tweeting and sharing requires JavaScript to be enabled anyway.</p>
-<p>In old browsers which doesn’t implement the JSON object (e.g. IE 7 and before), the possibility to permanently activate the buttons is not available. In browsers which doesn’t understand the value “inline-block” for the “display” declaration (e.g. IE 7 and before), the layout is broken. Despite these limitations the plugin is still usable on IE 6 and 7.</p>
 <p>When testing on localhost, some of the buttons might not properly work, because the domain localhost might not be accepted by the services. You can use the configuration option <code>Url</code> to work around this limitation.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>Report bugs and ask for support either on <a href="https://github.com/cmb69/socialshareprivacy_xh/issues">Github</a> or in the <a href="https://cmsimpleforum.com/">CMSimple_XH Forum</a>.</p>
@@ -85,7 +81,8 @@
 <p>Copyright © Christoph M. Becker</p>
 <p>Slovak translation © Dr. Martin Sereday</p>
 <h2 id="credits">Credits</h2>
-<p>Socialshareprivacy_XH is powered by <a href="http://www.illusions-schmiede.com/Socialshareprivacy-XL">socialshareprivacy-xl</a> which is based on <a href="http://www.heise.de/extras/socialshareprivacy/">socialshareprivacy</a>. Many thanks to <a href="http://www.heise.de/">Heise Zeitschriften Verlag GmbH &amp; Co. KG</a> and <a href="http://www.illusions-schmiede.com/">Illusions-Schmiede</a> for releasing these jQuery plugins under MIT license. And of course many thanks to <em>Christian</em> for pointing me to socialshareprivacy and <em>Martin</em> for pointing me to socialshareprivacy-xl.</p>
+<p>The plugin logo is designed by <a href="http://www.heise.de/">Heise Zeitschriften Verlag GmbH &amp; Co. KG</a>. Many thanks for releasing this icon under MIT license.</p>
+<p>The logos of the social networks are from <a href="https://www.iconfinder.com/search/icons?price=free&amp;category=social-media&amp;q=social+media">iconfinder.com</a>. Many thanks for making these icons available for free.</p>
 <p>Many thanks to the community at the <a href="https://www.cmsimpleforum.com/">CMSimple_XH forum</a> for tips, suggestions and testing.</p>
 <p>And last but not least many thanks to <a href="httsp://www.harteg.dk">Peter Harteg</a>, the “father” of CMSimple, and all developers of <a href="https://www.cmsimple-xh.org">CMSimple_XH</a> without whom this amazing CMS would not exist.</p>
 </body>

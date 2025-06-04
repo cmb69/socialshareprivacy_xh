@@ -21,7 +21,6 @@
 
 namespace Socialshareprivacy;
 
-use Plib\Jquery;
 use Plib\SystemChecker;
 use Plib\View;
 
@@ -33,11 +32,12 @@ class Plugin
 
     public static function controller(): Controller
     {
-        global $pth;
+        global $pth, $plugin_cf;
         if (self::$controller === null) {
             self::$controller = new Controller(
                 $pth["folder"]["plugins"] . "socialshareprivacy/",
-                new Jquery($pth["folder"]["plugins"] . "jquery/")
+                $plugin_cf["socialshareprivacy"],
+                self::view()
             );
         }
         return self::$controller;
@@ -45,11 +45,17 @@ class Plugin
 
     public static function infoCommand(): InfoCommand
     {
-        global $pth, $plugin_tx;
+        global $pth;
         return new InfoCommand(
             $pth["folder"]["plugins"] . "socialshareprivacy/",
             new SystemChecker(),
-            new View($pth["folder"]["plugins"] . "socialshareprivacy/views/", $plugin_tx["socialshareprivacy"])
+            self::view()
         );
+    }
+
+    private static function view(): View
+    {
+        global $pth, $plugin_tx;
+        return new View($pth["folder"]["plugins"] . "socialshareprivacy/views/", $plugin_tx["socialshareprivacy"]);
     }
 }

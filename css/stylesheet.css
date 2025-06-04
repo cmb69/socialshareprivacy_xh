@@ -1,296 +1,45 @@
-/*
- * Front-end
- *
- * To achieve the horizontal layout of 1rc1, look for "horizontal layout"
- * comments and remove the /* at the beginning of the line. Tweak the widths
- * according to your needs.
- */
+/* share widget */
 
-.social_share_privacy_area {
-    clear: both;
-    margin: 20px 0 !important;
-    list-style-type: none;
-    padding: 0 !important;
-    width: auto;
-    height: 100%;
-    display: block;
-    /*display: table; /* horizontal layout */
-}
-.social_share_privacy_area li {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 21px;
-    float: left;
-    width: 100%;
-    /*width: 100px; /* horizontal layout */
-}
-.social_share_privacy_area li .dummy_btn {
-    float: left;
-    margin: 0 0 0 10px;
-    cursor: pointer;
-    padding: 0;
-    height: inherit;
-}
-.social_share_privacy_area li div iframe {
-    overflow: hidden;
-    height: inherit;
-    width: inherit;
-}
-
-/*
- * Facebook
- */
-.social_share_privacy_area .facebook {
-    width: 100px;
-    height: 30px;
-    display: inline-block;
-}
-.social_share_privacy_area .facebook .fb_like iframe {
-    width: 100px;
-    height: 30px;
-}
-
-/*
- * Twitter
- */
-.social_share_privacy_area .twitter {
-    height: 30px;
-    width: 100px;
-}
-.social_share_privacy_area li div.tweet {
-    width: px;
-    height: 30px;
-}
-
-/*
- * Google+
- */
-.social_share_privacy_area .gplus {
-    width: 100px;
-    height: 30px;
-}
-.social_share_privacy_area li div.gplusone {
-    width: 100px;
-    height: 30px;
-}
-
-/*
- * XING
- */
-.social_share_privacy_area .xing {
-    width: 100px;
-    height: 30px;
-}
-.social_share_privacy_area li div.Xing {
-    width: 100px;
-    height: 30px;
-}
-
-/*
- * LinkedIn
- */
-.social_share_privacy_area .linkedin {
-    width: 100px;
-    height: 30px;
-}
-.social_share_privacy_area li div.LinkedIn {
-    width: 100px;
-    height: 30px;
-}
-
-/*
- * Switch
- */
-.social_share_privacy_area li .switch {
-    display: inline-block;
-    /*display: none; /* horizontal layout */
-    text-indent: -9999em;
-    background: transparent url(images/socialshareprivacy_on_off.png)
-        no-repeat 0 0 scroll;
-    width: 23px;
-    height: 12px;
-    overflow: hidden;
-    float: left;
-    margin: 4px 0 0;
-    padding: 0;
-    cursor: pointer;
-}
-.social_share_privacy_area li .switch.on {
-    background-position: 0 -12px;
-}
-
-/*
- * Tooltips
- */
-.social_share_privacy_area li.help_info {
-    position: relative;
-    width: 100%;
-    /*width: 100px; /* horizontal layout */
-}
-.social_share_privacy_area li.help_info .info,
-.social_share_privacy_area li .help_info.icon .info {
-    display: none;
-    position: absolute;
-    bottom: 40px;
-    left: 0;
-    width: 290px;
-    padding: 10px 15px;
+figure.socialshareprivacy_share {
     margin: 0;
-    font-size: 12px;
-    line-height: 16px;
+}
+figure.socialshareprivacy_share figcaption {
+    font-size: larger;
     font-weight: bold;
-    border: 1px solid #ccc;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    -moz-box-shadow: 0 3px 4px #999;
-    -webkit-box-shadow: 0 3px 4px #999;
-    box-shadow: 0 3px 4px #999;
-    background-color: #fdfbec;
-    color: #000;
-    z-index: 500;
 }
-.social_share_privacy_area li.gplus.help_info .info {
-    left: -60px;
+figure.socialshareprivacy_share .socialshareprivacy_links {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1em 0 0 1em;
+    margin: 1em 0;
 }
-.social_share_privacy_area li .help_info.icon .info {
-    left: -243px;
-    width: 350px;
-}
-.social_share_privacy_area li.help_info.display .info,
-.social_share_privacy_area li .help_info.icon.display .info {
-    display: block;
-}
-.social_share_privacy_area li.help_info.info_off.display .info {
-    display: none;
-}
-.social_share_privacy_area li .help_info.icon {
-    background: #fff url(images/socialshareprivacy_info.png) no-repeat
-        center center scroll;
-    width: 25px;
-    height: 20px;
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    border: 2px solid #e7e3e3;
-    border-right-width: 0;
-    -moz-border-radius: 5px 0 0 5px;
-    -webkit-border-radius: 5px 0 0 5px;
-    border-radius: 5px 0 0 5px;
-    margin: 0;
-    padding: 0;
-}
-.social_share_privacy_area li.settings_info .settings_info_menu.on
-        .help_info.icon {
-    border-top-width: 0;
-    border-left-width: 0;
-}
-.social_share_privacy_area li.settings_info .settings_info_menu.perma_option_off
-        .help_info.icon {
-    border-right-width: 2px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-
-/*
- * Settings/Info
- */
-.social_share_privacy_area li.settings_info {
-    position: relative;
-    top: -2px;
-}
-.social_share_privacy_area li.settings_info a {
+figure.socialshareprivacy_share a {
+    margin: 0 1em 1em 0;
     text-decoration: none;
-    margin: 0 !important;
+    border: none;
+    width: 3em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #cccccc;
 }
-.social_share_privacy_area li.settings_info .settings_info_menu {
-    background-color: #f3f4f5;
-    border: 2px solid #e7e3e3;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-box-shadow: 2px 2px 3px #c1c1c1;
-    -webkit-box-shadow: 2px 2px 3px #c1c1c1;
-    box-shadow: 3px 3px 3px #c1c1c1;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 135px;
-    z-index: 1000;
-    margin: 0;
-    padding: 0;
+figure.socialshareprivacy_share a.socialshareprivacy_facebook {
+    background-color: #1877f2;
 }
-.social_share_privacy_area li.settings_info .settings_info_menu.off {
-    border-width: 0;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    background-color: transparent;
+figure.socialshareprivacy_share a.socialshareprivacy_x {
+    background-color: #000000;
 }
-.social_share_privacy_area li.settings_info .settings_info_menu.off form
-    {
-    display: none;
-    margin: 0;
-    padding: 0;
+figure.socialshareprivacy_share a.socialshareprivacy_xing {
+    background-color: #ffffff;
 }
-.social_share_privacy_area li.settings_info .settings_info_menu .settings
-    {
-    text-indent: -9999em;
-    display: inline-block;
-    background: #fff url(images/settings.png) no-repeat center center scroll;
-    width: 25px;
-    height: 20px;
-    border: 2px solid #e7e3e3;
-    -moz-border-radius: 0 5px 5px 0;
-    -webkit-border-radius: 0 5px 5px 0;
-    border-radius: 0 5px 5px 0;
-    border-left: 1px solid #ddd;
-    margin: 0;
-    padding: 0;
+figure.socialshareprivacy_share a.socialshareprivacy_linkedin {
+    background-color: #007BB5;
 }
-.social_share_privacy_area li.settings_info .settings_info_menu.on .settings
-    {
-    border-top-width: 0;
-}
-.social_share_privacy_area li.settings_info .settings_info_menu form fieldset
-    {
-    border-width: 0;
-    margin: 0;
-    padding: 0 10px 10px;
-}
-.social_share_privacy_area li.settings_info .settings_info_menu form fieldset
-        legend {
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 14px;
-    margin: 0;
-    padding: 10px 0;
-    width: 115px;
-}
-.social_share_privacy_area li.settings_info .settings_info_menu form fieldset
-        input {
-    clear: both;
-    float: left;
-    margin: 4px 10px 4px 0;
-    padding: 0;
-}
-.social_share_privacy_area li.settings_info .settings_info_menu form fieldset
-        label {
-    display: inline-block;
-    float: left;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 24px;
-    -moz-transition: color .5s ease-in;
-    -webkit-transition: color .5s ease-in;
-    transition: color .5s ease-in;
-    margin: 0;
-    padding: 0;
-}
-.social_share_privacy_area li.settings_info .settings_info_menu form fieldset
-        label.checked {
-    color: #090;
+figure.socialshareprivacy_share a[target=_blank]::after {
+    content: "";
 }
 
 /* plugin info */
