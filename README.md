@@ -7,6 +7,7 @@ networks on your website without violating the privacy of visitors.
 Contrary to the code snippets these networks offer to embed on websites,
 Socialshareprivacy_XH does not include any third-party JavaScript or other assets,
 so no data are transferred to third-party servers until visitors press a share button.
+Currently, Facebook, X, Xing, LinkedIn, Reddit and Mastodon are supported.
 
 - [Requirements](#requirements)
 - [Download](#download)

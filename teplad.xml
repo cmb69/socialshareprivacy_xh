@@ -86,6 +86,7 @@
       Contrary to the code snippets these networks offer to embed on websites,
       Socialshareprivacy_XH does not include any third-party JavaScript or other assets,
       so no data are transferred to third-party servers until visitors press a share button.
+      Currently, Facebook, X, Xing, LinkedIn, Reddit and Mastodon are supported.
     </description>
     <!-- Beschreibung des Plugins, ca. 200 Zeichen, es können <br/>, <ol></ol>, <ul></ul>, <li></li>, <b></b>, <i></i> genutzt werden. -->
     <description lang="de">
@@ -95,6 +96,7 @@
       anbieten, verwendet Socialshareprivacy_XH kein JavaScript oder andere Assets der
       Anbieter, so dass keine Daten zu Fremdservern übertragen werden, bevor Besucher
       einen Teilen-Schalter anklicken.
+      Zur Zeit werden Facebook, X, Xing, LinkedIn, Reddit und Mastodon unterstützt.
    </description>
     <!-- additional languages are possible, i.e. da, fr, pl, ... -->
     <!-- The use of this language is limited by the website where the repository is hosted. -->

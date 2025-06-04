@@ -8,6 +8,7 @@ Im Gegensatz zu den Code-Schnipseln, die diese Netwerke zum Einbinden auf Websit
 anbieten, verwendet Socialshareprivacy_XH kein JavaScript oder andere Assets der
 Anbieter, so dass keine Daten zu Fremdservern übertragen werden, bevor Besucher
 einen Teilen-Schalter anklicken.
+Zur Zeit werden Facebook, X, Xing, LinkedIn, Reddit und Mastodon unterstützt.
 
 - [Voraussetzungen](#voraussetzungen)
 - [Download](#download)
