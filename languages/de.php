@@ -4,6 +4,7 @@ $plugin_tx['socialshareprivacy']['alt_facebook'] = "facebook Logo";
 $plugin_tx['socialshareprivacy']['alt_x'] = "X Logo";
 $plugin_tx['socialshareprivacy']['alt_xing'] = "XING Logo";
 $plugin_tx['socialshareprivacy']['alt_linkedin'] = "LinkedIn Logo";
+$plugin_tx['socialshareprivacy']['alt_reddit'] = "Reddit Logo";
 $plugin_tx['socialshareprivacy']['alt_mastodon'] = "Mastodon Logo";
 
 $plugin_tx['socialshareprivacy']['label_share'] = "Diese Seite teilen";
@@ -11,6 +12,7 @@ $plugin_tx['socialshareprivacy']['label_share_facebook'] = "Auf facebook teilen"
 $plugin_tx['socialshareprivacy']['label_share_x'] = "Auf X teilen";
 $plugin_tx['socialshareprivacy']['label_share_xing'] = "Auf XING teilen";
 $plugin_tx['socialshareprivacy']['label_share_linkedin'] = "Auf LinkedIn teilen";
+$plugin_tx['socialshareprivacy']['label_share_reddit'] = "Auf Reddit teilen";
 $plugin_tx['socialshareprivacy']['label_share_mastodon'] = "Auf Mastodon teilen";
 
 $plugin_tx['socialshareprivacy']['syscheck_title'] = "System Prüfung";
@@ -29,4 +31,5 @@ $plugin_tx['socialshareprivacy']['cf_allow_facebook'] = "Teilen auf facebook erl
 $plugin_tx['socialshareprivacy']['cf_allow_x'] = "Teilen auf X erlauben.";
 $plugin_tx['socialshareprivacy']['cf_allow_xing'] = "Teilen auf XING erlauben.";
 $plugin_tx['socialshareprivacy']['cf_allow_linkedin'] = "Teilen auf LinkedIn erlauben.";
+$plugin_tx['socialshareprivacy']['cf_allow_reddit'] = "Teilen auf Reddit erlauben.";
 $plugin_tx['socialshareprivacy']['cf_allow_mastodon'] = "Teilen auf Mastodon erlauben.";

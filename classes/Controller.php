@@ -49,6 +49,7 @@ class Controller
             "x" => $this->conf["allow_x"],
             "xing" => $this->conf["allow_xing"],
             "linkedin" => $this->conf["allow_linkedin"],
+            "reddit" => $this->conf["allow_reddit"],
             "mastodon" => $this->conf["allow_mastodon"],
         ]));
     }
