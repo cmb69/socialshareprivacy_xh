@@ -1,8 +1,5 @@
 <?php
 
-$plugin_tx['socialshareprivacy']['menu_info'] = "Info";
-
-$plugin_tx['socialshareprivacy']['alt_logo'] = "Doppeltes Daumen hoch";
 $plugin_tx['socialshareprivacy']['alt_facebook'] = "facebook Logo";
 $plugin_tx['socialshareprivacy']['alt_x'] = "X Logo";
 $plugin_tx['socialshareprivacy']['alt_xing'] = "XING Logo";
